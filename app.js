@@ -155,9 +155,24 @@ document.addEventListener("mouseenter", (e) => {
 });
 
 // section4 Video
+
+const sec4 = document.querySelector(".section4");
 var katunVideo = document.querySelector(".katun-vid");
 var playICO = document.querySelector(".play-bttn");
 var varlidate = false;
+
+// load video
+
+var srcval = false;
+
+sec4.addEventListener("mouseenter", (e) => {
+  srcval = true;
+});
+
+if ((srcval = true)) {
+  katunVideo.src = `./VIDEO/Katun.Intro.mp4`;
+}
+// Video React
 
 katunVideo.addEventListener("mousemove", (e) => {
   var icoBorder = playICO.getBoundingClientRect();
