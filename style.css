@@ -875,7 +875,7 @@ body {
 .dame {
   background-position: center;
   border-radius: 1.5vw;
-  background-image: url(./Images/Darko.png);
+  background-image: url(./Images/Darko.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -934,7 +934,7 @@ body {
 .dame2 {
   background-position: center;
   border-radius: 1.5vw;
-  background-image: url(./Images/Morphism.png);
+  background-image: url(./Images/Morphism.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
