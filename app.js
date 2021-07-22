@@ -376,8 +376,9 @@ sec6.addEventListener("mouseleave", (e) => {
 
 // design.illus - Validate and React
 sec6y = sec6.getBoundingClientRect().top;
+sec6y2 = sec6.getBoundingClientRect().top + sec6.getBoundingClientRect().height;
 
-if (sec6y < 0) {
+if (sec6y < 0 && sec6y > sec6y2) {
   var timer = setInterval(onTick, 50);
   var offsetval = 0;
 
@@ -397,7 +398,7 @@ if (sec6y < 0) {
 // Tech Particles - section6
 
 const TechPaticles = document.querySelectorAll(".tch-1");
-const TechSensor = document.querySelector("#des-group2");
+const TechSensor = document.querySelector("#svgform2");
 
 let mouse = {
   x: null,
@@ -460,4 +461,17 @@ TechSensor.addEventListener("mousemove", (e) => {
   }
 
   // console.log(TechPaticles);
+});
+
+// section7 - Submit Event React
+
+const submitBTN = document.querySelector(".submit-button");
+const submitBOX = document.querySelector("#submit-confirm-box");
+const submitShape = document.querySelector("#submit-confirm");
+
+submitBTN.addEventListener("mousedown", (e) => {
+  submitBOX.style.width = `100%`;
+  submitBOX.style.marginLeft = `1vw`;
+
+  submitShape.style.strokeDashoffset = `0`;
 });
