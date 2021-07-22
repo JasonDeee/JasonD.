@@ -100,6 +100,7 @@ body {
   right: 1vw;
   top: 80vh;
   z-index: 1;
+  transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
 }
 
 .decor2 {
@@ -127,6 +128,13 @@ body {
   z-index: -1;
 }
 
+.line-1 {
+  fill: none;
+  stroke: #292929;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 20px;
+}
 .img-decor3 {
   background-image: url(./Images/decor3s.png);
   background-repeat: no-repeat;
@@ -138,6 +146,7 @@ body {
   right: -35vw;
   top: -37vw;
   z-index: -1;
+  transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
 }
 .section1 {
   box-sizing: border-box;
@@ -191,6 +200,16 @@ body {
 }
 .POP-up:hover svg {
   opacity: 50%;
+}
+.button-line {
+  width: 2vw;
+  height: 0.9vw;
+  transform: translateY(0) rotate(0);
+  transform-origin: 50% 50%;
+  transition: all 1s 0s cubic-bezier(0.25, 0, 0, 1);
+}
+.button-line:nth-child(2) {
+  transform: translateY(0) rotate(0);
 }
 
 #blur-mask {
@@ -1949,6 +1968,7 @@ body {
   transform: translateX(-20%) translateY(40%);
   filter: drop-shadow(-3vw 2vw 5vw #ffffffa2);
   z-index: -1;
+  transition: all 1.8s 0.3s cubic-bezier(0.25, 0, 0, 1);
 }
 #color4 {
   content: "";

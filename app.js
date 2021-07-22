@@ -510,6 +510,10 @@ const MenuShadow = document.querySelector(".menu-layout");
 const footer = document.querySelector(".footer");
 const footerChild = document.querySelectorAll("#footer-col")[2];
 const copyright = document.querySelector("#copyright");
+const decor4 = document.querySelector("#decor4");
+const decor2 = document.querySelector(".decor-img2");
+const decor3 = document.querySelector(".img-decor3");
+const buttonLine = document.querySelectorAll(".button-line");
 
 var NavValidate = false;
 
@@ -532,6 +536,11 @@ NAVButton.addEventListener("mousedown", (e) => {
     footerChild.style.width = `25%`;
     footerChild.style.marginRight = `25%`;
     copyright.style.marginRight = `25%`;
+    decor4.style.left = `5vw`;
+    decor2.style.transform = `translateX(5vw)`;
+    decor3.style.transform = `translateX(5vw) rotate(-30deg) scale(0.8)`;
+    buttonLine[0].style.transform = `translateY(0.72vw) rotate(45deg)`;
+    buttonLine[1].style.transform = `translateY(-0.72vw) rotate(-45deg)`;
   } else {
     SideNav.style.right = `-20vw`;
     docbdy.style.right = `0`;
@@ -540,6 +549,11 @@ NAVButton.addEventListener("mousedown", (e) => {
     footerChild.style.width = `50%`;
     footerChild.style.marginRight = `0`;
     copyright.style.marginRight = `0`;
+    decor4.style.left = `0`;
+    decor2.style.transform = `translateX(0)`;
+    decor3.style.transform = `translateX(0) rotate(0) scale(1)`;
+    buttonLine[0].style.transform = `translateY(0) rotate(0)`;
+    buttonLine[1].style.transform = `translateY(0) rotate(0)`;
   }
 });
 
