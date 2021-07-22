@@ -60,12 +60,16 @@
 
 body {
   background-color: #e9e7e7;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
+  min-height: 100vh;
+  width: 100vw;
+  height: fit-content;
+  position: relative;
+  right: 0vw;
+  transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
 }
 
 .decor1 {
@@ -158,12 +162,49 @@ body {
 }
 
 .NAV-Elements {
+  position: absolute;
+  background: #ffffff00;
   display: flex;
   flex-direction: row;
-  background: none;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
+  height: 5vw;
+  padding-left: 17vw;
+  padding-right: 17vw;
+  align-self: center;
+  justify-self: center;
+  margin-top: 12vh;
+  z-index: 9;
+  transition: all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0s linear;
+}
+.NAV-Elements p,
+.NAV-Elements svg {
+  z-index: 11;
+}
+.POP-up {
+  width: 2vw;
+  height: auto;
+  z-index: 11;
+  cursor: pointer;
+  margin-right: 0;
+}
+.POP-up:hover svg {
+  opacity: 50%;
+}
+
+#blur-mask {
+  backdrop-filter: blur(5vw);
+  position: absolute;
+  width: 120vw;
+  height: 100%;
+  transform: translateX(-10vw);
+  left: 0;
+  top: 0;
+  z-index: 9;
+  opacity: 0;
+  box-shadow: 0vw 1vw 2vw 0 #00000031;
+  border-bottom: 2px solid #ffffff4f;
 }
 
 .Name {
@@ -303,6 +344,7 @@ body {
   font-family: "Quicksand";
   font-weight: 500;
   font-size: 1.2vw;
+  overflow: visible;
 }
 
 .socials {
@@ -1214,7 +1256,7 @@ body {
 }
 .sec6-layout2 {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin-right: 13vw;
   display: flex;
   box-sizing: border-box;
@@ -1987,10 +2029,10 @@ body {
   transition: all 0.7s cubic-bezier(0.25, 0, 0, 1);
 }
 #submit-confirm {
-  width: 3;
+  width: 3vw;
   height: 1.6vw;
-  stroke-dasharray: 30vw;
-  stroke-dashoffset: 31vw;
+  stroke-dasharray: 15vw;
+  stroke-dashoffset: 15.2vw;
   transition: all 0.7s cubic-bezier(0.25, 0, 0, 1);
 }
 
@@ -2000,7 +2042,7 @@ body {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 10px;
-  transition: all 0.3s 0s ease-out;
+  transition: all 0.7s 0s ease-out;
 }
 .submit-button:hover .sbm-1 {
   stroke: #cb356b;
@@ -2008,12 +2050,14 @@ body {
 
 .footer {
   position: relative;
-  overflow: hidden;
+  display: flex;
+  left: 0;
+  transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
 }
 .footer-layout {
   width: 100vw;
   height: auto;
-  min-height: 40vh;
+  min-height: 44vh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -2049,6 +2093,8 @@ body {
 }
 #footer-col:nth-child(3) {
   width: 50%;
+  margin-right: 0;
+  transition: all 2s 0s cubic-bezier(0.25, 0, 0, 1);
 }
 .footer-heading {
   font-family: "Poppins";
@@ -2074,8 +2120,9 @@ body {
   font-family: "Poppins";
   font-weight: 400;
   font-size: 1vw;
-  letter-spacing: 0.05vw;
+  letter-spacing: 0.02vw;
   color: #292929;
+  transition: all 2s 0.3s cubic-bezier(0.25, 0, 0, 1);
 }
 #footer-decor {
   background: white;
@@ -2084,16 +2131,156 @@ body {
   height: 40vw;
   position: absolute;
   border-radius: 50%;
-  left: -11vw;
-  bottom: -26vw;
-  visibility: hidden;
+  left: -12vw;
+  bottom: -22vw;
 }
 #footer-decor:nth-child(2) {
   left: 3vw;
-  top: -22vw;
+  top: -18vw;
 }
 
 #footer-decor:nth-child(3) {
   left: -18vw;
   top: -13vw;
+  visibility: hidden;
+}
+
+.menu-section {
+  position: fixed;
+  top: 0;
+  right: -20vw;
+  z-index: 10;
+  transition: all 1.3s 0s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.menu-layout {
+  width: 20vw;
+  height: 101vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  backdrop-filter: blur(0.4vw);
+  background: #ffffff57;
+  box-shadow: 0vw 0vw 0vw #0000004d;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1.5vw;
+  padding-bottom: 1vw;
+  overflow: visible;
+  overflow: hidden;
+}
+
+#trick-line {
+  width: 100%;
+  height: 2vw;
+  border-top: 3px solid #292929;
+  border-bottom: 3px solid #292929;
+  margin-bottom: 5vh;
+  opacity: 0%;
+}
+
+#greeting {
+  width: 100%;
+  height: auto;
+  padding-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+#greeting p {
+  font-family: "UTM avo";
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #292929;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 2vw;
+}
+
+.section-nav {
+  width: 100%;
+  margin-top: 6vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#nav-place {
+  font-family: "Poppins";
+  font-size: 1.3vw;
+  font-weight: 400;
+  color: #292929;
+  height: 8vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+#white-bar {
+  width: 55%;
+  height: 8vh;
+  background: #ffffff57;
+  position: absolute;
+  align-self: center;
+  z-index: 8;
+  box-shadow: 0vw 0vw 2vw #0000004d;
+  border-radius: 1vw;
+  opacity: 0;
+  margin-top: 0;
+  transition: all 0.3s 0s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.section-nav #nav-place:hover {
+  cursor: pointer;
+}
+.section-nav #nav-place:hover ~ #white-bar {
+  opacity: 100%;
+}
+
+.section-nav #nav-place:nth-child(2):hover ~ #white-bar {
+  width: 65%;
+  margin-top: 8vh;
+}
+.section-nav #nav-place:nth-child(3):hover ~ #white-bar {
+  width: 53%;
+  margin-top: 16vh;
+}
+.section-nav #nav-place:nth-child(4):hover ~ #white-bar {
+  width: 62%;
+  margin-top: 24vh;
+}
+.section-nav #nav-place:nth-child(5):hover ~ #white-bar {
+  width: 42%;
+  margin-top: 32vh;
+}
+#trick-line2 {
+  width: 50%;
+  height: 1vh;
+  border-top: 1px solid #292929;
+  position: relative;
+  align-self: flex-end;
+  overflow: visible;
+  margin-right: 1vw;
+  margin-top: 20vh;
+}
+
+#nav-copyright {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 0.8vw;
+  letter-spacing: 0.01vw;
+  color: #292929;
+  text-align: end;
+  position: relative;
+  align-self: flex-end;
+  overflow: visible;
+  margin-right: 1vw;
+}
+#section-none {
+  width: 100vw;
+  height: 50vh;
+  background: khaki;
+  margin-bottom: -1vw;
 }

@@ -475,3 +475,90 @@ submitBTN.addEventListener("mousedown", (e) => {
 
   submitShape.style.strokeDashoffset = `0`;
 });
+
+// Top Navigation Panel React
+
+const topNAV = document.querySelector(".NAV-Elements");
+const blurMask = document.querySelector("#blur-mask");
+
+document.addEventListener("scroll", function (e) {
+  if (window.scrollY > topNAV.offsetTop) {
+    topNAV.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0s linear`;
+    topNAV.style.position = `fixed`;
+    topNAV.style.paddingLeft = `5vw`;
+    topNAV.style.paddingRight = `5vw`;
+    topNAV.style.marginTop = `0`;
+    topNAV.style.background = `#ffffff31`;
+    blurMask.style.opacity = `100%`;
+  } else {
+    topNAV.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0.3s cubic-bezier(0.25, 0, 0, 1)`;
+    topNAV.style.position = `absolute`;
+    topNAV.style.paddingLeft = `17vw`;
+    topNAV.style.paddingRight = `17vw`;
+    topNAV.style.marginTop = `12vh`;
+    topNAV.style.background = `#ffffff00`;
+    blurMask.style.opacity = `0%`;
+  }
+});
+
+// Side Navigation Panel React
+
+const NAVButton = document.querySelector(".POP-up");
+const SideNav = document.querySelector(".menu-section");
+const docbdy = document.querySelector("body");
+const MenuShadow = document.querySelector(".menu-layout");
+const footer = document.querySelector(".footer");
+const footerChild = document.querySelectorAll("#footer-col")[2];
+const copyright = document.querySelector("#copyright");
+
+var NavValidate = false;
+
+NAVButton.addEventListener("mousedown", (e) => {
+  NavValidate = !NavValidate;
+  if (window.scrollY > topNAV.offsetTop && NavValidate == true) {
+    topNAV.style.paddingLeft = `17vw`;
+    topNAV.style.paddingRight = `17vw`;
+  }
+  if (window.scrollY > topNAV.offsetTop && NavValidate == false) {
+    topNAV.style.paddingLeft = `5vw`;
+    topNAV.style.paddingRight = `5vw`;
+  }
+
+  if (NavValidate == true) {
+    SideNav.style.right = `0`;
+    docbdy.style.right = `11vw`;
+    MenuShadow.style.boxShadow = `-1vw 0vw 2vw #0000004d`;
+    footer.style.left = `11vw`;
+    footerChild.style.width = `25%`;
+    footerChild.style.marginRight = `25%`;
+    copyright.style.marginRight = `25%`;
+  } else {
+    SideNav.style.right = `-20vw`;
+    docbdy.style.right = `0`;
+    MenuShadow.style.boxShadow = `0vw 0vw 0vw #0000004d`;
+    footer.style.left = `0`;
+    footerChild.style.width = `50%`;
+    footerChild.style.marginRight = `0`;
+    copyright.style.marginRight = `0`;
+  }
+});
+
+// React Bug Resolve
+const sensorEmail = document.querySelector(".section7");
+const copyright2 = document.querySelector("#nav-copyright");
+
+document.addEventListener("scroll", function (e) {
+  if (window.scrollY > topNAV.offsetTop && NavValidate == true) {
+    topNAV.style.paddingLeft = `17vw`;
+    topNAV.style.paddingRight = `17vw`;
+  }
+  if (window.scrollY < topNAV.offsetTop && NavValidate == true) {
+    topNAV.style.paddingLeft = `5vw`;
+    topNAV.style.paddingRight = `5vw`;
+  }
+  if (window.scrollY > sensorEmail.offsetTop) {
+    copyright2.style.opacity = `0%`;
+  } else {
+    copyright2.style.opacity = `100%`;
+  }
+});
