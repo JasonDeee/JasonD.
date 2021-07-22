@@ -17,19 +17,16 @@ ProjectBox.addEventListener("mousemove", (e) => {
   var scrolledY = window.scrollY;
   var scrolledX = window.scrollX;
   var rect = ProjectBox.getBoundingClientRect();
+
   let middleLeft = rect.left + rect.width / 2 + scrolledX;
   let middleTop = rect.top + rect.height / 2 + scrolledY;
-  let xAxis = (middleLeft - e.pageX) / (e.pageX / 8);
-  let yAxis = (middleTop - e.pageY) / (e.pageY / 12);
+  let xAxis = (middleLeft - e.pageX) / (rect.width / 40);
+  let yAxis = (middleTop - e.pageY) / (rect.height / 24);
   let rad = Math.atan2(e.pageY - middleTop, e.pageX - middleLeft);
   let angle = (rad * 180) / Math.PI + 270;
   let glareX = e.pageX - (rect.left + scrolledX);
   let glareY = e.pageY - (rect.top + scrolledY);
-
-  // ProjectBox.style.transform = `rotateY(${xAxis + 10}deg) rotateX(${
-  //   yAxis + 5
-  // }deg)`;
-  sec2.style.transform = `rotateY(${xAxis + 3}deg) rotateX(${yAxis + 5}deg)`;
+  sec2.style.transform = `rotateY(${xAxis + 6}deg) rotateX(${yAxis}deg)`;
 });
 
 ProjectBox.addEventListener("mouseenter", (e) => {

@@ -1968,7 +1968,7 @@ body {
   transform: translateX(-20%) translateY(40%);
   filter: drop-shadow(-3vw 2vw 5vw #ffffffa2);
   z-index: -1;
-  transition: all 1.8s 0.3s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
 }
 #color4 {
   content: "";
