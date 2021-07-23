@@ -1,3 +1,169 @@
+// Hi There, Jason Here!
+// Have a good Day!
+
+//
+
+// My Cat ALLWAY WATCHING YOU
+const section1 = document.querySelector(".section1");
+
+let cat = {
+  HeadBG: document.querySelector("#FACE_BG"),
+  foreHead: document.querySelector("#Ear_F_Mask"),
+  EarBG: document.querySelector("#Ear_BG"),
+  EarL: document.querySelector("#Ear_F_L"),
+  EarR: document.querySelector("#Ear_F_R"),
+  EarMaskL: document.querySelector("#Ear_F_R"),
+
+  EyeL: document.querySelector(".cat-14"),
+  EyeR: document.querySelector(".cat-16"),
+  EyeBowL: document.querySelector("#EyeBow_L"),
+  EyeBowR: document.querySelector("#EyeBow_R"),
+  EyeBallL: document.querySelector("#EyeBall_L"),
+  EyeBallR: document.querySelector("#EyeBall_R"),
+
+  Nose: document.querySelector("#NOSE"),
+
+  Mouth: document.querySelector("#Mouth"),
+  BeardL: document.querySelector("#Beard_L"),
+  BeardR: document.querySelector("#Beard_R"),
+
+  BodyBG: document.querySelector("#Body_BG"),
+  Hand: document.querySelector("#HAND"),
+  FatLine1: document.querySelector("#Fat_line1"),
+  FatLine2: document.querySelector("#Fat_line2"),
+};
+
+section1.addEventListener("mousemove", (e) => {
+  const catBox = document.querySelector(".funny-pic").getBoundingClientRect();
+
+  var offsetX = e.pageX - (catBox.left + catBox.width / 2 + window.scrollX);
+  var offsetY = e.pageY - (catBox.top + catBox.height / 2 + window.scrollY);
+  var offset = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
+  var scaleX = offsetX / window.innerWidth;
+  var scaleY = offsetY / window.innerHeight;
+  var scale =
+    offset /
+    Math.sqrt(
+      window.innerWidth * window.innerWidth +
+        window.innerHeight * window.innerHeight
+    );
+
+  // Head React
+  cat.HeadBG.style.transform = `rotateX(${offsetY / 20}deg)
+  rotateY(${-offsetX / 30}deg)`;
+  cat.foreHead.style.transform = `rotateX(${offsetY / 20}deg)
+  rotateY(${-offsetX / 27}deg)`;
+  cat.EarBG.style.transform = `rotateX(${offsetY / 20}deg)
+  rotateY(${-offsetX / 26}deg)`;
+
+  cat.EarL.style.transform = `rotateX(${offsetY / 30}deg)
+  rotateY(${-offsetX / 26}deg) translateX(${offsetX / 40}px)
+  translateY(${offsetY / 20}px) scaleY(${1 + scaleY / 50})
+  scaleX(${1 + scaleX / 20})
+  `;
+
+  cat.EarR.style.transform = `rotateX(${offsetY / 30}deg)
+  rotateY(${-offsetX / 26}deg) translateX(${offsetX / 40}px)
+  translateY(${offsetY / 20}px) scaleY(${1 + scaleY / 10})
+  scaleX(${1 + scaleX / 5})
+  `;
+
+  cat.EyeL.style.transform = `scale(${1 - scaleX / 600 + scaleY / 200})
+  translateX(${offsetX / 40}px) translateY(${offsetY / 60 + offsetX / 200}px)
+  rotateZ(${offsetX / 240}deg)`;
+  cat.EyeR.style.transform = `scale(${1 + scaleX / 5 - scaleY / 50})
+  translateX(${offsetX / 60}px) translateY(${-offsetY / 65 + offsetX / 150}px)
+  rotateZ(${offsetX / 240}deg)`;
+  cat.EyeBowL.style.transform = `
+  translateX(${offsetX / 30}px) translateY(${offsetY / 20}px)`;
+  cat.EyeBowR.style.transform = `
+  translateX(${offsetX / 80}px) translateY(${offsetY / 20}px)`;
+  cat.EyeBallL.style.transform = `
+  translateX(${-offsetX / 40}px)
+  translateY(${-offsetY / 60 - offsetX / 200}px)`;
+  cat.EyeBallR.style.transform = `
+  translateX(${-offsetX / 60}px) 
+  translateY(${-offsetY / 65 - offsetX / 150}px)`;
+
+  cat.Nose.style.transform = `
+  translateX(${offsetX / 60}px) translateY(${offsetY / 18}px)`;
+
+  cat.Mouth.style.transform = `
+  translateX(${offsetX / 60}px) translateY(${offsetY / 7}px)`;
+  cat.BeardL.style.transform = `translateX(${offsetX / 10}px)
+  translateY(${offsetY / 10}px)`;
+  cat.BeardR.style.transform = `translateX(${-offsetX / 20}px)
+  translateY(${offsetY / 10}px)`;
+
+  // Body React
+  cat.BodyBG.style.transform = `skewX(${-offsetX / 300}deg)`;
+  cat.Hand.style.transform = `skewX(${offsetX / 100}deg)`;
+  cat.FatLine1.style.transform = `translateX(${offsetX / 100}px)`;
+  cat.FatLine2.style.transform = `translateX(${-offsetX / 50}px)`;
+});
+
+section1.addEventListener("mouseleave", (e) => {
+  const catBox = document.querySelector(".funny-pic").getBoundingClientRect();
+
+  var offsetX = 0;
+  var offsetY = 0;
+  var offset = 0;
+  var scaleX = 0;
+  var scaleY = 0;
+  var scale = 0;
+  // Head React
+  cat.HeadBG.style.transform = `rotateX(${offsetY / 20}deg)
+  rotateY(${-offsetX / 30}deg)`;
+  cat.foreHead.style.transform = `rotateX(${offsetY / 20}deg)
+  rotateY(${-offsetX / 27}deg)`;
+  cat.EarBG.style.transform = `rotateX(${offsetY / 20}deg)
+  rotateY(${-offsetX / 26}deg)`;
+
+  cat.EarL.style.transform = `rotateX(${offsetY / 30}deg)
+  rotateY(${-offsetX / 26}deg) translateX(${offsetX / 40}px)
+  translateY(${offsetY / 20}px) scaleY(${1 + scaleY / 50})
+  scaleX(${1 + scaleX / 20})
+  `;
+
+  cat.EarR.style.transform = `rotateX(${offsetY / 30}deg)
+  rotateY(${-offsetX / 26}deg) translateX(${offsetX / 40}px)
+  translateY(${offsetY / 20}px) scaleY(${1 + scaleY / 10})
+  scaleX(${1 + scaleX / 5})
+  `;
+
+  cat.EyeL.style.transform = `scale(${1 - scaleX / 600 + scaleY / 200})
+  translateX(${offsetX / 40}px) translateY(${offsetY / 60 + offsetX / 200}px)
+  rotateZ(${offsetX / 240}deg)`;
+  cat.EyeR.style.transform = `scale(${1 + scaleX / 5 - scaleY / 50})
+  translateX(${offsetX / 60}px) translateY(${-offsetY / 65 + offsetX / 150}px)
+  rotateZ(${offsetX / 240}deg)`;
+  cat.EyeBowL.style.transform = `
+  translateX(${offsetX / 30}px) translateY(${offsetY / 20}px)`;
+  cat.EyeBowR.style.transform = `
+  translateX(${offsetX / 80}px) translateY(${offsetY / 20}px)`;
+  cat.EyeBallL.style.transform = `
+  translateX(${-offsetX / 40}px)
+  translateY(${-offsetY / 60 - offsetX / 200}px)`;
+  cat.EyeBallR.style.transform = `
+  translateX(${-offsetX / 60}px) 
+  translateY(${-offsetY / 65 - offsetX / 150}px)`;
+
+  cat.Nose.style.transform = `
+  translateX(${offsetX / 60}px) translateY(${offsetY / 18}px)`;
+
+  cat.Mouth.style.transform = `
+  translateX(${offsetX / 60}px) translateY(${offsetY / 7}px)`;
+  cat.BeardL.style.transform = `translateX(${offsetX / 10}px)
+  translateY(${offsetY / 10}px)`;
+  cat.BeardR.style.transform = `translateX(${-offsetX / 20}px)
+  translateY(${offsetY / 10}px)`;
+
+  // Body React
+  cat.BodyBG.style.transform = `skewX(${-offsetX / 300}deg)`;
+  cat.Hand.style.transform = `skewX(${offsetX / 100}deg)`;
+  cat.FatLine1.style.transform = `translateX(${offsetX / 100}px)`;
+  cat.FatLine2.style.transform = `translateX(${-offsetX / 50}px)`;
+});
 // "Project - section2
 var body = document.querySelector("body");
 var sec2 = document.querySelector(".section2");
