@@ -72,7 +72,9 @@ body {
   transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
   cursor: none;
 }
-
+a {
+  cursor: none;
+}
 .decor1 {
   background: linear-gradient(60deg, #12c2e9, #c471ed, #f64f59);
   box-sizing: border-box;
@@ -397,6 +399,7 @@ circle {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   padding-left: 2vw;
   padding-right: 2vw;
 }
@@ -413,7 +416,15 @@ circle {
 
   clip-path: circle(0% at top 20% right 30%);
 }
-
+.prj-button a {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
 .prj-button:hover {
   cursor: none;
   width: 19vw;
@@ -428,11 +439,11 @@ circle {
   clip-path: circle(100% at top 20% right 30%);
   width: 19vw;
 }
-
 .prj-title {
   font-family: "Poppins";
   font-size: 1.2vw;
 }
+
 .slash {
   transition: all 0.66s 0s ease-out;
   font-family: "Quicksand";
@@ -2319,6 +2330,15 @@ circle {
   align-items: center;
   z-index: 9;
 }
+#nav-place a {
+  text-decoration: none;
+  color: #292929;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #white-bar {
   width: 55%;
   height: 8vh;
