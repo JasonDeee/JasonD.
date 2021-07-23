@@ -79,11 +79,11 @@ section1.addEventListener("mousemove", (e) => {
   cat.EyeBowR.style.transform = `
   translateX(${offsetX / 80}px) translateY(${offsetY / 20}px)`;
   cat.EyeBallL.style.transform = `
-  translateX(${-offsetX / 40}px)
-  translateY(${-offsetY / 60 - offsetX / 200}px)`;
+  translateX(${-offsetX / 30}px)
+  translateY(${-offsetY / 50 - offsetX / 180}px)`;
   cat.EyeBallR.style.transform = `
-  translateX(${-offsetX / 60}px) 
-  translateY(${-offsetY / 65 - offsetX / 150}px)`;
+  translateX(${-offsetX / 50}px) 
+  translateY(${-offsetY / 50 - offsetX / 130}px)`;
 
   cat.Nose.style.transform = `
   translateX(${offsetX / 60}px) translateY(${offsetY / 18}px)`;
@@ -174,7 +174,6 @@ var MRSBs3 = document.querySelector(".mrsB3");
 var MRSBs4 = document.querySelector(".mrsB4");
 
 var MRBtag = document.querySelector(".mrsB-tag");
-var fkgbutton = document.querySelector(".see-more-button");
 var subconnect = document.querySelector(".sub-connector");
 var sectionconect = document.querySelector(".section-connector");
 var MRBname = document.querySelector(".mrsB-title");
@@ -229,7 +228,7 @@ ProjectBox.addEventListener("mouseleave", (e) => {
   MRBtag.style.transform = `translateZ(0)`;
 });
 
-// section2
+// section3
 var spic = document.querySelectorAll("#pic");
 var section3 = document.querySelector(".section3");
 var sec3Ly = document.querySelector(".section3-layout");
@@ -677,6 +676,7 @@ const decor4 = document.querySelector("#decor4");
 const decor2 = document.querySelector(".decor-img2");
 const decor3 = document.querySelector(".img-decor3");
 const buttonLine = document.querySelectorAll(".button-line");
+const TagBox = document.querySelector(".tag-display");
 
 var NavValidate = false;
 
@@ -694,6 +694,7 @@ NAVButton.addEventListener("mousedown", (e) => {
   if (NavValidate == true) {
     SideNav.style.right = `0`;
     docbdy.style.right = `11vw`;
+    TagBox.style.marginLeft = `22vw`;
     MenuShadow.style.boxShadow = `-1vw 0vw 2vw #0000004d`;
     footer.style.left = `11vw`;
     footerChild.style.width = `25%`;
@@ -707,6 +708,7 @@ NAVButton.addEventListener("mousedown", (e) => {
   } else {
     SideNav.style.right = `-20vw`;
     docbdy.style.right = `0`;
+    TagBox.style.marginLeft = `0`;
     MenuShadow.style.boxShadow = `0vw 0vw 0vw #0000004d`;
     footer.style.left = `0`;
     footerChild.style.width = `50%`;
@@ -738,4 +740,346 @@ document.addEventListener("scroll", function (e) {
   } else {
     copyright2.style.opacity = `100%`;
   }
+});
+
+// Follow Along Cursor React
+
+const TagContent = document.querySelector("#tag-contents");
+const CurPointer = document.querySelector("#border");
+
+// Along Mouse
+
+document.addEventListener("mousemove", (e) => {
+  let fixX = e.pageX - window.scrollX - window.innerWidth / 2;
+  let fixY = e.pageY - window.scrollY - TagBox.clientHeight / 2;
+
+  TagBox.style.transform = `translateY(${fixY}px) translateX(${fixX}px)`;
+});
+document.addEventListener("mouseenter", (e) => {
+  TagBox.style.opacity = `100%`;
+});
+document.addEventListener("mouseleave", (e) => {
+  TagBox.style.opacity = `0%`;
+});
+
+// // // Things Needs
+
+function NormalPointerIn() {
+  CurPointer.style.opacity = `100%`;
+  CurPointer.style.width = `300%`;
+  CurPointer.style.height = `300%`;
+}
+function TextPointerIn() {
+  CurPointer.style.opacity = `100%`;
+  CurPointer.style.width = `200%`;
+  CurPointer.style.height = `200%`;
+}
+
+function NormalPointerOut() {
+  CurPointer.style.opacity = `0`;
+  CurPointer.style.width = `0`;
+  CurPointer.style.height = `0`;
+}
+
+// Sec6 Bug Resolve
+
+sec6.addEventListener("mouseenter", (e) => {
+  TagBox.style.display = `none`;
+});
+
+sec6.addEventListener("mouseleave", (e) => {
+  TagBox.style.display = `flex`;
+  TagBox.style.cursor = `none`;
+});
+
+// // Behance
+let Behance = {
+  SVG1: document.querySelector(".behance-svg"),
+  SVG2: document.querySelector(".behance-svg2"),
+};
+
+Behance.SVG1.addEventListener("mouseenter", (e) => {
+  TagContent.innerHTML = "Behance";
+  TagContent.style.width = `6vw`;
+  TagContent.style.height = `2vw`;
+  TagContent.style.opacity = `100%`;
+  TagContent.style.letterSpacing = `0.01vw`;
+
+  TextPointerIn();
+});
+
+Behance.SVG1.addEventListener("mouseleave", (e) => {
+  TagContent.style.width = `0`;
+  TagContent.innerHTML = "";
+  TagContent.style.height = `0`;
+  TagContent.style.opacity = `0%`;
+  TagContent.style.letterSpacing = `-0.5vw`;
+
+  NormalPointerOut();
+});
+
+Behance.SVG2.addEventListener("mouseenter", (e) => {
+  TagContent.innerHTML = "Behance";
+  TagContent.style.width = `6vw`;
+  TagContent.style.height = `2vw`;
+  TagContent.style.opacity = `100%`;
+  TagContent.style.letterSpacing = `0.01vw`;
+  TagContent.style.color = `#ffffff`;
+
+  TextPointerIn();
+});
+
+Behance.SVG2.addEventListener("mouseleave", (e) => {
+  TagContent.style.width = `0`;
+  TagContent.innerHTML = "";
+  TagContent.style.height = `0`;
+  TagContent.style.opacity = `0%`;
+  TagContent.style.letterSpacing = `-0.5vw`;
+  TagContent.style.color = `#292929`;
+
+  NormalPointerOut();
+});
+
+// // Artstation
+let Artstation = {
+  SVG1: document.querySelector(".artstation-svg"),
+  SVG2: document.querySelector(".artstation-svg2"),
+};
+
+Artstation.SVG1.addEventListener("mouseenter", (e) => {
+  TagContent.innerHTML = "Artstation";
+  TagContent.style.width = `7vw`;
+  TagContent.style.height = `2vw`;
+  TagContent.style.opacity = `100%`;
+  TagContent.style.letterSpacing = `0.01vw`;
+
+  TextPointerIn();
+});
+
+Artstation.SVG1.addEventListener("mouseleave", (e) => {
+  TagContent.style.width = `0`;
+  TagContent.innerHTML = "";
+  TagContent.style.height = `0`;
+  TagContent.style.opacity = `0%`;
+  TagContent.style.letterSpacing = `-0.5vw`;
+
+  NormalPointerOut();
+});
+
+Artstation.SVG2.addEventListener("mouseenter", (e) => {
+  TagContent.innerHTML = "Artstation";
+  TagContent.style.width = `7vw`;
+  TagContent.style.height = `2vw`;
+  TagContent.style.opacity = `100%`;
+  TagContent.style.letterSpacing = `0.01vw`;
+  TagContent.style.color = `#ffffff`;
+
+  TextPointerIn();
+});
+
+Artstation.SVG2.addEventListener("mouseleave", (e) => {
+  TagContent.style.width = `0`;
+  TagContent.innerHTML = "";
+  TagContent.style.height = `0`;
+  TagContent.style.opacity = `0%`;
+  TagContent.style.letterSpacing = `-0.5vw`;
+  TagContent.style.color = `#292929`;
+
+  NormalPointerOut();
+});
+
+// // Fb
+let Fb = {
+  SVG1: document.querySelectorAll(".fb-svg")[0],
+  SVG2: document.querySelectorAll(".fb-svg")[1],
+};
+
+Fb.SVG1.addEventListener("mouseenter", (e) => {
+  TagContent.innerHTML = "Facebook";
+  TagContent.style.width = `7vw`;
+  TagContent.style.height = `2vw`;
+  TagContent.style.opacity = `100%`;
+  TagContent.style.letterSpacing = `0.01vw`;
+
+  TextPointerIn();
+});
+
+Fb.SVG1.addEventListener("mouseleave", (e) => {
+  TagContent.style.width = `0`;
+  TagContent.innerHTML = "";
+  TagContent.style.height = `0`;
+  TagContent.style.opacity = `0%`;
+  TagContent.style.letterSpacing = `-0.5vw`;
+
+  NormalPointerOut();
+});
+
+Fb.SVG2.addEventListener("mouseenter", (e) => {
+  TagContent.innerHTML = "Facebook";
+  TagContent.style.width = `7vw`;
+  TagContent.style.height = `2vw`;
+  TagContent.style.opacity = `100%`;
+  TagContent.style.letterSpacing = `0.01vw`;
+  TagContent.style.color = `#ffffff`;
+
+  TextPointerIn();
+});
+
+Fb.SVG2.addEventListener("mouseleave", (e) => {
+  TagContent.style.width = `0`;
+  TagContent.innerHTML = "";
+  TagContent.style.height = `0`;
+  TagContent.style.opacity = `0%`;
+  TagContent.style.letterSpacing = `-0.5vw`;
+  TagContent.style.color = `#292929`;
+
+  NormalPointerOut();
+});
+
+// // "See My Project" The Button
+
+const prjButton = document.querySelector(".prj-button");
+
+prjButton.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+
+prjButton.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+// // See More Button
+
+const MoreButton1 = document.querySelectorAll(".see-more-button")[0];
+const MoreButton2 = document.querySelector(".see-more-button2");
+const MoreButton3 = document.querySelectorAll(".see-more-button")[1];
+const MoreButton4 = document.querySelectorAll(".see-more-button")[2];
+
+MoreButton1.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreButton1.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+MoreButton2.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreButton2.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+MoreButton3.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreButton3.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+MoreButton4.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreButton4.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+// Read More Text
+
+const MoreText1 = document.querySelectorAll(".mrsB-readmore")[0];
+const MoreText2 = document.querySelectorAll(".mrsB-readmore")[1];
+const MoreText3 = document.querySelectorAll(".mrsB-readmore")[2];
+const MoreText4 = document.querySelectorAll(".mrsB-readmore")[3];
+
+MoreText1.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreText1.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+MoreText2.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreText2.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+MoreText3.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreText3.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+MoreText4.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+MoreText4.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+// About Me Cursor
+
+const EmailText = document.querySelector("#Email");
+const textInput = document.querySelectorAll(".name-input");
+
+EmailText.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+EmailText.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+submitBTN.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+submitBTN.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
+});
+
+for (let index = 0; index < textInput.length; index++) {
+  const element = textInput[index];
+
+  element.addEventListener("mouseenter", (e) => {
+    NormalPointerIn();
+  });
+  element.addEventListener("mouseleave", (e) => {
+    NormalPointerOut();
+  });
+}
+
+// Footer Cursor Belike
+const footerLink = document.querySelectorAll(".footer-content span");
+
+for (let index = 0; index < footerLink.length; index++) {
+  const element = footerLink[index];
+
+  element.addEventListener("mouseenter", (e) => {
+    NormalPointerIn();
+  });
+  element.addEventListener("mouseleave", (e) => {
+    NormalPointerOut();
+  });
+}
+
+// NAV Cursor Belike
+
+const SideNavElement = document.querySelectorAll("#nav-place");
+
+for (let index = 0; index < SideNavElement.length; index++) {
+  const element = SideNavElement[index];
+
+  element.addEventListener("mouseenter", (e) => {
+    NormalPointerIn();
+  });
+  element.addEventListener("mouseleave", (e) => {
+    NormalPointerOut();
+  });
+}
+
+NAVButton.addEventListener("mouseenter", (e) => {
+  NormalPointerIn();
+});
+NAVButton.addEventListener("mouseleave", (e) => {
+  NormalPointerOut();
 });
