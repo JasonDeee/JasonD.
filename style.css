@@ -547,18 +547,24 @@ circle {
 .artstation-svg,
 .artstation-svg2 {
   transition: all 0.3s 0s ease-out;
-  height: 2vw;
-  width: 4vw;
+  height: 100%;
+  width: 10vw;
   overflow: visible;
 }
-.artstation-svg:hover {
-  width: 17vw;
-  cursor: none;
+
+#ast-nav,
+#beh-nav,
+#fb-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3vw;
+  height: 2vw;
+  z-index: 11;
+  transition: all 0.3s 0s ease-out;
 }
-.artstation-svg2:hover {
-  width: 6vw;
-  cursor: none;
-  transform: translateX(0.5vw);
+#ast-nav:hover {
+  width: 7vw;
 }
 .ast-1,
 .ast-2,
