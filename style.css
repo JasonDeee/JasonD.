@@ -190,8 +190,25 @@ a {
   z-index: 9;
   transition: all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0s linear;
 }
+
+#top-nav-link {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10vw;
+}
+#top-nav-link a {
+  text-decoration: none;
+  color: #292929;
+  font-family: "Poppins";
+  font-size: 1vw;
+  font-weight: 700;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
 .NAV-Elements p,
-.NAV-Elements svg {
+.NAV-Elements svg,
+.NAV-Elements a {
   z-index: 11;
 }
 .POP-up {
@@ -201,8 +218,29 @@ a {
   cursor: none;
   margin-right: 0;
 }
-.POP-up:hover svg {
+.NAV-Elements a {
+  position: relative;
+}
+.NAV-Elements a::before {
+  position: absolute;
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  height: 0.2vw;
+  width: 0%;
+  background: #292929;
+  transition: width 0.3s 0s ease-out;
+}
+.NAV-Elements a:hover:before {
+  width: 100%;
+}
+.POP-up:hover svg,
+.NAV-Elements a:hover {
   opacity: 50%;
+}
+.NAV-Elements a:hover {
+  display: block;
+  box-sizing: border-box;
 }
 .button-line {
   width: 2vw;
@@ -230,10 +268,14 @@ a {
 }
 
 .Name {
+  display: flex;
   font-family: "UTM Avo";
   font-weight: Bold;
   color: #292929;
   font-size: 1.7vw;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5vw;
 }
 
 .POP-up {
@@ -588,6 +630,7 @@ circle {
   z-index: 0;
   display: flex;
   align-items: flex-end;
+  opacity: 100%;
   transition: all 0.85s 0s ease-out;
 }
 
@@ -598,19 +641,20 @@ circle {
   font-weight: 700;
   color: #292929;
   z-index: 2;
+  transform: translateY(0);
 }
 
 #cnt-1::before {
   content: "01";
   font-family: "Poppins";
   font-size: 14vw;
-  color: #292929;
-  opacity: 20%;
+  color: rgba(41, 41, 41, 0.2);
   line-height: 3vw;
   font-weight: 200;
   margin-right: -7vw;
   font-style: italic;
 }
+
 #cnt-2::before {
   content: "02";
   font-family: "Poppins";
@@ -2224,6 +2268,10 @@ circle {
   opacity: 30%;
   cursor: none;
 }
+.footer-content a {
+  color: #292929;
+  text-decoration: none;
+}
 
 #copyright {
   font-family: "Poppins";
@@ -2319,8 +2367,8 @@ circle {
 }
 #nav-place {
   font-family: "Poppins";
-  font-size: 1.3vw;
-  font-weight: 400;
+  font-size: 1vw;
+  font-weight: 700;
   color: #292929;
   height: 8vh;
   display: flex;
@@ -2329,11 +2377,13 @@ circle {
   justify-content: center;
   align-items: center;
   z-index: 9;
+  transform: translateX(20vw);
 }
 #nav-place a {
   text-decoration: none;
   color: #292929;
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

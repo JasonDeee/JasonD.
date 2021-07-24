@@ -208,7 +208,6 @@ ProjectBox.addEventListener("mouseenter", (e) => {
   MRBtag.style.transition = `all 0.65s ease-out`;
   subconnect.style.transform = `translateY(-3.6vw)`;
   sectionconect.style.transform = `translateY(-4vw)`;
-  // MRSB.style.boxShadow = `-0.3vw 0.3vw 1vw 0 #00000042`;
 });
 
 ProjectBox.addEventListener("mouseleave", (e) => {
@@ -360,7 +359,7 @@ var play = document.querySelector("#play-icon");
 var pause = document.querySelector("#pse-icon");
 var descriptions = document.querySelector(".katun-des");
 
-katunVideo.addEventListener("mousedown", (e) => {
+katunVideo.addEventListener("click", (e) => {
   varlidate = !varlidate;
 
   if (varlidate == true) {
@@ -677,10 +676,11 @@ const decor2 = document.querySelector(".decor-img2");
 const decor3 = document.querySelector(".img-decor3");
 const buttonLine = document.querySelectorAll(".button-line");
 const TagBox = document.querySelector(".tag-display");
+const menuElement = document.querySelectorAll("#nav-place");
 
 var NavValidate = false;
 
-NAVButton.addEventListener("mousedown", (e) => {
+NAVButton.addEventListener("click", (e) => {
   NavValidate = !NavValidate;
   if (window.scrollY > topNAV.offsetTop && NavValidate == true) {
     topNAV.style.paddingLeft = `17vw`;
@@ -705,6 +705,23 @@ NAVButton.addEventListener("mousedown", (e) => {
     decor3.style.transform = `translateX(5vw) rotate(-30deg) scale(0.8)`;
     buttonLine[0].style.transform = `translateY(0.72vw) rotate(45deg)`;
     buttonLine[1].style.transform = `translateY(-0.72vw) rotate(-45deg)`;
+
+    let loopValidate = 0;
+    for (let index = 0; index < menuElement.length; index++) {
+      const element = menuElement[index];
+      loopValidate = index;
+
+      element.style.transform = `translateX(0)`;
+      element.style.transition = `all 1.3s ${0.1 * index}s
+      cubic-bezier(0.25, 0, 0, 1)`;
+
+      if (loopValidate == menuElement.length) {
+        break;
+      }
+      if (loopValidate == 0) {
+        continue;
+      }
+    }
   } else {
     SideNav.style.right = `-20vw`;
     docbdy.style.right = `0`;
@@ -719,6 +736,20 @@ NAVButton.addEventListener("mousedown", (e) => {
     decor3.style.transform = `translateX(0) rotate(0) scale(1)`;
     buttonLine[0].style.transform = `translateY(0) rotate(0)`;
     buttonLine[1].style.transform = `translateY(0) rotate(0)`;
+
+    let loopValidate = 0;
+    for (let index = 0; index < menuElement.length; index++) {
+      const element = menuElement[index];
+      loopValidate = index;
+
+      element.style.transform = `translateX(20vw)`;
+      if (loopValidate == menuElement.length) {
+        break;
+      }
+      if (loopValidate == 0) {
+        continue;
+      }
+    }
   }
 });
 
@@ -1048,8 +1079,10 @@ for (let index = 0; index < textInput.length; index++) {
   });
 }
 
-// Footer Cursor Belike
-const footerLink = document.querySelectorAll(".footer-content span");
+// Header and Footer Cursor Belike
+const footerLink = document.querySelectorAll(
+  ".footer-content span, .NAV-Elements a"
+);
 
 for (let index = 0; index < footerLink.length; index++) {
   const element = footerLink[index];
@@ -1084,7 +1117,7 @@ NAVButton.addEventListener("mouseleave", (e) => {
   NormalPointerOut();
 });
 
-// Smooth Navigation
+// Smooth Scroll Navigation
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
