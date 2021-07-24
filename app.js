@@ -5,10 +5,9 @@
 
 // Preload Screen
 
-const PreloadSensor = document.querySelector(".decor-img1");
-document.addEventListener("DOMContentLoaded", (e) => {
-  console.log("loaded");
-});
+function loadImage2() {
+  alert("Image is loaded");
+}
 
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
