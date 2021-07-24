@@ -5,7 +5,8 @@
 
 // Preload Screen
 
-window.addEventListener("load", (e) => {
+const PreloadSensor = document.querySelector(".decor-img1");
+document.addEventListener("DOMContentLoaded", (e) => {
   console.log("loaded");
 });
 
