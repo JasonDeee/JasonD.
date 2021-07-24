@@ -3,6 +3,12 @@
 
 //
 
+// Preload Screen
+
+window.addEventListener("load", (e) => {
+  console.log("loaded");
+});
+
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
 
@@ -540,7 +546,7 @@ sec6y = sec6.getBoundingClientRect().top;
 sec6y2 = sec6.getBoundingClientRect().top + sec6.getBoundingClientRect().height;
 
 if (sec6y < 0 && sec6y > sec6y2) {
-  var timer = setInterval(onTick, 50);
+  var timer = setInterval(onTick, 30);
   var offsetval = 0;
 
   const velocity = 4;
@@ -809,7 +815,7 @@ document.addEventListener("scroll", (e) => {
 
   if (clampSensor.top > 0) {
     decorPic1.style.transform = `translateY(${window.scrollY / 3}px) 
-    rotate(${window.scrollY / 60}deg)`;
+    rotate(${window.scrollY / 30}deg)`;
     decorPic2.style.marginTop = `${window.scrollY / 8}px`;
   }
 

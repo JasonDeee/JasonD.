@@ -57,6 +57,18 @@
   src: url(./Fonts/bebas/BebasNeue-Bold.otf);
   font-weight: 700;
 }
+::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+::-webkit-scrollbar-track {
+  width: 100%;
+  background: #e9e7e7;
+}
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border-radius: 5vw;
+}
 
 body {
   background-color: #e9e7e7;
@@ -66,15 +78,58 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
   height: fit-content;
   position: relative;
   right: 0vw;
   transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
   cursor: none;
 }
+
 a {
   cursor: none;
 }
+
+#Preloader {
+  box-sizing: border-box;
+  position: fixed;
+  width: 101vw;
+  height: 101vh;
+  z-index: 100;
+  background: #292929;
+  mix-blend-mode: multiply;
+  display: flex;
+}
+#PreloadCircle {
+  width: 101vw;
+  height: 101vw;
+  box-sizing: border-box;
+  background: white;
+  position: fixed;
+  clip-path: circle(0% at top 20% right 30%);
+}
+
+@keyframes CirclePreload {
+  100% {
+    clip-path: circle(98% at top 20% right 30%);
+  }
+  0% {
+    clip-path: circle(0% at top 20% right 30%);
+  }
+}
+
+@keyframes BoxDisappear {
+  0% {
+    display: flex;
+  }
+  99% {
+    display: flex;
+  }
+  100% {
+    display: none;
+  }
+}
+
 .decor1 {
   background: linear-gradient(60deg, #12c2e9, #c471ed, #f64f59);
   box-sizing: border-box;
@@ -2013,6 +2068,7 @@ circle {
   height: 14vh;
   cursor: none;
 }
+
 .name-input input,
 #message textarea {
   width: 100%;
