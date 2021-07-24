@@ -3,9 +3,14 @@
 
 //
 // Preload Event
-document.addEventListener("DOMContentLoaded", (e) => {
+window.addEventListener("load", (e) => {
   alert("load");
+  PreloadPerform();
 });
+
+function PreloadPerform() {
+  var timer = setInterval(onTick);
+}
 
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
