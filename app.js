@@ -3,9 +3,9 @@
 
 //
 // Preload Event
-function loadImage2() {
-  alert("loaded");
-}
+document.addEventListener("DOMContentLoaded", (e) => {
+  alert("load");
+});
 
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
