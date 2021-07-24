@@ -773,14 +773,13 @@ document.addEventListener("scroll", function (e) {
   }
 });
 
-// Follow Along Cursor React
+// Follow Along Cursor React and Parallax Decoration
 
 const TagContent = document.querySelector("#tag-contents");
 const CurPointer = document.querySelector("#border");
 
-// Along Mouse
-
 document.addEventListener("mousemove", (e) => {
+  // Mouse Follow
   let fixX = e.pageX - window.scrollX - window.innerWidth / 2;
   let fixY = e.pageY - window.scrollY - TagBox.clientHeight / 2;
 
@@ -791,6 +790,66 @@ document.addEventListener("mouseenter", (e) => {
 });
 document.addEventListener("mouseleave", (e) => {
   TagBox.style.opacity = `0%`;
+});
+// // Parallax Decoration And Animate Onscroll
+// Parallax Items
+
+const decorPic1 = document.querySelector(".decor-img1");
+const decorPic2 = document.querySelector(".decor-img2");
+
+const decorCol2 = document.querySelector(".decor1");
+
+// Level Bars Item
+const skillTable = document.querySelector("#gr3");
+const LevelItem = document.querySelectorAll(".appitem");
+
+document.addEventListener("scroll", (e) => {
+  // Parallax
+  let clampSensor = document.querySelector(".section3").getBoundingClientRect();
+
+  if (clampSensor.top > 0) {
+    decorPic1.style.transform = `translateY(${window.scrollY / 3}px) 
+    rotate(${window.scrollY / 60}deg)`;
+    decorPic2.style.marginTop = `${window.scrollY / 8}px`;
+  }
+
+  // // Level Bars
+  let LevelBarSensor =
+    skillTable.getBoundingClientRect().top -
+    window.innerHeight +
+    (skillTable.getBoundingClientRect().height / 9) * 5;
+
+  if (LevelBarSensor > 0) {
+    loopValidate = 0;
+
+    for (let index = 0; index < LevelItem.length; index++) {
+      const element = LevelItem[index];
+      loopValidate = index;
+
+      element.style.width = `70%`;
+
+      if (loopValidate == LevelItem.length) {
+        break;
+      } else {
+        continue;
+      }
+    }
+  } else {
+    for (let index = 0; index < LevelItem.length; index++) {
+      const element = LevelItem[index];
+      loopValidate = index;
+
+      element.style.width = `100%`;
+      element.style.transition = `width 2s ${0.1 * index}s 
+      cubic-bezier(0.25, 0, 0, 1)`;
+
+      if (loopValidate == LevelItem.length) {
+        break;
+      } else {
+        continue;
+      }
+    }
+  }
 });
 
 // // // Things Needs
