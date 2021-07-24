@@ -2,11 +2,9 @@
 // Have a good Day!
 
 //
-
-// Preload Screen
-
+// Preload Event
 function loadImage2() {
-  alert("Image is loaded");
+  alert("loaded");
 }
 
 // My Cat ALLWAY WATCHING YOU
