@@ -3,15 +3,11 @@
 
 //
 // Preload Event
-window.addEventListener("load", (e) => {
+document.addEventListener("DOMContentLoaded", (e) => {
   alert("load");
-  PreloadPerform();
+  var PreloadTime = setInterval(PreloadPerform, 100);
 });
-
-function PreloadPerform() {
-  var timer = setInterval(onTick);
-}
-
+function PreloadPerform() {}
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
 
