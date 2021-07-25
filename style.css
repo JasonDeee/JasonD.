@@ -79,6 +79,7 @@ body {
   min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
+  overflow-y: hidden;
   height: fit-content;
   position: relative;
   right: 0vw;
@@ -97,10 +98,12 @@ a {
   height: 101vh;
   z-index: 100;
   background: #292929;
+  pointer-events: none;
   mix-blend-mode: multiply;
   display: flex;
 }
-#PreloadCircle {
+#PreloadCircle,
+#PreloadCircle2 {
   width: 101vw;
   height: 101vw;
   box-sizing: border-box;
@@ -108,10 +111,13 @@ a {
   position: fixed;
   clip-path: circle(0% at top 20% right 30%);
 }
-
+#PreloadCircle2 {
+  background: #f64f59;
+  clip-path: circle(0% at top 20% right 30%);
+}
 @keyframes CirclePreload {
   100% {
-    clip-path: circle(98% at top 20% right 30%);
+    clip-path: circle(80% at top 20% right 30%);
   }
   0% {
     clip-path: circle(0% at top 20% right 30%);
@@ -120,13 +126,13 @@ a {
 
 @keyframes BoxDisappear {
   0% {
-    display: flex;
+    visibility: visible;
   }
   99% {
-    display: flex;
+    visibility: visible;
   }
   100% {
-    display: none;
+    visibility: hidden;
   }
 }
 
