@@ -22,8 +22,9 @@ $("#IMGPreload").ready(function () {
       PreloadBox.style.animation = `BoxDisappear 1.6s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
     }
     if (PreloadTime == 27) {
-      PreloadBox.style.display = `none`;
       // Finishing
+      PreloadBox.style.display = `none`;
+      PreloadBox.style.pointerEvents = `none`;
       bodyload.style.overflowY = `visible`;
       PreloadFinish();
       return;
@@ -31,7 +32,6 @@ $("#IMGPreload").ready(function () {
     function PreloadFinish() {
       clearInterval(PreloadTimeInterval);
       PreloadTime = null;
-      alert("all set");
     }
   }
 });
@@ -50,8 +50,9 @@ $("#IMGPreload").ready(function () {
 // // //       PreloadBox.style.animation = `BoxDisappear 1.6s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
 // // //     }
 // // //     if (PreloadTime == 27) {
-// // //       PreloadBox.style.display = `none`;
 // // //       // Finishing
+// // //       PreloadBox.style.display = `none`;
+// // //
 // // //       bodyload.style.overflowY = `visible`;
 // // //       PreloadFinish();
 // // //       return;

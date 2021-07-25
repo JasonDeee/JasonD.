@@ -98,7 +98,6 @@ a {
   height: 101vh;
   z-index: 100;
   background: #292929;
-  pointer-events: none;
   mix-blend-mode: multiply;
   display: flex;
 }
@@ -2545,7 +2544,7 @@ circle {
   box-shadow: 0.8vw 0.5vw 2vw #29292959;
   text-align: center;
   padding: 1vw;
-  z-index: 12;
+  z-index: 999;
   color: #292929;
   letter-spacing: 0.02vw;
   transition: all 0.6s 0s ease-out, transform 0s,
