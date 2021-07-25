@@ -371,6 +371,7 @@ a {
   box-sizing: border-box;
   border-radius: 50%;
   overflow: visible;
+  margin-left: 1vw;
 }
 .funny-pic::before {
   content: "";
@@ -378,6 +379,7 @@ a {
   position: absolute;
   width: 23vw;
   height: 23vw;
+  margin-right: 1vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -439,10 +441,10 @@ circle {
     transform: translateX(0);
   }
   33% {
-    transform: translateX(-1.3vw);
+    transform: translateX(-2.3vw);
   }
   60% {
-    transform: translateX(-1.3vw);
+    transform: translateX(-2vw);
   }
   100% {
     transform: translateX(0);
