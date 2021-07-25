@@ -10,9 +10,6 @@ const bodyload = document.querySelector("body");
 
 $("#IMGPreload").load(function () {
   // Handler for .load() called.
-  alert("IMG Loaded");
-});
-document.addEventListener("DOMContentLoaded", (e) => {
   var PreloadTimeInterval = setInterval(PreloadPerform, 100);
   var PreloadTime = 0;
   function PreloadPerform() {
@@ -33,9 +30,34 @@ document.addEventListener("DOMContentLoaded", (e) => {
     function PreloadFinish() {
       clearInterval(PreloadTimeInterval);
       PreloadTime = null;
+      alert("all set");
     }
   }
 });
+// document.addEventListener("DOMContentLoaded", (e) => {
+//   var PreloadTimeInterval = setInterval(PreloadPerform, 100);
+//   var PreloadTime = 0;
+//   function PreloadPerform() {
+//     PreloadTime++;
+//     if (PreloadTime == 10) {
+//       // Play
+//       PreloadCircle.style.animation = `CirclePreload 1.5s cubic-bezier(0.25, 0, 0, 1) 0.18s forwards`;
+//       PreloadCircle2.style.animation = `CirclePreload 1.5s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
+//       PreloadBox.style.animation = `BoxDisappear 1.6s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
+//     }
+//     if (PreloadTime == 27) {
+//       PreloadBox.style.display = `none`;
+//       // Finishing
+//       bodyload.style.overflowY = `visible`;
+//       PreloadFinish();
+//       return;
+//     }
+//     function PreloadFinish() {
+//       clearInterval(PreloadTimeInterval);
+//       PreloadTime = null;
+//     }
+//   }
+// });
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
 
