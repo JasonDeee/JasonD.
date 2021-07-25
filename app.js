@@ -7,6 +7,11 @@ const PreloadBox = document.querySelector("#Preloader");
 const PreloadCircle = document.querySelector("#PreloadCircle");
 const PreloadCircle2 = document.querySelector("#PreloadCircle2");
 const bodyload = document.querySelector("body");
+
+$("#IMGPreload").load(function () {
+  // Handler for .load() called.
+  alert("IMG Loaded");
+});
 document.addEventListener("DOMContentLoaded", (e) => {
   var PreloadTimeInterval = setInterval(PreloadPerform, 100);
   var PreloadTime = 0;
