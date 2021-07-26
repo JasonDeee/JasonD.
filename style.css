@@ -388,7 +388,9 @@ a {
   overflow: visible;
   z-index: 2;
 }
-
+.tch-1 {
+  transform: translateX(0px) translateY(0);
+}
 .cat-watching {
   width: 100%;
   height: 100%;
