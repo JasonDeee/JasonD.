@@ -635,13 +635,17 @@ const TechSensor = document.querySelector("#svgform2");
 let mouse = {
   x: null,
   y: null,
-  radius: 30,
+  radius: 40,
 };
 
 TechSensor.addEventListener("mousemove", (e) => {
   mouse.x = e.pageX;
   mouse.y = e.pageY;
 
+  // var timeValue = 0;
+  // var timeFuntion = setInterval(LoopFreq, 10);
+
+  // function LoopFreq() {
   for (let index = 0; index < TechPaticles.length; index++) {
     const element = TechPaticles[index];
 
@@ -676,22 +680,19 @@ TechSensor.addEventListener("mousemove", (e) => {
     if (distance.both < mouse.radius) {
       offset.x = (offset.max * distance.x) / distance.both;
       offset.y = (offset.max * distance.y) / distance.both;
-    }
 
-    if (distance.both > mouse.radius) {
-      offset.x = 0;
-      offset.y = 0;
+      element.style.transform = `translateX(${-offset.x}px) translateY(${
+        -offset.y / 3
+      }px)`;
+
+      element.style.transition = `all ${offset.velocity}s ease-out`;
+    } else {
+      element.style.transform = `translateX(0px) translateY(0px)`;
     }
 
     // react
-
-    element.style.transform = `translateX(${-offset.x}px) translateY(${
-      -offset.y / 3
-    }px)`;
-
-    element.style.transition = `all ${offset.velocity}s ease-out`;
   }
-
+  // }
   // console.log(TechPaticles);
 });
 
