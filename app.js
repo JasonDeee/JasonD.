@@ -9,6 +9,7 @@ const PreloadCircle2 = document.querySelector("#PreloadCircle2");
 const bodyload = document.querySelector("body");
 
 // // jQuerry Method
+
 $("#IMGPreload").ready(function () {
   // Handler for .load() called.
   var PreloadTimeInterval = setInterval(PreloadPerform, 100);
@@ -63,6 +64,15 @@ $("#IMGPreload").ready(function () {
 // // //     }
 // // //   }
 // // // });
+
+// Reset Scroll On Page Reload
+
+// // jQuery Method (This was Too much shorty)
+
+$(document).ready(function () {
+  $("html").animate({ scrollLeft: 0 }, 1);
+  $("body").animate({ scrollLeft: 0 }, 1);
+});
 
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
@@ -601,7 +611,7 @@ sec6y = sec6.getBoundingClientRect().top;
 sec6y2 = sec6.getBoundingClientRect().top + sec6.getBoundingClientRect().height;
 
 if (sec6y < 0 && sec6y > sec6y2) {
-  var timer = setInterval(onTick, 30);
+  var timer = setInterval(onTick, 10);
   var offsetval = 0;
 
   const velocity = 4;
@@ -612,8 +622,8 @@ if (sec6y < 0 && sec6y > sec6y2) {
 
     offsetval += velocity;
 
-    mnt1.style.strokeDashoffset = `${offsetval}px`;
-    mnt2.style.strokeDashoffset = `${offsetval}px`;
+    mnt1.style.strokeDashoffset = `${offsetval / 2}px`;
+    mnt2.style.strokeDashoffset = `${offsetval / 2}px`;
   }
 }
 
@@ -625,7 +635,7 @@ const TechSensor = document.querySelector("#svgform2");
 let mouse = {
   x: null,
   y: null,
-  radius: 45,
+  radius: 30,
 };
 
 TechSensor.addEventListener("mousemove", (e) => {
@@ -675,8 +685,8 @@ TechSensor.addEventListener("mousemove", (e) => {
 
     // react
 
-    element.style.transform = `translateX(${offset.x}px) translateY(${
-      offset.y / 3
+    element.style.transform = `translateX(${-offset.x}px) translateY(${
+      -offset.y / 3
     }px)`;
 
     element.style.transition = `all ${offset.velocity}s ease-out`;
