@@ -390,6 +390,7 @@ a {
 }
 .tch-1 {
   transform: translateX(0px) translateY(0);
+  image-resolution: 1dpi;
 }
 .cat-watching {
   width: 100%;

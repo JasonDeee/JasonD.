@@ -563,10 +563,15 @@ morphism.addEventListener("mouseleave", (e) => {
 const sec6 = document.querySelector(".section6");
 const wave = document.querySelectorAll(".wav-1");
 const waveRec = document.querySelector("#wave-decor");
+const waveValilate = document.querySelector("#text-group");
 
 sec6.addEventListener("mousemove", (e) => {
   var scrollX = window.scrollX;
   var scrollY = window.scrollY;
+
+  var ValidateLenght =
+    waveValilate.getBoundingClientRect().top +
+    waveValilate.getBoundingClientRect().height / 2;
 
   const middleLeft =
     waveRec.getBoundingClientRect().x + waveRec.clientWidth / 2 + scrollX;
@@ -580,6 +585,9 @@ sec6.addEventListener("mousemove", (e) => {
   var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
   for (let index = 0; index < wave.length; index++) {
+    if (ValidateLenght < 0) {
+      break;
+    }
     const element = wave[index];
 
     var reverse = Math.abs(wave.length - index);
@@ -625,11 +633,14 @@ if (sec6y < 0 && sec6y > sec6y2) {
     mnt1.style.strokeDashoffset = `${offsetval / 2}px`;
     mnt2.style.strokeDashoffset = `${offsetval / 2}px`;
   }
+} else {
+  offsetval = null;
+  clearInterval(timer);
 }
 
 // Tech Particles - section6
 
-const TechPaticles = document.querySelectorAll(".tch-1");
+const TechPaticles = document.querySelectorAll("#tech-svg .tch-1");
 const TechSensor = document.querySelector("#svgform2");
 
 let mouse = {
@@ -644,19 +655,19 @@ TechSensor.addEventListener("mousemove", (e) => {
 
   // var timeValue = 0;
   // var timeFuntion = setInterval(LoopFreq, 10);
-
   // function LoopFreq() {
+
   for (let index = 0; index < TechPaticles.length; index++) {
     const element = TechPaticles[index];
 
-    const rect = element.getBoundingClientRect();
+    var rect = element.getBoundingClientRect();
 
-    const particles = {
-      x: rect.x + rect.width / 2 + window.scrollX,
-      y: rect.y + element.clientHeight / 2 + window.scrollY,
+    var particles = {
+      x: rect.left + rect.width / 2 + window.scrollX,
+      y: rect.top + element.clientHeight / 2 + window.scrollY,
     };
 
-    var distance = {
+    let distance = {
       x: mouse.x - particles.x,
       y: mouse.y - particles.y,
 
@@ -681,16 +692,17 @@ TechSensor.addEventListener("mousemove", (e) => {
       offset.x = (offset.max * distance.x) / distance.both;
       offset.y = (offset.max * distance.y) / distance.both;
 
-      element.style.transform = `translateX(${-offset.x}px) translateY(${
-        -offset.y / 3
-      }px)`;
+      // react
+
+      element.style.transform = `translateX(${-offset.x}px) translateY(${-offset.y}px)`;
 
       element.style.transition = `all ${offset.velocity}s ease-out`;
     } else {
       element.style.transform = `translateX(0px) translateY(0px)`;
     }
-
-    // react
+    if (index === TechPaticles.length) {
+      break;
+    }
   }
   // }
   // console.log(TechPaticles);
@@ -843,6 +855,21 @@ document.addEventListener("scroll", function (e) {
   } else {
     copyright2.style.opacity = `100%`;
   }
+
+  // Sec6 Bug Resolve
+
+  var sec6Validate1 = sec6.getBoundingClientRect().top;
+  var sec6Validate2 =
+    sec6.getClientRects().top + sec6.getBoundingClientRect().height;
+
+  sec6.addEventListener("mouseenter", (e) => {
+    TagBox.style.display = `none`;
+  });
+
+  sec6.addEventListener("mouseleave", (e) => {
+    TagBox.style.display = `flex`;
+    TagBox.style.cursor = `none`;
+  });
 });
 
 // Follow Along Cursor React and Parallax Decoration
@@ -942,17 +969,6 @@ function NormalPointerOut() {
   CurPointer.style.width = `0`;
   CurPointer.style.height = `0`;
 }
-
-// Sec6 Bug Resolve
-
-sec6.addEventListener("mouseenter", (e) => {
-  TagBox.style.display = `none`;
-});
-
-sec6.addEventListener("mouseleave", (e) => {
-  TagBox.style.display = `flex`;
-  TagBox.style.cursor = `none`;
-});
 
 // // Behance
 let Behance = {
