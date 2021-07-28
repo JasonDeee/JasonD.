@@ -1671,11 +1671,11 @@ circle {
   }
 }
 #mve1 {
-  animation: dash 35s ease-in-out infinite both;
+  animation: dash 20s ease-in-out infinite forwards;
 }
 
 #mve2 {
-  animation: dash2 52s ease-in-out infinite both;
+  animation: dash2 25s ease-in-out infinite forwards;
 }
 
 #tech-svg {

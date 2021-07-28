@@ -570,43 +570,53 @@ const wave = document.querySelectorAll(".wav-1");
 const waveRec = document.querySelector("#wave-decor");
 const waveValilate = document.querySelector("#text-group");
 
-sec6.addEventListener("mousemove", (e) => {
-  var scrollX = window.scrollX;
-  var scrollY = window.scrollY;
+var waveValilate2 = 0;
 
-  var ValidateLenght =
+window.addEventListener("scroll", (e) => {
+  waveValilate2 =
     waveValilate.getBoundingClientRect().top +
     waveValilate.getBoundingClientRect().height / 2;
+  console.log(waveValilate2);
+  if (waveValilate2 > 0) {
+    sec6.addEventListener("mousemove", (e) => {
+      var scrollX = window.scrollX;
+      var scrollY = window.scrollY;
 
-  const middleLeft =
-    waveRec.getBoundingClientRect().x + waveRec.clientWidth / 2 + scrollX;
-  // const middleTop = waveRec.clientTop + waveRec.clientHeight / 2 + scrollY;
-  const middleTop =
-    waveRec.getBoundingClientRect().y + waveRec.clientHeight / 2 + scrollY;
+      var ValidateLenght =
+        waveValilate.getBoundingClientRect().top +
+        waveValilate.getBoundingClientRect().height / 2;
 
-  var distanceX = e.pageX - middleLeft;
-  var distanceY = e.pageY - middleTop;
+      const middleLeft =
+        waveRec.getBoundingClientRect().x + waveRec.clientWidth / 2 + scrollX;
+      // const middleTop = waveRec.clientTop + waveRec.clientHeight / 2 + scrollY;
+      const middleTop =
+        waveRec.getBoundingClientRect().y + waveRec.clientHeight / 2 + scrollY;
 
-  var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+      var distanceX = e.pageX - middleLeft;
+      var distanceY = e.pageY - middleTop;
 
-  for (let index = 0; index < wave.length; index++) {
-    if (ValidateLenght < 0) {
-      break;
-    }
-    const element = wave[index];
+      var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-    var reverse = Math.abs(wave.length - index);
-    var Halfreverse = wave.length / 2 - index;
+      for (let index = 0; index < wave.length; index++) {
+        if (ValidateLenght < 0) {
+          break;
+        }
+        const element = wave[index];
 
-    scale = 0.005 + index * 0.005;
-    offset = 1 + (index - wave.lenght / 2) * 0.1;
+        var reverse = Math.abs(wave.length - index);
+        var Halfreverse = wave.length / 2 - index;
 
-    scaleAmount = 1 - scale * (distance / 244);
-    shiftX = distanceX * 0.25 * (Halfreverse / wave.length);
-    shiftY = distanceY * 0.25 * (Halfreverse / wave.length);
+        scale = 0.005 + index * 0.005;
+        offset = 1 + (index - wave.lenght / 2) * 0.1;
 
-    element.style.transition = `all 0.33s 0s ease-out`;
-    element.style.transform = `scale(${scaleAmount}) translateX(${shiftX}px) translateY(${shiftY}px)`;
+        scaleAmount = 1 - scale * (distance / 244);
+        shiftX = distanceX * 0.25 * (Halfreverse / wave.length);
+        shiftY = distanceY * 0.25 * (Halfreverse / wave.length);
+
+        element.style.transition = `all 0.33s 0s ease-out`;
+        element.style.transform = `scale(${scaleAmount}) translateX(${shiftX}px) translateY(${shiftY}px)`;
+      }
+    });
   }
 });
 
@@ -922,6 +932,11 @@ document.addEventListener("scroll", (e) => {
     window.innerHeight +
     (skillTable.getBoundingClientRect().height / 9) * 5;
 
+  let LevelBarSensor2 =
+    skillTable.getBoundingClientRect().top -
+    window.innerHeight -
+    (skillTable.getBoundingClientRect().height / 9) * 5;
+
   if (LevelBarSensor > 0) {
     for (let index = 0; index < LevelItem.length; index++) {
       const element = LevelItem[index];
@@ -934,7 +949,8 @@ document.addEventListener("scroll", (e) => {
         continue;
       }
     }
-  } else {
+  }
+  if (LevelBarSensor2 < 0) {
     for (let index = 0; index < LevelItem.length; index++) {
       const element = LevelItem[index];
 
