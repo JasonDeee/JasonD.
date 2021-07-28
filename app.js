@@ -10,8 +10,13 @@ const bodyload = document.querySelector("body");
 
 // // jQuerry Method
 
+const TagBox = document.querySelector(".tag-display");
+
 $("#IMGPreload").ready(function () {
   // Handler for .load() called.
+  TagBox.style.opacity = `100%`;
+  TagBox.style.transform = `translateY(250px) translateX(200px)`;
+
   var PreloadTimeInterval = setInterval(PreloadPerform, 100);
   var PreloadTime = 0;
   function PreloadPerform() {
@@ -759,7 +764,6 @@ const decor4 = document.querySelector("#decor4");
 const decor2 = document.querySelector(".decor-img2");
 const decor3 = document.querySelector(".img-decor3");
 const buttonLine = document.querySelectorAll(".button-line");
-const TagBox = document.querySelector(".tag-display");
 const menuElement = document.querySelectorAll("#nav-place");
 
 var NavValidate = false;
@@ -919,15 +923,12 @@ document.addEventListener("scroll", (e) => {
     (skillTable.getBoundingClientRect().height / 9) * 5;
 
   if (LevelBarSensor > 0) {
-    loopValidate = 0;
-
     for (let index = 0; index < LevelItem.length; index++) {
       const element = LevelItem[index];
-      loopValidate = index;
 
       element.style.width = `70%`;
 
-      if (loopValidate == LevelItem.length) {
+      if (index == LevelItem.length) {
         break;
       } else {
         continue;
@@ -936,13 +937,12 @@ document.addEventListener("scroll", (e) => {
   } else {
     for (let index = 0; index < LevelItem.length; index++) {
       const element = LevelItem[index];
-      loopValidate = index;
 
       element.style.width = `100%`;
       element.style.transition = `width 2s ${0.1 * index}s 
       cubic-bezier(0.25, 0, 0, 1)`;
 
-      if (loopValidate == LevelItem.length) {
+      if (index == LevelItem.length) {
         break;
       } else {
         continue;
