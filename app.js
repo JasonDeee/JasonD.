@@ -572,53 +572,54 @@ const waveValilate = document.querySelector("#text-group");
 
 var waveValilate2 = 0;
 
-window.addEventListener("scroll", (e) => {
-  waveValilate2 =
+//  indow.addEventListener("scroll", (e) => {
+//   waveValilate2 =
+//     waveValilate.getBoundingClientRect().top +
+//     waveValilate.getBoundingClientRect().height / 2;
+//   console.log(waveValilate2);
+//  if (waveValilate2 > 0) {
+sec6.addEventListener("mousemove", (e) => {
+  var scrollX = window.scrollX;
+  var scrollY = window.scrollY;
+
+  var ValidateLenght =
     waveValilate.getBoundingClientRect().top +
     waveValilate.getBoundingClientRect().height / 2;
-  console.log(waveValilate2);
-  if (waveValilate2 > 0) {
-    sec6.addEventListener("mousemove", (e) => {
-      var scrollX = window.scrollX;
-      var scrollY = window.scrollY;
 
-      var ValidateLenght =
-        waveValilate.getBoundingClientRect().top +
-        waveValilate.getBoundingClientRect().height / 2;
+  const middleLeft =
+    waveRec.getBoundingClientRect().x + waveRec.clientWidth / 2 + scrollX;
+  // const middleTop = waveRec.clientTop + waveRec.clientHeight / 2 + scrollY;
+  const middleTop =
+    waveRec.getBoundingClientRect().y + waveRec.clientHeight / 2 + scrollY;
 
-      const middleLeft =
-        waveRec.getBoundingClientRect().x + waveRec.clientWidth / 2 + scrollX;
-      // const middleTop = waveRec.clientTop + waveRec.clientHeight / 2 + scrollY;
-      const middleTop =
-        waveRec.getBoundingClientRect().y + waveRec.clientHeight / 2 + scrollY;
+  var distanceX = e.pageX - middleLeft;
+  var distanceY = e.pageY - middleTop;
 
-      var distanceX = e.pageX - middleLeft;
-      var distanceY = e.pageY - middleTop;
+  var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
-      var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+  for (let index = 0; index < wave.length; index++) {
+    if (ValidateLenght < 0) {
+      break;
+    }
+    const element = wave[index];
 
-      for (let index = 0; index < wave.length; index++) {
-        if (ValidateLenght < 0) {
-          break;
-        }
-        const element = wave[index];
+    var reverse = Math.abs(wave.length - index);
+    var Halfreverse = wave.length / 2 - index;
 
-        var reverse = Math.abs(wave.length - index);
-        var Halfreverse = wave.length / 2 - index;
+    scale = 0.005 + index * 0.005;
+    offset = 1 + (index - wave.lenght / 2) * 0.1;
 
-        scale = 0.005 + index * 0.005;
-        offset = 1 + (index - wave.lenght / 2) * 0.1;
+    scaleAmount = 1 - scale * (distance / 244);
+    shiftX = distanceX * 0.25 * (Halfreverse / wave.length);
+    shiftY = distanceY * 0.25 * (Halfreverse / wave.length);
 
-        scaleAmount = 1 - scale * (distance / 244);
-        shiftX = distanceX * 0.25 * (Halfreverse / wave.length);
-        shiftY = distanceY * 0.25 * (Halfreverse / wave.length);
-
-        element.style.transition = `all 0.33s 0s ease-out`;
-        element.style.transform = `scale(${scaleAmount}) translateX(${shiftX}px) translateY(${shiftY}px)`;
-      }
-    });
+    element.style.transition = `all 0.33s 0s ease-out`;
+    element.style.transform = `scale(${scaleAmount}) translateX(${shiftX}px) translateY(${shiftY}px)`;
   }
 });
+//  }
+// }
+// );
 
 sec6.addEventListener("mouseleave", (e) => {
   for (let index = 0; index < wave.length; index++) {
