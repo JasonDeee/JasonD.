@@ -937,7 +937,7 @@ document.addEventListener("scroll", (e) => {
     window.innerHeight -
     (skillTable.getBoundingClientRect().height / 9) * 5;
 
-  if (LevelBarSensor > 0) {
+  if (LevelBarSensor2 > 0) {
     for (let index = 0; index < LevelItem.length; index++) {
       const element = LevelItem[index];
 
@@ -945,12 +945,10 @@ document.addEventListener("scroll", (e) => {
 
       if (index == LevelItem.length) {
         break;
-      } else {
-        continue;
       }
     }
   }
-  if (LevelBarSensor2 < 0) {
+  if (LevelBarSensor < 0) {
     for (let index = 0; index < LevelItem.length; index++) {
       const element = LevelItem[index];
 
@@ -960,8 +958,6 @@ document.addEventListener("scroll", (e) => {
 
       if (index == LevelItem.length) {
         break;
-      } else {
-        continue;
       }
     }
   }
