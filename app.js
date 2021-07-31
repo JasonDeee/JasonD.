@@ -47,11 +47,11 @@ function RandomPreloadText() {
     TextDecoy[CharOnChange] = SplitPreloadContent2[CharOnChange];
     newPreloadText = TextDecoy.toString().replaceAll(",", "");
   }
-  if (CharOnChange === SplitPreloadContent.length - 1) {
-    newPreloadText = PreloadTextContent;
+  if (CharOnChange === SplitPreloadContent2.length - 1) {
     PreloadTimeOut = null;
     CharOnChange = null;
     clearInterval(PreloadTextTime);
+    newPreloadText = PreloadTextContent;
     return;
   }
   PreloadContent.innerHTML = newPreloadText;
@@ -68,7 +68,7 @@ const bodyload = document.querySelector("body");
 // // jQuerry Method
 
 const TagBox = document.querySelector(".tag-display");
-$("#IMGPreload").ready(function () {
+$("#IMGPreload").load(function () {
   // Handler for .load() called.
   TagBox.style.opacity = `100%`;
   TagBox.style.transform = `translateY(0) translateX(100vw)`;
