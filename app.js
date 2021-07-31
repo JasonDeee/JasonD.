@@ -68,7 +68,7 @@ const bodyload = document.querySelector("body");
 // // jQuerry Method
 
 const TagBox = document.querySelector(".tag-display");
-$("#IMGPreload").load(function () {
+$("#IMGPreload").ready(function () {
   // Handler for .load() called.
   TagBox.style.opacity = `100%`;
   TagBox.style.transform = `translateY(0) translateX(100vw)`;
@@ -76,13 +76,13 @@ $("#IMGPreload").load(function () {
   var PreloadTime = 0;
   function PreloadPerform() {
     PreloadTime++;
-    if (PreloadTime == 25) {
+    if (PreloadTime == 30) {
       // Play
       PreloadCircle.style.animation = `CirclePreload 1.5s cubic-bezier(0.25, 0, 0, 1) 0.18s forwards`;
       PreloadCircle2.style.animation = `CirclePreload 1.5s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
       PreloadBox.style.animation = `BoxDisappear 1.6s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
     }
-    if (PreloadTime == 42) {
+    if (PreloadTime == 47) {
       // Finishing
       PreloadBox.style.display = `none`;
       PreloadBox.style.pointerEvents = `none`;
