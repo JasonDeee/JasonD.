@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.3s 0s ease-out;
-  font-family: "Poppins", sans-serif;
 }
 
 @font-face {
@@ -1360,6 +1359,15 @@ circle {
   justify-content: center;
   z-index: 3;
 }
+#darko-title p {
+  color: white;
+  background: #292929;
+  font-family: "Bebas Neue";
+  font-weight: 700;
+  font-size: 5vw;
+  text-align: center;
+  flex-direction: row;
+}
 
 #fill-in {
   width: 15vw;
@@ -1419,6 +1427,10 @@ circle {
   z-index: 3;
   box-shadow: -0.1vw 0.1vw 1vw #00000085;
 }
+#morph-title p {
+  font-family: "Bebas Neue";
+}
+
 #morph-des {
   display: flex;
   flex-direction: column;
