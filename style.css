@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   transition: all 0.3s 0s ease-out;
+  font-family: "Poppins", sans-serif;
 }
+
 @font-face {
   font-family: UTM Avo;
   src: url("./Fonts/utm-avo/UTM\ Avo.ttf") format("truetype");
@@ -109,6 +111,7 @@ a {
   background: white;
   position: fixed;
   clip-path: circle(0% at top 20% right 30%);
+  z-index: 3;
 }
 #PreloadCircle2 {
   background: #f64f59;
@@ -132,6 +135,134 @@ a {
   }
   100% {
     visibility: hidden;
+  }
+}
+
+#PreloadAnimation {
+  width: 100vw;
+  height: 30vh;
+  position: absolute;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 13.5vw;
+  padding-right: 13.5vw;
+  background: black;
+  z-index: 1;
+  margin-bottom: 20vh;
+}
+#PreloadAnimation h1 {
+  color: white;
+  font-size: 3vw;
+}
+#Loop_Box_Circle {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  margin-right: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  animation: Box_Rotate 1s cubic-bezier(0.25, 0, 0, 1) 2.2s infinite;
+  transform-origin: center;
+}
+.Loop_Circle {
+  width: 1vw;
+  height: 1vw;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: scale(0) translateX(0) translateY(2vw);
+}
+
+#C1 {
+  animation: Circle_In 1s cubic-bezier(0.25, 0, 0, 1) 0s forwards,
+    Circle_On_Loop_1 1s cubic-bezier(0.25, 0, 0, 1) 1.5s forwards;
+}
+#C2 {
+  animation: Circle_In 1s cubic-bezier(0.25, 0, 0, 1) 0.05s forwards,
+    Circle_On_Loop_2 1s cubic-bezier(0.25, 0, 0, 1) 1.5s forwards;
+}
+#C3 {
+  animation: Circle_In 1s cubic-bezier(0.25, 0, 0, 1) 0.1s forwards,
+    Circle_On_Loop_3 1s cubic-bezier(0.25, 0, 0, 1) 1.5s forwards;
+}
+#C4 {
+  animation: Circle_In 1s cubic-bezier(0.25, 0, 0, 1) 0.15s forwards,
+    Circle_On_Loop_4 1s cubic-bezier(0.25, 0, 0, 1) 1.5s forwards;
+}
+#C5 {
+  animation: Circle_In 1s cubic-bezier(0.25, 0, 0, 1) 0.2s forwards,
+    Circle_On_Loop_5 1s cubic-bezier(0.25, 0, 0, 1) 1.5s forwards;
+}
+
+@keyframes Box_Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes Circle_In {
+  0% {
+    transform: scale(0) translateX(0) translateY(2vw);
+  }
+  40% {
+    transform: scale(1) translateX(0) translateY(-0.3vw);
+  }
+  65% {
+    transform: scale(1) translateX(0) translateY(0.1vw);
+  }
+
+  100% {
+    transform: scale(1) translateX(0) translateY(0);
+  }
+}
+
+@keyframes Circle_On_Loop_1 {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateX(2.05vw) translateY(-1.1vw);
+  }
+}
+
+@keyframes Circle_On_Loop_2 {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateX(1.02vw) translateY(2vw);
+  }
+}
+
+@keyframes Circle_On_Loop_3 {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateX(0) translateY(-2.78vw);
+  }
+}
+@keyframes Circle_On_Loop_4 {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateX(-1.02vw) translateY(2vw);
+  }
+}
+@keyframes Circle_On_Loop_5 {
+  0% {
+    transform: scale(1) translateX(0) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateX(-2.05vw) translateY(-1.1vw);
   }
 }
 

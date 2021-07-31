@@ -3,6 +3,63 @@
 
 //
 // Preload Event
+//
+// // Preloader Animation  // Sadly Maybe I just Need CSS :))
+
+// // // But No!
+
+const WordCharacter =
+  "00ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678900";
+const splitWordCharacter = WordCharacter.split("");
+
+const PreloadContent = document.querySelector("#Preload_Text");
+const PreloadTextContent = PreloadContent.textContent;
+const SplitPreloadContent = PreloadTextContent.split("");
+
+var TextDecoy = SplitPreloadContent;
+
+var PreloadTimeOut = 0;
+var CharOnChange = -1;
+var PreloadTextTime = setInterval(RandomPreloadText, 70);
+
+function RandomPreloadText() {
+  PreloadTimeOut += 70;
+
+  const SplitPreloadContent2 = PreloadTextContent.split("");
+
+  var newPreloadText = TextDecoy.toString().replaceAll(",", "");
+  if (PreloadTimeOut < 1400) {
+    randomNum1 = Math.round(Math.random() * (SplitPreloadContent.length - 1));
+    randomNum2 = Math.round(Math.random() * (splitWordCharacter.length - 1));
+    randomNum3 = Math.round(Math.random() * (SplitPreloadContent.length - 1));
+
+    randomNum4 = Math.round(Math.random() * (SplitPreloadContent.length - 1));
+    randomNum5 = Math.round(Math.random() * (splitWordCharacter.length - 1));
+
+    TextDecoy[randomNum3] = splitWordCharacter[randomNum2];
+    TextDecoy[randomNum4] = splitWordCharacter[randomNum5];
+
+    newPreloadText = TextDecoy.toString().replaceAll(",", "");
+  }
+
+  if (PreloadTimeOut >= 1400) {
+    CharOnChange++;
+    TextDecoy[CharOnChange] = SplitPreloadContent2[CharOnChange];
+    newPreloadText = TextDecoy.toString().replaceAll(",", "");
+  }
+  if (CharOnChange === SplitPreloadContent.length - 1) {
+    newPreloadText = PreloadTextContent;
+    PreloadTimeOut = null;
+    CharOnChange = null;
+    clearInterval(PreloadTextTime);
+    return;
+  }
+  PreloadContent.innerHTML = newPreloadText;
+}
+
+//
+//
+// // Preloader Onload
 const PreloadBox = document.querySelector("#Preloader");
 const PreloadCircle = document.querySelector("#PreloadCircle");
 const PreloadCircle2 = document.querySelector("#PreloadCircle2");
@@ -11,23 +68,21 @@ const bodyload = document.querySelector("body");
 // // jQuerry Method
 
 const TagBox = document.querySelector(".tag-display");
-
 $("#IMGPreload").ready(function () {
   // Handler for .load() called.
   TagBox.style.opacity = `100%`;
-  TagBox.style.transform = `translateY(250px) translateX(200px)`;
-
+  TagBox.style.transform = `translateY(0) translateX(100vw)`;
   var PreloadTimeInterval = setInterval(PreloadPerform, 100);
   var PreloadTime = 0;
   function PreloadPerform() {
     PreloadTime++;
-    if (PreloadTime == 10) {
+    if (PreloadTime == 25) {
       // Play
       PreloadCircle.style.animation = `CirclePreload 1.5s cubic-bezier(0.25, 0, 0, 1) 0.18s forwards`;
       PreloadCircle2.style.animation = `CirclePreload 1.5s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
       PreloadBox.style.animation = `BoxDisappear 1.6s cubic-bezier(0.25, 0, 0, 1) 0s forwards`;
     }
-    if (PreloadTime == 27) {
+    if (PreloadTime == 42) {
       // Finishing
       PreloadBox.style.display = `none`;
       PreloadBox.style.pointerEvents = `none`;
