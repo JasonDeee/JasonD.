@@ -47,7 +47,7 @@ function RandomPreloadText() {
     TextDecoy[CharOnChange] = SplitPreloadContent2[CharOnChange];
     newPreloadText = TextDecoy.toString().replaceAll(",", "");
   }
-  if (CharOnChange === SplitPreloadContent2.length - 1) {
+  if (CharOnChange === SplitPreloadContent2.length) {
     PreloadTimeOut = null;
     CharOnChange = null;
     clearInterval(PreloadTextTime);
