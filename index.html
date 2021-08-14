@@ -3505,76 +3505,82 @@
               Or Through the Form from beside<br />
               Or write an Email directly
             </p>
-            <p id="Email">JBDL2K@hotmail.com</p>
+            <p id="Email">
+              <a href="mailto:JBDL2K@hotmail.com">JBDL2K@hotmail.com</a>
+            </p>
           </div>
           <div id="main-col">
-            <div class="name-input" id="name">
-              <input
-                type="text"
-                name="name"
-                autocomplete="off"
-                spellcheck="false"
-                required
-              />
-              <label for="name" class="name-label">
-                <span class="name-content">Your Name</span>
-              </label>
-            </div>
-            <div class="name-input" id="mail">
-              <input
-                type="text"
-                name="name"
-                autocomplete="off"
-                spellcheck="false"
-                required
-              />
-              <label for="name" class="name-label">
-                <span class="name-content">Your Email</span>
-              </label>
-            </div>
-            <div class="name-input" id="subject">
-              <input
-                type="text"
-                name="name"
-                autocomplete="off"
-                spellcheck="false"
-                required
-              />
-              <label for="name" class="name-label">
-                <span class="name-content">Subject</span>
-              </label>
-            </div>
-            <div class="name-input" id="message">
-              <textarea
-                name="message-input"
-                id="message-inp"
-                autocomplete="off"
-                spellcheck="false"
-                style="resize: none"
-                required
-              ></textarea>
-              <label for="name" class="name-label">
-                <span class="name-content">Messages</span>
-              </label>
-            </div>
-            <div class="submit-button">
-              <div id="submit-confirm-box">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 123.87 88.94"
-                  id="submit-confirm"
-                >
-                  <g id="Layer_2" data-name="Layer 2">
-                    <g id="Layer_1-2" data-name="Layer 1">
-                      <polyline
-                        class="sbm-1"
-                        points="5 49.02 39.93 83.94 118.87 5"
-                      />
-                    </g>
-                  </g>
-                </svg>
+            <form id="Social_Form" action="" method="POST">
+              <div class="name-input" id="name">
+                <input
+                  type="text"
+                  name="name"
+                  autocomplete="off"
+                  spellcheck="false"
+                  required
+                />
+                <label for="name" class="name-label">
+                  <span class="name-content">Your Name</span>
+                </label>
               </div>
-            </div>
+              <div class="name-input" id="mail">
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="off"
+                  spellcheck="false"
+                  required
+                />
+                <label for="name" class="name-label">
+                  <span class="name-content">Your Email</span>
+                </label>
+              </div>
+              <div class="name-input" id="subject">
+                <input
+                  type="text"
+                  name="_subject"
+                  autocomplete="off"
+                  spellcheck="false"
+                  required
+                />
+                <label for="name" class="name-label">
+                  <span class="name-content">Subject</span>
+                </label>
+              </div>
+              <div class="name-input" id="message">
+                <textarea
+                  name="message"
+                  id="message-inp"
+                  autocomplete="off"
+                  spellcheck="false"
+                  style="resize: none"
+                  required
+                ></textarea>
+                <label for="name" class="name-label">
+                  <span class="name-content">Messages</span>
+                </label>
+              </div>
+              <button type="submit">
+                <div class="submit-button">
+                  <div id="submit-confirm-box">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 123.87 88.94"
+                      id="submit-confirm"
+                    >
+                      <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                          <polyline
+                            class="sbm-1"
+                            points="5 49.02 39.93 83.94 118.87 5"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -3591,7 +3597,7 @@
           <div id="footer-col">
             <p class="footer-heading">JasonD Design Internship</p>
             <p class="footer-content">
-              <a href=""
+              <a href="mailto:JDBL2K@hotmail.com"
                 ><span> JDBL2K@hotmail.com <br /> </span
               ></a>
             </p>
@@ -3631,9 +3637,35 @@
             </p>
           </div>
         </div>
-        <p id="copyright">℗ 2021 JasonD - All rights Unsigned</p>
+        <p id="copyright">© 2021 JasonD. - All rights Reserved</p>
       </div>
     </section>
+    <div class="thank_Pop">
+      <div id="black_matte"></div>
+      <div id="Pop_main">
+        <div id="checked_shape">
+          <div id="checked_circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 123.87 88.94"
+              id="submit-confirm2"
+            >
+              <g id="Layer_2" data-name="Layer 2">
+                <g id="Layer_1-2" data-name="Layer 1">
+                  <polyline
+                    class="sbm-1"
+                    points="5 49.02 39.93 83.94 118.87 5"
+                  />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h2 id="checked_Title">Appreciate That!</h2>
+        </div>
+        <h1 id="checked_Sub">Click Any Where.<br /></h1>
+      </div>
+    </div>
     <script src="./app.js"></script>
+    <script src="./data.js"></script>
   </body>
 </html>

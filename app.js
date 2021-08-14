@@ -8,6 +8,10 @@
 
 // // // But No!
 
+// Beta Alert
+
+alert("Hi There, The pages are still on developing!\r\nThanks For Turn By");
+
 const WordCharacter =
   "00ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678900";
 const splitWordCharacter = WordCharacter.split("");
@@ -784,13 +788,7 @@ TechSensor.addEventListener("mousemove", (e) => {
 const submitBTN = document.querySelector(".submit-button");
 const submitBOX = document.querySelector("#submit-confirm-box");
 const submitShape = document.querySelector("#submit-confirm");
-
-submitBTN.addEventListener("mousedown", (e) => {
-  submitBOX.style.width = `100%`;
-  submitBOX.style.marginLeft = `1vw`;
-
-  submitShape.style.strokeDashoffset = `0`;
-});
+const submitShape2 = document.querySelector(".thank_Pop #checked_shape .sbm-1");
 
 // Top Navigation Panel React
 
@@ -1332,7 +1330,7 @@ NAVButton.addEventListener("mouseleave", (e) => {
   NormalPointerOut();
 });
 
-// Smooth Scroll Navigation
+// Smooth And Mommentium Scroll Navigation
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -1341,4 +1339,14 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       behavior: "smooth",
     });
   });
+});
+
+var Mommenttimer = null;
+window.addEventListener("scroll", (e) => {
+  if (Mommenttimer !== null) {
+    clearTimeout(Mommenttimer);
+  }
+  Mommenttimer = setTimeout(function () {
+    // do something
+  }, 150);
 });

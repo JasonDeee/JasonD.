@@ -1,3 +1,6 @@
+/* Oh Hi There */
+/* Good Day For ya! */
+
 * {
   margin: 0;
   padding: 0;
@@ -59,11 +62,17 @@
   font-weight: 700;
 }
 ::-webkit-scrollbar {
+  -o-transition: width 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
+  -webkit-transition: width 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
+  transition: width 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
   width: 0.6vw;
+  overflow: visible;
+}
+::-webkit-scrollbar:hover {
+  width: 1vw;
 }
 
 ::-webkit-scrollbar-track {
-  width: 100%;
   background: #e9e7e7;
 }
 ::-webkit-scrollbar-thumb {
@@ -2192,15 +2201,17 @@ circle {
   padding-right: 3vw;
   padding-left: 1vw;
 }
-#Email {
+#Email,
+#Email a {
   font-family: "Poppins";
+  text-decoration: none;
   font-weight: 600;
   font-size: 1.3vw;
   color: #292929;
   margin-top: 6vh;
   transition: all 0.7s cubic-bezier(0.25, 0, 0, 1);
 }
-#Email:hover {
+#Email:hover a {
   color: #cb356b;
   cursor: none;
   letter-spacing: 0.1vw;
@@ -2334,18 +2345,34 @@ circle {
   z-index: -3;
 }
 
+#Social_Form {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#Social_Form button {
+  border: none;
+  overflow: visible;
+  margin-top: 2vw;
+  height: auto;
+  width: auto;
+  z-index: 0;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
 .submit-button {
   position: relative;
   background: #cb356b;
   height: 3vw;
   width: auto;
-  align-self: flex-end;
-  margin-top: 2vw;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   border-radius: 5vw;
-  z-index: 0;
   padding-left: 2vw;
   padding-right: 2vw;
 }
@@ -2356,14 +2383,14 @@ circle {
   font-family: "Poppins";
   font-weight: 600;
   letter-spacing: 0.05vw;
-  background: white;
+  background: #e9e7e7;
   position: absolute;
   height: 3vw;
   width: 100%;
   border-radius: 5vw;
-  z-index: -1;
   clip-path: circle(0% at bottom 20% right 30%);
   transition: all 0.3s 0s ease-out;
+  z-index: 0;
 }
 .submit-button::before {
   content: "SUBMIT";
@@ -2373,6 +2400,7 @@ circle {
   font-weight: 600;
   letter-spacing: 0.05vw;
   transition: all 0.3s 0s ease-out;
+  z-index: 2;
 }
 
 .submit-button:hover::after {
@@ -2399,12 +2427,13 @@ circle {
   overflow: visible;
   margin-left: 0;
   transition: all 0.7s cubic-bezier(0.25, 0, 0, 1);
+  z-index: 2;
 }
 #submit-confirm {
   width: 3vw;
   height: 1.6vw;
   stroke-dasharray: 15vw;
-  stroke-dashoffset: 15.2vw;
+  stroke-dashoffset: 15vw;
   transition: all 0.7s cubic-bezier(0.25, 0, 0, 1);
 }
 
@@ -2416,6 +2445,7 @@ circle {
   stroke-width: 10px;
   transition: all 0.7s 0s ease-out;
 }
+
 .submit-button:hover .sbm-1 {
   stroke: #cb356b;
 }
@@ -2733,4 +2763,120 @@ circle {
   align-items: center;
   justify-content: center;
   letter-spacing: -0.5vw;
+}
+
+.thank_Pop {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.thank_Pop #black_matte {
+  background: #00000096;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  opacity: 0;
+}
+
+.thank_Pop #Pop_main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.thank_Pop #checked_shape {
+  background: #e9e7e7;
+  width: 23vw;
+  height: 23vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 2vw #00000096;
+  transform: scale(0) rotate(90deg);
+  border-radius: 50%;
+}
+.thank_Pop #checked_shape #checked_circle {
+  width: 35%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 5px solid #ed47a3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+.thank_Pop #checked_shape h2 {
+  color: #292929;
+  font-size: 1.9vw;
+  font-family: "Bebas Neue";
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
+}
+.thank_Pop h1 {
+  color: #e9e7e7;
+  font-size: 1.1vw;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  margin-top: 4vh;
+  font-weight: 400;
+}
+
+.thank_Pop #checked_shape svg {
+  width: 68%;
+  aspect-ratio: 1;
+}
+
+.thank_Pop #checked_shape .sbm-1 {
+  stroke: #ed47a3;
+  stroke-dasharray: 15vw;
+  stroke-dashoffset: 15vw;
+}
+
+@keyframes Appreciate {
+  0% {
+    transform: scale(0) rotate(90deg);
+    border-radius: 50%;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    border-radius: 5vw;
+  }
+}
+
+@keyframes AppreciateShape {
+  0% {
+    stroke-dashoffset: 15vw;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes AppreciateClose {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
