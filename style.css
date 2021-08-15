@@ -1054,13 +1054,16 @@ circle {
   font-family: "Poppins";
   font-size: 1.1vw;
   font-weight: 600;
-  color: #292929;
   text-decoration: underline;
   z-index: 2;
   cursor: none;
 }
+.mrsB-readmore a {
+  color: #292929;
+}
 
 .see-more-button {
+  position: relative;
   box-sizing: border-box;
   border-radius: 5vw;
   background: #ffffff6e;
@@ -1071,6 +1074,13 @@ circle {
   align-items: center;
   justify-content: center;
 }
+.see-more-button a,
+.see-more-button2 a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .see-more-button:hover,
 .see-more-button2:hover {
   transform-style: preserve-3d;
