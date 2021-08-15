@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mrs.Brown</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <div id="return">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 160 320"
+          id="return-svg"
+        >
+          <defs>
+            <style>
+              .sls-1 {
+                fill: none;
+                stroke: #e9e7e7;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 40px;
+              }
+            </style>
+          </defs>
+          <g id="Layer_2" data-name="Layer 2">
+            <g id="Layer_1-2" data-name="Layer 1">
+              <path
+                class="sls-1"
+                d="M15,15,138,138a28,28,0,0,1,0,39.59l-123,123"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div id="NAV-dots"></div>
+      <div id="Blank"></div>
+    </nav>
+    <div class="container">
+      <section class="section" id="section1">
+        <div id="sec1_decor">
+          <div id="dc1"></div>
+          <div id="dc2"></div>
+          <div id="dc3"></div>
+        </div>
+        <div id="header_Text">
+          <div id="Brand">
+            <h1>JasonD.</h1>
+            <div id="line"></div>
+          </div>
+          <div id="Project">
+            <h2>
+              <span
+                >From<br />
+                The RED PRIDE Project</span
+              >
+              <br />
+              Mrs.<br />Brown
+            </h2>
+            <div id="line"></div>
+          </div>
+          <div id="date">
+            <h2>#3D Modelling ● June 2021</h2>
+            <div id="line"></div>
+          </div>
+        </div>
+        <div id="Preview_img"></div>
+      </section>
+      <section class="section" id="section2">
+        <div id="sec2_Info">
+          <div id="sec2_decor">
+            <h3>2 <br />0 <br />2 <br />1</h3>
+            <div id="dc1"></div>
+            <div id="dc2"></div>
+
+            <h1>
+              <div id="line"></div>
+              What is
+            </h1>
+            <h2>
+              The <br />
+              RED <br />
+              PRIDE?
+            </h2>
+          </div>
+          <p id="sec2_des">
+            My team and Me was asigned<br />
+            For a Marketing Campaign.<br />
+            That was The RED PRIDE<br />
+            From Biti's Hunter X.
+          </p>
+        </div>
+        <div id="sec2_Img">
+          <div class="img" id="Img1"><div class="overlay">Commercial</div></div>
+          <div class="img" id="Img2"><div class="overlay">RED PRIDE</div></div>
+          <div class="img" id="Img3"><div class="overlay">Character</div></div>
+        </div>
+      </section>
+      <section class="section" id="section3">
+        <div id="left_side">
+          <div id="title_grp">
+            <p>defining</p>
+            <h1>KEY</h1>
+            <h2>
+              V <br />
+              I<br />
+              S<br />
+              U<br />
+              A<br />
+              L
+            </h2>
+            <div id="line"></div>
+          </div>
+          <div id="tag_grp">
+            <span>HouseWife</span>
+            <span>Brown</span>
+            <span>Charming</span>
+            <span>Charming</span>
+            <span>Charming</span>
+          </div>
+        </div>
+        <div id="right_side"></div>
+        <div id="shadow_overlay">
+          <div id="Overlay_side">
+            <div id="color"></div>
+            <div id="mask">
+              <div class="container2">
+                <div class="turbur">
+                  <div class="circle" id="circle1"></div>
+                  <div class="circle" id="circle2"></div>
+                  <div class="circle" id="circle3"></div>
+                  <div class="circle" id="circle4"></div>
+                </div>
+              </div>
+
+              <svg x="0" y="0" width="100%" height="100%">
+                <filter id="turbulence">
+                  <feTurbulence
+                    id="Morph-filter"
+                    type="turbulence"
+                    numOctaves="15"
+                    seed="1"
+                    baseFrequency="0.002 0.005"
+                  ></feTurbulence>
+                  <feDisplacementMap
+                    scale="198"
+                    in="SourceGraphic"
+                    in2="turbulence"
+                  ></feDisplacementMap>
+                  <animate
+                    xlink:href="#Morph-filter"
+                    attributeName="baseFrequency"
+                    dur="65s"
+                    keyTimes="0;0.5;1"
+                    values="0.0015 0.0035;0.0025 0.0045;0.0015 0.0035"
+                    repeatCount="indefinite"
+                  />
+                </filter>
+                <filter id="LumaMask">
+                  <feColorMatrix
+                    type="matrix"
+                    values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                2.56 2.56 2.56 0 0"
+                  />
+                </filter>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="section4"></section>
+      <section class="section" id="section5"></section>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
