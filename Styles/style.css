@@ -4167,8 +4167,8 @@ circle {
             transform: scale(1);
   }
   30% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.23);
+            transform: scale(1.23);
   }
   100% {
     -webkit-transform: scale(0);
@@ -4182,8 +4182,8 @@ circle {
             transform: scale(1);
   }
   30% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1.23);
+            transform: scale(1.23);
   }
   100% {
     -webkit-transform: scale(0);
