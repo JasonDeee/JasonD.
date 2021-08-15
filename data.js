@@ -17,7 +17,8 @@ const checked_shape = document.querySelector("#checked_shape");
 const checked_circle = document.querySelector("#checked_circle");
 
 thankPopUp.addEventListener("click", (e) => {
-  Pop_main.style.animation = `AppreciateClose 0.8s cubic-bezier(0.25, 0, 0, 1) 0.3s forwards`;
+  Pop_main.style.transform = `scale(1)`;
+  Pop_main.style.animation = `AppreciateClose 0.8s cubic-bezier(1, 0, 0, 0.25) 0.3s forwards`;
   thankOverlay.style.opacity = `0`;
 
   var thankTimeOut = setTimeout(function () {
@@ -33,6 +34,7 @@ ContactForm.addEventListener("submit", (e) => {
   submitBOX.style.marginLeft = `1vw`;
   submitShape.style.strokeDashoffset = `0`;
 
+  Pop_main.style.animation = `none`;
   thankPopUp.style.display = `flex`;
   thankOverlay.style.opacity = `100%`;
   checked_shape.style.animation = `Appreciate 0.8s cubic-bezier(0.25, 0, 0, 1) 0.3s forwards`;
