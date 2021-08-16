@@ -5,16 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jason D.</title>
-    <link
-      rel="icon"
-      href="./Images/Favicon.svg"
-      type="image/svg"
-    />
-    <link
-      rel="shortcut icon"
-      href="./Images/Favicon.svg"
-      type="image/svg"
-    />
+    <link rel="icon" href="./Images/Favicon.svg" type="image/svg" />
+    <link rel="shortcut icon" href="./Images/Favicon.svg" type="image/svg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,7 +49,7 @@
     <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
   </head>
 
-  <body>
+  <body class="desktop_body">
     <section id="Preloader">
       <div id="PreloadCircle2"></div>
       <div id="PreloadCircle"></div>
@@ -860,7 +852,7 @@
         My Works are the bridges to various insightful.
       </p>
     </div>
-    <div class="section2-box">
+    <div id="section2_BOX" class="section2-box">
       <div class="section2">
         <div class="pic-holder">
           <div class="mrsB4"></div>
@@ -893,10 +885,10 @@
               </g>
             </svg>
             <p class="mrsB-title">Mrs. Brown</p>
-            <p class="mrsB-sub">#3D Modelling ● June 2021</p>
+            <p class="mrsB-sub">#3D Modelling • June 2021</p>
           </div>
           <div class="mrsB-des">
-            <div>
+            <div id="fillter">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 800.14 1"
@@ -925,17 +917,16 @@
                   </g>
                 </g>
               </svg>
-              <p class="mrsB-destext">My very first character model,</p>
-              <p class="mrsB-destext">Mrs. Brown....</p>
               <p class="mrsB-destext">
-                Inspiration of Lara Croft theme from Tomb Raider 2013 Game.
+                My very first character model,<br />
+                Mrs. Brown....<br />
+                Inspiration of Lara Croft theme from Tomb Raider 2013 Game.<br />
+                I made her for a project from college.<br />
+                I have chosen Lara in order to show<br />
+                the activeness from our products<br />
+                - Her Shoes -<br />
+                Adventurous as the Game itself<br />...
               </p>
-              <p class="mrsB-destext">I made her for a project from college.</p>
-              <p class="mrsB-destext">I have chosen Lara in order to show</p>
-              <p class="mrsB-destext">the activeness from our products</p>
-              <p class="mrsB-destext">- Her Shoes -</p>
-              <p class="mrsB-destext">Adventurous as the Game itself</p>
-              <p class="mrsB-destext">...</p>
               <p class="mrsB-readmore">
                 <a href="http://brown.tessttt.tk/" target="_blank"
                   >READ MORE!</a
@@ -1107,7 +1098,7 @@
           </g>
         </svg>
         <p id="ctr-des">Full Bodied & The Intensive Vodka</p>
-        <p class="mrsB-sub">#Brand Recognition ● January 2020</p>
+        <p class="mrsB-sub">#Brand Recognition • January 2020</p>
         <div id="ctrss">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1267,7 +1258,7 @@
             </g>
           </svg>
           <p class="mrsB-title">Katun Intro</p>
-          <p class="mrsB-sub">#Animation ● October 2020</p>
+          <p class="mrsB-sub">#Animation • October 2020</p>
           <div class="space"></div>
           <div>
             <svg
@@ -1439,7 +1430,7 @@
             </g>
           </svg>
           <div id="sec5-space">
-            <p class="mrsB-sub">#Visual Design ● July 2021</p>
+            <p class="mrsB-sub">#Visual Design • July 2021</p>
           </div>
           <p class="mrsB-destext">
             'Same Projects, but not only one contributor.'
@@ -1620,11 +1611,11 @@
             <p id="CV-name">Viet Cao</p>
             <div id="des-group">
               <p id="des1">
-                Born in Phu Ly city, 2000. My Parents gave me the name that
+                I was born in Phu Ly city, 2000. My Parents gifted me the name
               </p>
-              <p id="des1">Very much inspired of a famous poet Nam Cao.</p>
+              <p id="des1">That very much inspired of a famous poet Nam Cao.</p>
               <p id="des1">
-                But my friend call me Jason, which after my music idol
+                But friends call me Jason, which after my music idol
               </p>
               <p id="des1">- Jason Derulo - And You can call me too!</p>
             </div>
@@ -3095,15 +3086,16 @@
             <div class="formbox">
               <div class="formtext">
                 <p id="des1">
-                  According to J.K. Rowling: "There's always room for a story<br />
-                  that can transport people to another place."<br />
+                  Once, My college dean told Learners about PublicSpeaking:<br />
+                  "The best way to initiate a topic is telling a story.<br />
+                  Everyone like following the story". <br />
                   I really love the way a story can easily draw people's
                   attention.
                   <br />
                   Moreover, i love the way they simplify things <br />
                   And make them easier to be kept in mind. <br />
                   I believe that success peoples <br />
-                  Are the success Storyteller.
+                  Are the success Storytellers.
                 </p>
               </div>
               <div class="formsvg">
@@ -3706,7 +3698,12 @@
         <h1 id="checked_Sub">Click Any Where.<br /></h1>
       </div>
     </div>
+    <section class="Null_Body">
+      <div id="Null_Object" class="Null_Object"></div>
+    </section>
+
     <script src="./app.js"></script>
     <script src="./data.js"></script>
+    <script src="./mobile.js"></script>
   </body>
 </html>

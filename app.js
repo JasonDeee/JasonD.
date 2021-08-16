@@ -67,7 +67,7 @@ function RandomPreloadText() {
 const PreloadBox = document.querySelector("#Preloader");
 const PreloadCircle = document.querySelector("#PreloadCircle");
 const PreloadCircle2 = document.querySelector("#PreloadCircle2");
-const bodyload = document.querySelector("body");
+const bodyload = document.querySelector(".desktop_body");
 
 // // jQuerry Method
 
@@ -300,7 +300,8 @@ section1.addEventListener("mouseleave", (e) => {
   cat.FatLine2.style.transform = `translateX(${-offsetX / 50}px)`;
 });
 // "Project - section2
-var body = document.querySelector("body");
+
+var body = document.querySelector(".desktop_body");
 var sec2 = document.querySelector(".section2");
 var ProjectBox = document.querySelector(".section2-box");
 var MRSB = document.querySelector(".mrsB");
@@ -314,6 +315,22 @@ var sectionconect = document.querySelector(".section-connector");
 var MRBname = document.querySelector(".mrsB-title");
 
 ProjectBox.addEventListener("mousemove", (e) => {
+  if (window.innerWidth > 768) {
+    ProjectBox_MouseMove(e);
+  }
+});
+ProjectBox.addEventListener("mouseenter", (e) => {
+  if (window.innerWidth > 768) {
+    ProjectBox_MouseEnter(e);
+  }
+});
+ProjectBox.addEventListener("mouseleave", (e) => {
+  if (window.innerWidth > 768) {
+    ProjectBox_MouseLeave(e);
+  }
+});
+
+function ProjectBox_MouseMove(e) {
   var scrolledY = window.scrollY;
   var scrolledX = window.scrollX;
   var rect = ProjectBox.getBoundingClientRect();
@@ -327,9 +344,8 @@ ProjectBox.addEventListener("mousemove", (e) => {
   let glareX = e.pageX - (rect.left + scrolledX);
   let glareY = e.pageY - (rect.top + scrolledY);
   sec2.style.transform = `rotateY(${xAxis + 6}deg) rotateX(${yAxis}deg)`;
-});
-
-ProjectBox.addEventListener("mouseenter", (e) => {
+}
+function ProjectBox_MouseEnter(e) {
   MRBname.style.letterSpacing = `0.5vw`;
   sec2.style.transform = `translateZ(-7vw)`;
   // ProjectBox.style.transform = `translateZ(-7vw)`;
@@ -343,9 +359,9 @@ ProjectBox.addEventListener("mouseenter", (e) => {
   MRBtag.style.transition = `all 0.65s ease-out`;
   subconnect.style.transform = `translateY(-3.6vw)`;
   sectionconect.style.transform = `translateY(-4vw)`;
-});
+}
 
-ProjectBox.addEventListener("mouseleave", (e) => {
+function ProjectBox_MouseLeave(e) {
   MRSBs3.style.transform = `translateZ(0) translateX(0) `;
   MRSB.style.transform = `translateZ(0) translateX(0)`;
   MRSB.style.width = `45.7vw`;
@@ -360,7 +376,7 @@ ProjectBox.addEventListener("mouseleave", (e) => {
   // ProjectBox.style.transform = `rotateY(${0}deg) rotateX(${0}deg)`;
   sec2.style.transition = `all 0.5s ease-out`;
   MRBtag.style.transform = `translateZ(0)`;
-});
+}
 
 // section3
 var spic = document.querySelectorAll("#pic");
@@ -819,7 +835,7 @@ document.addEventListener("scroll", function (e) {
 
 const NAVButton = document.querySelector(".POP-up");
 const SideNav = document.querySelector(".menu-section");
-const docbdy = document.querySelector("body");
+const docbdy = document.querySelector(".desktop_body");
 const MenuShadow = document.querySelector(".menu-layout");
 const footer = document.querySelector(".footer");
 const footerChild = document.querySelectorAll("#footer-col")[2];
