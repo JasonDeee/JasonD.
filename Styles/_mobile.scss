@@ -1,0 +1,179 @@
+/*Mobile Ver*/
+
+body,
+a,
+li,
+div {
+  cursor: default;
+}
+
+.Box-Intro {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+.third {
+  width: 43%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 5vh;
+  filter: drop-shadow(1vw 1vw 2vw #00000049);
+}
+
+.Intro {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Intro-text1,
+.Intro-text,
+.Intro-text2,
+.subs {
+  text-align: center;
+}
+.Intro-text1 {
+  font-size: 3vw;
+}
+.Intro-text,
+.Intro-text2 {
+  font-size: 4.6vw;
+  line-height: 5vw;
+}
+.Intro-text2 {
+  margin-bottom: 5vh;
+}
+
+.subs {
+  font-size: 2vw;
+}
+.prj-button {
+  width: 23vw;
+  height: 7vw;
+}
+
+.prj-title {
+  font-size: 1.8vw;
+}
+
+.prj-button:hover {
+  cursor: none;
+  width: 30vw;
+}
+.socials {
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 3vw;
+}
+.behance-svg {
+  height: 3vw;
+  width: 6.1vw;
+  transform: rotateY(-1vw);
+}
+.artstation-svg,
+.artstation-svg2 {
+  height: 3vw;
+  width: 6.1vw;
+}
+.fb-svg {
+  height: 3vw;
+  width: 6.1vw;
+}
+.connector-holder {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-connector {
+  font-size: 4.6vw;
+}
+.sub-connector {
+  font-size: 2vw;
+}
+.section-connector::before {
+  font-size: 20vw;
+}
+
+.section2_Mobile {
+  display: flex;
+  width: 80vw;
+  align-items: flex-start;
+  justify-content: center;
+  height: auto;
+  z-index: 5;
+  transform-style: unset;
+  perspective: unset;
+
+  .section2 {
+    transform-style: unset;
+    height: 80vh;
+  }
+  .pic-holder {
+    height: 100%;
+  }
+  .pic-holder div {
+    display: none;
+  }
+
+  .pic-holder div:nth-last-child(1) {
+    display: block;
+    height: 100%;
+  }
+  .mrsB-des #fillter {
+    height: 62%;
+  }
+
+  .name-tag {
+    height: 38%;
+    padding-top: 0;
+  }
+  .mrsB-title {
+    font-size: 4.6vw;
+  }
+  .mrsB-sub {
+    font-size: 2vw;
+    width: 15vw;
+  }
+  .mrsB-destext {
+    background: #e7e7e7;
+    margin-top: 2vh;
+    height: 80%;
+    font-size: 2vw;
+    overflow-y: scroll;
+    margin-bottom: 3vh;
+    padding: 1vw;
+    border-radius: 1vw;
+  }
+  .mrsB-readmore {
+    font-size: 2vw;
+    cursor: pointer;
+  }
+
+  .see-more-button {
+    width: 12vw;
+    height: 8vw;
+    position: relative;
+    background: #ffffffbe;
+    align-self: center;
+  }
+  .see-more-button svg {
+    width: 4vw;
+    height: 4vw;
+  }
+  .see-more-button .sls-1 {
+    stroke-width: 30px;
+  }
+
+  .see-more-button:hover,
+  .see-more-button2:hover {
+    background: #ffffff;
+    width: 16vw;
+    cursor: pointer;
+  }
+}

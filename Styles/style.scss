@@ -99,6 +99,11 @@ body {
   cursor: none;
 }
 
+.Null_Body,
+.Null_Body .div {
+  display: none;
+}
+
 a {
   cursor: none;
 }
@@ -502,6 +507,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 0;
 }
 
 .funny-pic {
@@ -660,11 +666,10 @@ circle {
   border-radius: 5vw;
   background: #f5af19;
   position: absolute;
-  width: 16vw;
-  height: 5vw;
+  width: 100%;
+  height: 100%;
   margin-left: -2vw;
   justify-content: space-between;
-
   clip-path: circle(0% at top 20% right 30%);
 }
 .prj-button a {
@@ -688,7 +693,6 @@ circle {
 }
 .prj-button:hover .prj-button-overlay {
   clip-path: circle(100% at top 20% right 30%);
-  width: 19vw;
 }
 .prj-title {
   font-family: "Poppins";
@@ -717,6 +721,11 @@ circle {
   transition: all 0.3s 0s ease-out;
   fill: $secondaryColor;
 }
+.behance-svg {
+  height: 2vw;
+  width: 4.1vw;
+}
+
 .behance-svg2 .bha-1,
 .behance-svg2 .bha-2,
 .behance-svg2 .bha-3 {
@@ -825,11 +834,12 @@ circle {
 }
 
 .section2 {
+  position: relative;
   box-sizing: border-box;
   border-radius: 1.5vw;
   box-shadow: 1vw 1vw 3vw 0 #00000031;
   width: 74vw;
-  height: auto;
+  height: 100%;
   margin-top: 1vh;
   background: #ffffff6e;
   display: flex;
@@ -859,36 +869,30 @@ circle {
   transform: translateY(0);
 }
 
-#cnt-1::before {
-  content: "01";
+.section-connector::before {
   font-family: "Poppins";
   font-size: 14vw;
-  color: rgba(41, 41, 41, 0.2);
+  color: $secondaryColor;
+  opacity: 20%;
   line-height: 3vw;
   font-weight: 200;
   margin-right: -7vw;
   font-style: italic;
 }
 
+#cnt-1::before {
+  content: "01";
+  color: #29292959;
+  margin-right: -7vw;
+  opacity: 100%;
+}
+
 #cnt-2::before {
   content: "02";
-  font-family: "Poppins";
-  font-size: 14vw;
-  color: $secondaryColor;
-  opacity: 20%;
-  line-height: 3vw;
-  font-weight: 200;
   margin-right: -14.6vw;
-  font-style: italic;
 }
 #cnt-3::before {
   content: "03";
-  font-family: "Poppins";
-  font-size: 14vw;
-  color: $secondaryColor;
-  opacity: 20%;
-  line-height: 3vw;
-  font-weight: 200;
   margin-right: -14.6vw;
   font-style: italic;
 }
@@ -908,7 +912,7 @@ circle {
   width: 80vw;
   align-items: flex-start;
   justify-content: center;
-  height: 50vw;
+  height: 45.7vw;
   z-index: 5;
   transform-style: preserve-3d;
   perspective: 111vw;
@@ -921,6 +925,9 @@ circle {
 
 .none {
   box-shadow: -0.3vw 0.3vw 1vw 0 #00000000;
+}
+.pic-holder div {
+  display: block;
 }
 
 .mrsB {
@@ -1001,7 +1008,7 @@ circle {
 }
 
 .name-tag {
-  height: 35%;
+  height: 38%;
   width: auto;
 }
 .mrsB-title {
@@ -1022,8 +1029,9 @@ circle {
 }
 
 .mrsB-tag {
+  position: relative;
   transform-style: preserve-3d;
-  height: 45.7vw;
+  height: 100%;
   width: 38.197%;
   padding: 3vw;
   box-sizing: border-box;
@@ -1035,6 +1043,7 @@ circle {
   width: auto;
 }
 .mrsB-des {
+  position: relative;
   box-sizing: border-box;
   height: 65%;
   width: 100%;
@@ -1043,6 +1052,11 @@ circle {
   display: flex;
   flex-direction: column;
   transform-style: preserve-3d;
+}
+.mrsB-des #fillter {
+  position: relative;
+  height: auto;
+  width: 100%;
 }
 
 .mrsB-destext {
@@ -1130,7 +1144,7 @@ circle {
   width: auto;
   height: 70vh;
   gap: 2vw;
-  margin-top: 10vh;
+  margin-top: 100px;
   align-items: flex-end;
   justify-content: center;
   transition: all 0.12s 0s ease-out;
@@ -2892,4 +2906,8 @@ circle {
   100% {
     transform: scale(0);
   }
+}
+
+@media screen and (max-width: 768px) {
+  @import "./mobile";
 }
