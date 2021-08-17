@@ -392,43 +392,7 @@ for (i = 0; i < spic.length; i++) {
 }
 
 document.addEventListener("mouseenter", (e) => {
-  for (i = 0; i < spic.length; i++) {
-    var Obj = spic[i].getBoundingClientRect();
-    var ObjectX = Obj.x + Obj.width / 2;
-    var ScreenMin1 = (window.innerWidth * 2) / 10;
-    var ScreenMin2 = (window.innerWidth * 3) / 10;
-
-    var ScreenMax1 = (window.innerWidth * 8) / 10;
-    var ScreenMax2 = (window.innerWidth * 7) / 10;
-
-    if (ObjectX < ScreenMin1) {
-      scale = 0.3;
-    }
-    if (ObjectX > ScreenMax1) {
-      scale = 0.3;
-    }
-
-    if (ObjectX < ScreenMin2 && ObjectX > ScreenMin1) {
-      scale =
-        0.3 +
-        0.7 * (Math.abs(ObjectX - ScreenMin2) / ((window.innerWidth * 2) / 10));
-    }
-    if (ObjectX < ScreenMax2 && ObjectX > ScreenMin2) {
-      scale = 1;
-    }
-    if (ObjectX < ScreenMax1 && ObjectX > ScreenMax2) {
-      scale =
-        0.3 +
-        0.7 * (Math.abs(ObjectX - ScreenMax1) / ((window.innerWidth * 2) / 10));
-    }
-    spic[i].style.width = `${scale * OriginX[i]}px`;
-    spic[i].style.height = `${scale * OriginY[i]}px`;
-  }
-  section3.addEventListener("mousemove", (e) => {
-    var shiftVal1 = (e.pageX - window.innerWidth / 2) / window.innerWidth;
-    var shiftVal2 = shiftVal1 * (0 - 130);
-    sec3Ly.style.transform = `translateX(${shiftVal2}vw)`;
-
+  if (window.innerWidth > 768) {
     for (i = 0; i < spic.length; i++) {
       var Obj = spic[i].getBoundingClientRect();
       var ObjectX = Obj.x + Obj.width / 2;
@@ -463,6 +427,50 @@ document.addEventListener("mouseenter", (e) => {
       spic[i].style.width = `${scale * OriginX[i]}px`;
       spic[i].style.height = `${scale * OriginY[i]}px`;
     }
+  }
+
+  section3.addEventListener("mousemove", (e) => {
+    var shiftVal1 = (e.pageX - window.innerWidth / 2) / window.innerWidth;
+    var shiftVal2 = shiftVal1 * (0 - 130);
+
+    if (window.innerWidth > 768) {
+      for (i = 0; i < spic.length; i++) {
+        sec3Ly.style.transform = `translateX(${shiftVal2}vw)`;
+
+        var Obj = spic[i].getBoundingClientRect();
+        var ObjectX = Obj.x + Obj.width / 2;
+        var ScreenMin1 = (window.innerWidth * 2) / 10;
+        var ScreenMin2 = (window.innerWidth * 3) / 10;
+
+        var ScreenMax1 = (window.innerWidth * 8) / 10;
+        var ScreenMax2 = (window.innerWidth * 7) / 10;
+
+        if (ObjectX < ScreenMin1) {
+          scale = 0.3;
+        }
+        if (ObjectX > ScreenMax1) {
+          scale = 0.3;
+        }
+
+        if (ObjectX < ScreenMin2 && ObjectX > ScreenMin1) {
+          scale =
+            0.3 +
+            0.7 *
+              (Math.abs(ObjectX - ScreenMin2) / ((window.innerWidth * 2) / 10));
+        }
+        if (ObjectX < ScreenMax2 && ObjectX > ScreenMin2) {
+          scale = 1;
+        }
+        if (ObjectX < ScreenMax1 && ObjectX > ScreenMax2) {
+          scale =
+            0.3 +
+            0.7 *
+              (Math.abs(ObjectX - ScreenMax1) / ((window.innerWidth * 2) / 10));
+        }
+        spic[i].style.width = `${scale * OriginX[i]}px`;
+        spic[i].style.height = `${scale * OriginY[i]}px`;
+      }
+    }
   });
 });
 
@@ -487,23 +495,29 @@ if ((srcval = true)) {
 // Video React
 
 katunVideo.addEventListener("mousemove", (e) => {
-  var icoBorder = playICO.getBoundingClientRect();
-  var VIDborder = katunVideo.getBoundingClientRect();
-  cX = e.pageX - VIDborder.left - window.scrollX - icoBorder.width / 2;
-  cY = e.pageY - VIDborder.top - window.scrollY - icoBorder.height / 2;
-  playICO.style.left = `${cX}px`;
-  playICO.style.top = `${cY}px`;
+  if (window.innerWidth > 768) {
+    var icoBorder = playICO.getBoundingClientRect();
+    var VIDborder = katunVideo.getBoundingClientRect();
+    cX = e.pageX - VIDborder.left - window.scrollX - icoBorder.width / 2;
+    cY = e.pageY - VIDborder.top - window.scrollY - icoBorder.height / 2;
+    playICO.style.left = `${cX}px`;
+    playICO.style.top = `${cY}px`;
+  }
 });
 
 katunVideo.addEventListener("mouseenter", (e) => {
-  playICO.style.transition = `all 0.15s ease-out`;
+  if (window.innerWidth > 768) {
+    playICO.style.transition = `all 0.15s ease-out`;
+  }
 });
 katunVideo.addEventListener("mouseleave", (e) => {
-  var icoBorder = playICO.getBoundingClientRect();
+  if (window.innerWidth > 768) {
+    var icoBorder = playICO.getBoundingClientRect();
 
-  playICO.style.transition = `all 0.85s ease-out`;
-  playICO.style.left = `35%`;
-  playICO.style.top = `40%`;
+    playICO.style.transition = `all 0.85s ease-out`;
+    playICO.style.left = `35%`;
+    playICO.style.top = `40%`;
+  }
 });
 
 var play = document.querySelector("#play-icon");
@@ -515,14 +529,17 @@ katunVideo.addEventListener("click", (e) => {
 
   if (varlidate == true) {
     katunVideo.play();
+
     play.style.marginLeft = `0`;
     play.style.width = `0`;
     pause.style.width = `4vw`;
 
-    descriptions.style.transform = `translateX(31vw)`;
-    descriptions.style.opacity = `50%`;
-    descriptions.style.border = `0.17vw solid #ffffff36`;
-    descriptions.style.borderRadius = `1.5vw`;
+    if (window.innerWidth > 768) {
+      descriptions.style.transform = `translateX(31vw)`;
+      descriptions.style.opacity = `50%`;
+      descriptions.style.border = `0.17vw solid #ffffff36`;
+      descriptions.style.borderRadius = `1.5vw`;
+    }
 
     katunVideo.addEventListener("mouseenter", (e) => {
       playICO.style.opacity = `100%`;
@@ -530,6 +547,15 @@ katunVideo.addEventListener("click", (e) => {
     katunVideo.addEventListener("mouseleave", (e) => {
       playICO.style.opacity = `0%`;
     });
+    if (window.innerWidth < 768) {
+      var hiddentime = setTimeout(() => {
+        playICO.style.opacity = `0%`;
+        if (varlidate == false) {
+          playICO.style.opacity = `100%`;
+        }
+        clearTimeout(hiddentime);
+      }, 2000);
+    }
   }
   if (varlidate == false) {
     playICO.style.opacity = `100%`;
