@@ -1649,7 +1649,7 @@ circle {
 
 .section3 {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100vw;
   height: auto;
   display: -webkit-box;
@@ -4256,6 +4256,9 @@ circle {
   div {
     cursor: default;
   }
+  html {
+    overflow-x: hidden;
+  }
   .mrsB-title {
     font-size: 4.6vw;
     line-height: 5vw;
@@ -4530,6 +4533,7 @@ circle {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    overflow: hidden;
   }
   .section3_Mobile .sec3_mobile_layout {
     position: relative;

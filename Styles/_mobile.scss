@@ -7,6 +7,9 @@ div {
   cursor: default;
 }
 
+html {
+  overflow-x: hidden;
+}
 .mrsB-title {
   font-size: 4.6vw;
   line-height: 5vw;
@@ -232,6 +235,7 @@ div {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   .sec3_mobile_layout {
     position: relative;
