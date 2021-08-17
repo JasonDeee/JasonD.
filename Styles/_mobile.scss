@@ -7,6 +7,32 @@ div {
   cursor: default;
 }
 
+.mrsB-title {
+  font-size: 4.6vw;
+  line-height: 5vw;
+}
+.mrsB-sub {
+  font-size: 2vw;
+  line-height: 2.5vw;
+}
+.mrsB-destext {
+  font-size: 2vw;
+}
+.mrsB-readmore {
+  font-size: 2vw;
+  cursor: pointer;
+}
+.see-more-button,
+.see-more-button2 {
+  width: 12vw;
+  height: 8vw;
+}
+.see-more-button:hover,
+.see-more-button2:hover {
+  width: 16vw;
+  cursor: pointer;
+}
+
 .Box-Intro {
   display: flex;
   flex-direction: column-reverse;
@@ -154,15 +180,22 @@ div {
     width: 15vw;
   }
   .mrsB-destext {
-    background: #e7e7e7;
+    background: #e9e7e7;
     margin-top: 2vh;
-    height: 70%;
+    height: 90%;
     font-size: 2vw;
     overflow-y: scroll;
     margin-bottom: 1vh;
     padding: 1vw;
     border-radius: 1vw;
   }
+  .mrsB-destext::-webkit-scrollbar {
+    width: 2px;
+  }
+  .mrsB-destext::-webkit-scrollbar-thumb {
+    background: #656565;
+  }
+
   .mrsB-readmore {
     font-size: 2vw;
     cursor: pointer;
@@ -190,5 +223,159 @@ div {
     background: #ffffff;
     width: 16vw;
     cursor: pointer;
+  }
+}
+
+.section3_Mobile {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .sec3_mobile_layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 74vw 74vw 15vh 15vh 74vw 87vw;
+    grid-template-rows: 100%;
+    flex-direction: unset;
+    width: 100vw;
+    height: 45vh;
+    gap: 2vw;
+    margin-top: 150px;
+    transition: all 0.12s 0s ease-out;
+    overflow-x: scroll;
+    transform: none;
+    padding-right: 13vw;
+    padding-left: 13vw;
+    scroll-padding: 0px 13vw 0px 13vw;
+    scroll-snap-type: x mandatory;
+  }
+
+  #pic {
+    align-self: center;
+    height: 80%;
+    width: 74vw;
+    overflow: visible;
+    background-position: center;
+    scroll-snap-align: center;
+  }
+  #pic:nth-child(3),
+  #pic:nth-child(4) {
+    height: 80%;
+    width: 15vh;
+  }
+
+  .centaurus-brand2 {
+    box-shadow: -0.1vw 0.1vw 1vw 0 #0000004d;
+  }
+  #ctr-logo {
+    position: relative;
+    margin-top: 2vh;
+    margin-bottom: 6vh;
+    width: 20vw;
+    padding-bottom: 2vh;
+  }
+  #ctr_logo_svg {
+    width: 13vw;
+    height: 13vw;
+  }
+  #CTR-title {
+    font-size: 12vw;
+  }
+  #starro {
+    margin-top: 6vh;
+    width: 3vw;
+    height: 3vw;
+    margin-bottom: 1vh;
+  }
+  #ctr-des {
+    font-size: 3.2vw;
+    margin-bottom: 1vh;
+  }
+  .mrsB-sub {
+    font-size: 2vw;
+  }
+  #ctrss {
+    margin-top: 6vh;
+  }
+  .mrsB-destext {
+    font-size: 2vw;
+    text-align: center;
+  }
+  .mrsB-readmore {
+    font-size: 2vw;
+    cursor: pointer;
+  }
+
+  .see-more-button2 {
+    margin-top: 3vh;
+    width: 12vw;
+    height: 8vw;
+    position: relative;
+    background: #ffffffbe;
+  }
+  .see-more-button2 svg {
+    width: 4vw;
+    height: 4vw;
+  }
+  .see-more-button2 .sls-1 {
+    stroke-width: 30px;
+  }
+
+  .see-more-button:hover,
+  .see-more-button2:hover {
+    background: #ffffff;
+    width: 16vw;
+    cursor: pointer;
+  }
+}
+
+.section4_Mobile {
+  position: relative;
+  box-sizing: border-box;
+  width: 74vw;
+  height: auto;
+  margin-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2vw 2vh 4vw 0 #0000003a;
+  border-radius: 1.5vw;
+
+  .katun-hold {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .katun-vid {
+    width: 100%;
+    border-radius: unset;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .katun-des {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-left: 0.17vw solid #ffffff36;
+    right: unset;
+    box-shadow: unset;
+    border-top-right-radius: unset;
+    padding: 3vw;
+  }
+  .play-bttn {
+    top: 15%;
+    left: unset;
+  }
+  .mrsB-title {
+    line-height: 7vw;
+  }
+  .see-more-button {
+    background: #e9e7e7;
   }
 }

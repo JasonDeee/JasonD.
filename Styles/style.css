@@ -94,7 +94,7 @@
 
 html {
   width: 100vw;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 body {
@@ -1648,6 +1648,9 @@ circle {
 }
 
 .section3 {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1664,6 +1667,11 @@ circle {
           justify-content: center;
 }
 
+.section3 .mrsB-destext {
+  text-align: center;
+  width: 100%;
+}
+
 .section3-layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1675,7 +1683,7 @@ circle {
   width: auto;
   height: 70vh;
   gap: 2vw;
-  margin-top: 100px;
+  margin-top: 200px;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -1754,6 +1762,9 @@ circle {
   letter-spacing: 0.1vw;
   height: auto;
   width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-top: 5vh;
   text-align: center;
   -webkit-box-orient: vertical;
@@ -1772,20 +1783,41 @@ circle {
   font-family: Ceasar;
   font-weight: normal;
   font-size: 6.6vw;
-  line-height: 13vh;
+  line-height: 7vw;
 }
 
 #ctr-logo {
-  margin-top: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 7vh;
+  padding-bottom: 2vw;
+  width: 13vw;
+  height: auto;
 }
 
 #ctr-des {
   font-size: 1.5vw;
-  margin-bottom: 3vh;
+  margin-bottom: 1vw;
+}
+
+#starro {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 
 #ctrss {
-  margin-bottom: 5vh;
+  margin-top: 3vw;
+  margin-bottom: 1vh;
+  height: 1px;
+  width: 13vw;
+  background: #292929;
 }
 
 .see-more-button2 {
@@ -1809,6 +1841,7 @@ circle {
 }
 
 .section4 {
+  position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 74vw;
@@ -1821,8 +1854,6 @@ circle {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
 }
 
 .katun-hold {
@@ -1839,6 +1870,7 @@ circle {
 }
 
 .katun-vid {
+  position: relative;
   width: 74vw;
   border-radius: 1.5vw;
   height: auto;
@@ -1898,6 +1930,8 @@ circle {
       -ms-flex-pack: center;
           justify-content: center;
   position: absolute;
+  z-index: 4;
+  pointer-events: none;
 }
 
 #play-icon {
@@ -4222,6 +4256,31 @@ circle {
   div {
     cursor: default;
   }
+  .mrsB-title {
+    font-size: 4.6vw;
+    line-height: 5vw;
+  }
+  .mrsB-sub {
+    font-size: 2vw;
+    line-height: 2.5vw;
+  }
+  .mrsB-destext {
+    font-size: 2vw;
+  }
+  .mrsB-readmore {
+    font-size: 2vw;
+    cursor: pointer;
+  }
+  .see-more-button,
+  .see-more-button2 {
+    width: 12vw;
+    height: 8vw;
+  }
+  .see-more-button:hover,
+  .see-more-button2:hover {
+    width: 16vw;
+    cursor: pointer;
+  }
   .Box-Intro {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4413,14 +4472,20 @@ circle {
     width: 15vw;
   }
   .section2_Mobile .mrsB-destext {
-    background: #e7e7e7;
+    background: #e9e7e7;
     margin-top: 2vh;
-    height: 70%;
+    height: 90%;
     font-size: 2vw;
     overflow-y: scroll;
     margin-bottom: 1vh;
     padding: 1vw;
     border-radius: 1vw;
+  }
+  .section2_Mobile .mrsB-destext::-webkit-scrollbar {
+    width: 2px;
+  }
+  .section2_Mobile .mrsB-destext::-webkit-scrollbar-thumb {
+    background: #656565;
   }
   .section2_Mobile .mrsB-readmore {
     font-size: 2vw;
@@ -4449,6 +4514,193 @@ circle {
     background: #ffffff;
     width: 16vw;
     cursor: pointer;
+  }
+  .section3_Mobile {
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section3_Mobile .sec3_mobile_layout {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 74vw 74vw 15vh 15vh 74vw 87vw;
+        grid-template-columns: 74vw 74vw 15vh 15vh 74vw 87vw;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+    -webkit-box-orient: unset;
+    -webkit-box-direction: unset;
+        -ms-flex-direction: unset;
+            flex-direction: unset;
+    width: 100vw;
+    height: 45vh;
+    gap: 2vw;
+    margin-top: 150px;
+    -webkit-transition: all 0.12s 0s ease-out;
+    transition: all 0.12s 0s ease-out;
+    overflow-x: scroll;
+    -webkit-transform: none;
+            transform: none;
+    padding-right: 13vw;
+    padding-left: 13vw;
+    scroll-padding: 0px 13vw 0px 13vw;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+  }
+  .section3_Mobile #pic {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    height: 80%;
+    width: 74vw;
+    overflow: visible;
+    background-position: center;
+    scroll-snap-align: center;
+  }
+  .section3_Mobile #pic:nth-child(3),
+  .section3_Mobile #pic:nth-child(4) {
+    height: 80%;
+    width: 15vh;
+  }
+  .section3_Mobile .centaurus-brand2 {
+    -webkit-box-shadow: -0.1vw 0.1vw 1vw 0 #0000004d;
+            box-shadow: -0.1vw 0.1vw 1vw 0 #0000004d;
+  }
+  .section3_Mobile #ctr-logo {
+    position: relative;
+    margin-top: 2vh;
+    margin-bottom: 6vh;
+    width: 20vw;
+    padding-bottom: 2vh;
+  }
+  .section3_Mobile #ctr_logo_svg {
+    width: 13vw;
+    height: 13vw;
+  }
+  .section3_Mobile #CTR-title {
+    font-size: 12vw;
+  }
+  .section3_Mobile #starro {
+    margin-top: 6vh;
+    width: 3vw;
+    height: 3vw;
+    margin-bottom: 1vh;
+  }
+  .section3_Mobile #ctr-des {
+    font-size: 3.2vw;
+    margin-bottom: 1vh;
+  }
+  .section3_Mobile .mrsB-sub {
+    font-size: 2vw;
+  }
+  .section3_Mobile #ctrss {
+    margin-top: 6vh;
+  }
+  .section3_Mobile .mrsB-destext {
+    font-size: 2vw;
+    text-align: center;
+  }
+  .section3_Mobile .mrsB-readmore {
+    font-size: 2vw;
+    cursor: pointer;
+  }
+  .section3_Mobile .see-more-button2 {
+    margin-top: 3vh;
+    width: 12vw;
+    height: 8vw;
+    position: relative;
+    background: #ffffffbe;
+  }
+  .section3_Mobile .see-more-button2 svg {
+    width: 4vw;
+    height: 4vw;
+  }
+  .section3_Mobile .see-more-button2 .sls-1 {
+    stroke-width: 30px;
+  }
+  .section3_Mobile .see-more-button:hover,
+  .section3_Mobile .see-more-button2:hover {
+    background: #ffffff;
+    width: 16vw;
+    cursor: pointer;
+  }
+  .section4_Mobile {
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 74vw;
+    height: auto;
+    margin-top: 25vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-shadow: -2vw 2vh 4vw 0 #0000003a;
+            box-shadow: -2vw 2vh 4vw 0 #0000003a;
+    border-radius: 1.5vw;
+  }
+  .section4_Mobile .katun-hold {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+  }
+  .section4_Mobile .katun-vid {
+    width: 100%;
+    border-radius: unset;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section4_Mobile .katun-des {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-left: 0.17vw solid #ffffff36;
+    right: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+    border-top-right-radius: unset;
+    padding: 3vw;
+  }
+  .section4_Mobile .play-bttn {
+    top: 15%;
+    left: unset;
+  }
+  .section4_Mobile .mrsB-title {
+    line-height: 7vw;
+  }
+  .section4_Mobile .see-more-button {
+    background: #e9e7e7;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -84,7 +84,7 @@
 
 html {
   width: 100vw;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 body {
@@ -1138,11 +1138,18 @@ circle {
 }
 
 .section3 {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .mrsB-destext {
+    text-align: center;
+    width: 100%;
+  }
 }
 .section3-layout {
   display: flex;
@@ -1150,7 +1157,7 @@ circle {
   width: auto;
   height: 70vh;
   gap: 2vw;
-  margin-top: 100px;
+  margin-top: 200px;
   align-items: flex-end;
   justify-content: center;
   transition: all 0.12s 0s ease-out;
@@ -1215,6 +1222,7 @@ circle {
   letter-spacing: 0.1vw;
   height: auto;
   width: auto;
+  display: flex;
   margin-top: 5vh;
   text-align: center;
   flex-direction: column;
@@ -1225,17 +1233,32 @@ circle {
   font-family: Ceasar;
   font-weight: normal;
   font-size: 6.6vw;
-  line-height: 13vh;
+  line-height: 7vw;
 }
 #ctr-logo {
-  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7vh;
+  padding-bottom: 2vw;
+  width: 13vw;
+  height: auto;
 }
 #ctr-des {
   font-size: 1.5vw;
-  margin-bottom: 3vh;
+  margin-bottom: 1vw;
 }
+#starro {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
 #ctrss {
-  margin-bottom: 5vh;
+  margin-top: 3vw;
+  margin-bottom: 1vh;
+  height: 1px;
+  width: 13vw;
+  background: #292929;
 }
 
 .see-more-button2 {
@@ -1252,13 +1275,13 @@ circle {
 }
 
 .section4 {
+  position: relative;
   box-sizing: border-box;
   width: 74vw;
   height: auto;
   margin-top: 25vh;
   display: flex;
   flex-direction: row;
-  transform-style: preserve-3d;
 }
 .katun-hold {
   display: flex;
@@ -1269,6 +1292,7 @@ circle {
 }
 
 .katun-vid {
+  position: relative;
   width: 74vw;
   border-radius: 1.5vw;
   height: auto;
@@ -1306,6 +1330,8 @@ circle {
   align-items: center;
   justify-content: center;
   position: absolute;
+  z-index: 4;
+  pointer-events: none;
 }
 
 #play-icon {
