@@ -105,57 +105,72 @@ div {
   width: 80vw;
   align-items: flex-start;
   justify-content: center;
-  height: auto;
+  height: fit-content;
   z-index: 5;
   transform-style: unset;
   perspective: unset;
 
   .section2 {
     transform-style: unset;
-    height: 80vh;
+    height: 90vw;
   }
+
   .pic-holder {
-    height: 100%;
+    width: 45.7vw;
+    height: fit-content;
   }
   .pic-holder div {
     display: none;
   }
 
   .pic-holder div:nth-last-child(1) {
-    display: block;
-    height: 100%;
+    display: inline;
+    width: 45.7vw;
+    height: 90vw;
+    background-position: center;
   }
   .mrsB-des #fillter {
     height: 62%;
+    position: relative;
   }
-
+  .mrsB-des {
+    margin-top: -3vw;
+    transform-style: unset;
+  }
+  .mrsB-tag {
+    transform-style: unset;
+  }
   .name-tag {
-    height: 38%;
+    height: 33%;
     padding-top: 0;
   }
   .mrsB-title {
     font-size: 4.6vw;
   }
   .mrsB-sub {
+    margin-top: 0.3vw;
     font-size: 2vw;
+    line-height: 2.5vw;
     width: 15vw;
   }
   .mrsB-destext {
     background: #e7e7e7;
     margin-top: 2vh;
-    height: 80%;
+    height: 70%;
     font-size: 2vw;
     overflow-y: scroll;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
     padding: 1vw;
     border-radius: 1vw;
   }
   .mrsB-readmore {
     font-size: 2vw;
     cursor: pointer;
+    margin-left: 1vw;
   }
 
   .see-more-button {
+    margin-top: 3vh;
     width: 12vw;
     height: 8vw;
     position: relative;

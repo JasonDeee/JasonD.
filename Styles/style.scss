@@ -82,6 +82,11 @@
   border-radius: 5vw;
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background-color: $keyColor;
   display: flex;
@@ -921,6 +926,7 @@ circle {
   width: 45.7vw;
   height: 45.7vw;
   flex-direction: row;
+  position: relative;
 }
 
 .none {

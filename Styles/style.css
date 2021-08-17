@@ -92,6 +92,11 @@
   border-radius: 5vw;
 }
 
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background-color: #e9e7e7;
   display: -webkit-box;
@@ -1366,6 +1371,7 @@ circle {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  position: relative;
 }
 
 .none {
@@ -4351,7 +4357,9 @@ circle {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: auto;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     z-index: 5;
     -webkit-transform-style: unset;
             transform-style: unset;
@@ -4361,47 +4369,66 @@ circle {
   .section2_Mobile .section2 {
     -webkit-transform-style: unset;
             transform-style: unset;
-    height: 80vh;
+    height: 90vw;
   }
   .section2_Mobile .pic-holder {
-    height: 100%;
+    width: 45.7vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
   }
   .section2_Mobile .pic-holder div {
     display: none;
   }
   .section2_Mobile .pic-holder div:nth-last-child(1) {
-    display: block;
-    height: 100%;
+    display: inline;
+    width: 45.7vw;
+    height: 90vw;
+    background-position: center;
   }
   .section2_Mobile .mrsB-des #fillter {
     height: 62%;
+    position: relative;
+  }
+  .section2_Mobile .mrsB-des {
+    margin-top: -3vw;
+    -webkit-transform-style: unset;
+            transform-style: unset;
+  }
+  .section2_Mobile .mrsB-tag {
+    -webkit-transform-style: unset;
+            transform-style: unset;
   }
   .section2_Mobile .name-tag {
-    height: 38%;
+    height: 33%;
     padding-top: 0;
   }
   .section2_Mobile .mrsB-title {
     font-size: 4.6vw;
   }
   .section2_Mobile .mrsB-sub {
+    margin-top: 0.3vw;
     font-size: 2vw;
+    line-height: 2.5vw;
     width: 15vw;
   }
   .section2_Mobile .mrsB-destext {
     background: #e7e7e7;
     margin-top: 2vh;
-    height: 80%;
+    height: 70%;
     font-size: 2vw;
     overflow-y: scroll;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
     padding: 1vw;
     border-radius: 1vw;
   }
   .section2_Mobile .mrsB-readmore {
     font-size: 2vw;
     cursor: pointer;
+    margin-left: 1vw;
   }
   .section2_Mobile .see-more-button {
+    margin-top: 3vh;
     width: 12vw;
     height: 8vw;
     position: relative;
