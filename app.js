@@ -596,72 +596,80 @@ const morphdes = document.querySelectorAll(".Morph-des");
 const morphD = document.querySelector("#morph-des");
 
 darko.addEventListener("mouseenter", (e) => {
-  darko.style.transform = `scale(1)`;
-  darko.style.marginRight = `2vw`;
-  morphism.style.width = `30vw`;
-  darkoTitle.style.transform = `translateX(-22.3vw)`;
+  if (window.innerWidth > 768) {
+    darko.style.transform = `scale(1)`;
+    darko.style.marginRight = `2vw`;
+    morphism.style.width = `30vw`;
+    darkoTitle.style.transform = `translateX(-22.3vw)`;
 
-  for (let index = 0; index < darkodes.length; index++) {
-    const element = darkodes[index];
-    number = index * 0.2 + 0.1;
+    for (let index = 0; index < darkodes.length; index++) {
+      const element = darkodes[index];
+      number = index * 0.2 + 0.1;
 
-    element.style.transform = `translateX(-24.9vw)`;
-    element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
+      element.style.transform = `translateX(-24.9vw)`;
+      element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
+    }
   }
 });
 
 darko.addEventListener("mouseleave", (e) => {
-  darko.style.transform = `scale(0.7)`;
-  darko.style.marginRight = `-17vw`;
-  morphism.style.width = `56vw`;
+  if (window.innerWidth > 768) {
+    darko.style.transform = `scale(0.7)`;
+    darko.style.marginRight = `-17vw`;
+    morphism.style.width = `56vw`;
 
-  darkoTitle.style.transform = `translateX(0)`;
-  for (let index = 0; index < darkodes.length; index++) {
-    const element = darkodes[index];
-    number = index * 0.3;
+    darkoTitle.style.transform = `translateX(0)`;
+    for (let index = 0; index < darkodes.length; index++) {
+      const element = darkodes[index];
+      number = index * 0.3;
 
-    element.style.transform = `translateX(0)`;
-    element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
+      element.style.transform = `translateX(0)`;
+      element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
+    }
   }
 });
 
 morphism.addEventListener("mouseenter", (e) => {
-  morphism.style.transform = `scale(1)`;
-  morphism.style.marginLeft = `2vw`;
-  darko.style.width = `30vw`;
-  subtitle.style.color = `white`;
-  blackbar[1].style.background = `white`;
-  blackbar[0].style.background = `white`;
-  dzSub.style.filter = `drop-shadow(-0.1vw 0.1vw 0.3vw #00000085)`;
+  if (window.innerWidth > 768) {
+    morphism.style.transform = `scale(1)`;
+    morphism.style.marginLeft = `2vw`;
+    darko.style.width = `30vw`;
+    subtitle.style.color = `white`;
+    blackbar[1].style.background = `white`;
+    blackbar[0].style.background = `white`;
+    dzSub.style.filter = `drop-shadow(-0.1vw 0.1vw 0.3vw #00000085)`;
 
-  morphTitle.style.transform = `translateX(22.3vw)`;
+    morphTitle.style.transform = `translateX(22.3vw)`;
 
-  for (let index = 0; index < morphdes.length; index++) {
-    const element = morphdes[index];
-    number = index * 0.2 + 0.1;
+    for (let index = 0; index < morphdes.length; index++) {
+      const element = morphdes[index];
+      number = index * 0.2 + 0.1;
 
-    element.style.transform = `translateX(24.9vw)`;
-    element.style.transition = `all 1.2s ${number}s cubic-bezier(0.2, 0, 0, 1)`;
+      element.style.transform = `translateX(24.9vw)`;
+      element.style.transition = `all 1.2s ${number}s cubic-bezier(0.2, 0, 0, 1)`;
+    }
   }
 });
 
 morphism.addEventListener("mouseleave", (e) => {
-  morphism.style.transform = `scale(0.7)`;
-  morphism.style.marginLeft = `-17vw`;
-  darko.style.width = `56vw`;
-  blackbar[1].style.background = `#292929`;
-  blackbar[0].style.background = `#292929`;
-  subtitle.style.color = `#292929`;
-  dzSub.style.filter = `none`;
+  if (window.innerWidth > 768) {
+    morphism.style.transform = `scale(0.7)`;
+    morphism.style.marginLeft = `-17vw`;
+    darko.style.width = `56vw`;
+    blackbar[1].style.background = `#292929`;
+    blackbar[0].style.background = `#292929`;
+    subtitle.style.color = `#292929`;
+    dzSub.style.filter = `none`;
 
-  morphTitle.style.transform = `translateX(0)`;
+    morphTitle.style.transform = `translateX(0)`;
 
-  for (let index = 0; index < morphdes.length; index++) {
-    const element = morphdes[index];
-    number = index * 0.2 + 0.1;
+    for (let index = 0; index < morphdes.length; index++) {
+      const element = morphdes[index];
+      number = index * 0.2 + 0.1;
 
-    element.style.transform = `translateX(0)`;
-    element.style.transition = `all 1.2s ${number}s cubic-bezier(0.2, 0, 0, 1)`;
+      element.style.transform = `translateX(0)`;
+      element.style.transition = `all 1.2s ${number}s cubic-bezier(0.2, 0, 0, 1)`;
+    }
   }
 });
 
