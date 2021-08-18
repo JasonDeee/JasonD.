@@ -10,6 +10,9 @@ div {
 html {
   overflow-x: hidden;
 }
+body {
+  overflow-x: hidden;
+}
 .mrsB-title {
   font-size: 4.6vw;
   line-height: 5vw;
@@ -129,6 +132,10 @@ html {
   font-size: 20vw;
 }
 
+.section1 {
+  box-shadow: 2vw 4vw 6vw 0 #00000059;
+}
+
 .section2_Mobile {
   display: flex;
   width: 80vw;
@@ -142,6 +149,7 @@ html {
   .section2 {
     transform-style: unset;
     height: 90vw;
+    box-shadow: 2vw 4vw 6vw 0 #00000059;
   }
 
   .pic-holder {
@@ -212,13 +220,6 @@ html {
     position: relative;
     background: #ffffffbe;
     align-self: center;
-  }
-  .see-more-button svg {
-    width: 4vw;
-    height: 4vw;
-  }
-  .see-more-button .sls-1 {
-    stroke-width: 30px;
   }
 
   .see-more-button:hover,
@@ -319,13 +320,6 @@ html {
     position: relative;
     background: #ffffffbe;
   }
-  .see-more-button2 svg {
-    width: 4vw;
-    height: 4vw;
-  }
-  .see-more-button2 .sls-1 {
-    stroke-width: 30px;
-  }
 
   .see-more-button:hover,
   .see-more-button2:hover {
@@ -343,7 +337,7 @@ html {
   margin-top: 25vh;
   display: flex;
   flex-direction: column;
-  box-shadow: -2vw 2vh 4vw 0 #0000003a;
+  box-shadow: -2vw 4vw 6vw 0 #00000059;
   border-radius: 1.5vw;
 
   .katun-hold {
@@ -381,5 +375,297 @@ html {
   }
   .see-more-button {
     background: #e9e7e7;
+  }
+}
+
+.section5_Mobile {
+  transition: all 1.3s 0s cubic-bezier(0.25, 0, 0, 1);
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
+  .sec5-layout {
+    margin-top: 15vh;
+    align-items: flex-start;
+  }
+  .sec5-description {
+    margin-top: 5vh;
+  }
+
+  #darko {
+    margin-top: 65vw;
+  }
+  #Dz-text {
+    margin-top: 45%;
+  }
+  #Dz-text svg {
+    width: 6.8vw;
+    height: 10vw;
+  }
+
+  #dz-title {
+    font-size: 3.5vw;
+  }
+  .sub-title {
+    font-size: 4vw;
+    height: 4.2vw;
+    letter-spacing: -0.8vw;
+  }
+  #blackbar {
+    background: $secondaryColor;
+    height: 100%;
+    width: 3px;
+  }
+
+  .sec5-layout #dz-sub {
+    animation: hubout2 3s forwards;
+  }
+  .sec5-layout #sub-t {
+    animation: tilout2 3s forwards;
+    letter-spacing: 0;
+  }
+
+  @keyframes hubout2 {
+    0% {
+      height: 0;
+    }
+    40% {
+      height: 4.2vw;
+    }
+    60% {
+      height: 4.2vw;
+    }
+    100% {
+      height: 4.2vw;
+    }
+  }
+
+  @keyframes tilout2 {
+    0% {
+      width: 0vw;
+      height: 0;
+      letter-spacing: -1.6vw;
+    }
+    40% {
+      width: 0vw;
+      height: 3vw;
+      letter-spacing: -1.6vw;
+    }
+    60% {
+      width: 0vw;
+      letter-spacing: -1.6vw;
+    }
+    100% {
+      width: 27vw;
+      letter-spacing: 0;
+    }
+  }
+  .sec5-layout:hover #dz-sub {
+    animation: none;
+    height: 0;
+  }
+  .sec5-layout:hover #sub-t {
+    animation: none;
+    width: 0;
+    letter-spacing: -0.8vw;
+  }
+  .sec5-desBox {
+    width: auto;
+  }
+}
+
+.section6_Mobile {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  z-index: 0;
+  cursor: default;
+
+  .sec6-layout {
+    margin-top: 1vh;
+  }
+
+  #circle-decor {
+    width: 75vw;
+    height: 75vw;
+    top: -20vw;
+    left: -18vw;
+  }
+
+  #gr1 {
+    left: unset;
+    align-self: flex-end;
+    margin-top: 32vw;
+    align-items: flex-end;
+    text-align: end;
+    right: 20vw;
+    width: 54vw;
+    #des1 {
+      margin-right: -10vw;
+    }
+
+    #line_round {
+      height: 22vw;
+      transform: rotate(90deg) translateX(1vw) translateY(-2vw);
+      transform-origin: 50% 100%;
+    }
+  }
+  #line_round {
+    width: 1px;
+  }
+  #line_round::after {
+    width: 2vw;
+    height: 2vw;
+  }
+  #JS-name {
+    font-size: 4.6vw;
+  }
+  #CV-name {
+    font-size: 2vw;
+  }
+  .formbox {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+  .formsvg {
+    width: 100%;
+    max-width: 100%;
+    padding: 2vw;
+    background: #d9d7d7;
+    margin-bottom: 1vw;
+  }
+  .formbox:nth-child(3) {
+    align-items: flex-start;
+    .formsvg {
+      flex-direction: row;
+      justify-content: center;
+      gap: 3vw;
+    }
+    #dsn-illus {
+      width: 15vw;
+      height: 15vw;
+      margin-right: 0;
+    }
+    #wil {
+      font-weight: 600;
+      font-size: 3.3vw;
+      letter-spacing: 2vw;
+      text-align: center;
+      margin-left: 5vw;
+      margin-right: 0;
+    }
+    .dsn-1 {
+      stroke-width: 8px;
+    }
+  }
+
+  .formtext {
+    width: 100%;
+  }
+
+  #svgform2 {
+    flex-direction: column;
+  }
+  .formbox:nth-child(7) {
+    text-align: end;
+  }
+
+  #des1 {
+    font-size: 2vw;
+  }
+  #des2 {
+    font-size: 2vw;
+  }
+  #gr2 {
+    #line_round {
+      height: 13vw;
+    }
+  }
+  #Love-name {
+    font-size: 4.6vw;
+    line-height: 5vw;
+  }
+  #CV2-name {
+    font-size: 2vw;
+    margin-top: 0.5vw;
+  }
+  #line_cnt {
+    width: 38%;
+  }
+  #line_cnt2 {
+    width: 38%;
+  }
+
+  #gr3 {
+    #line_round {
+      margin-left: 13vw;
+      transform: rotate(-90deg) translateX(2vw) translateY(-2vw);
+      transform-origin: 50% 100%;
+    }
+    #skill-name {
+      font-size: 4.6vw;
+    }
+
+    .appitem {
+      height: auto;
+      margin-bottom: 2vw;
+    }
+
+    .app-list {
+      flex-direction: column;
+    }
+    .row {
+      width: 100%;
+    }
+    .logo {
+      width: 10vw;
+      height: 10vw;
+      font-size: 4vw;
+    }
+    .level {
+      width: 80%;
+      height: 10vw;
+    }
+
+    .level-bar {
+      height: 6px;
+    }
+    .bar {
+      height: 4px;
+    }
+    #percent-bar,
+    #percent-bar-60,
+    #percent-bar-50 {
+      height: 2px;
+    }
+    .name-hold {
+      height: 65%;
+    }
+
+    .app-name {
+      font-family: "Poppins";
+      font-size: 2.6vw;
+    }
+    #subfix1::after,
+    #subfix2::after,
+    #subfix3::after,
+    #subfix4::after {
+      font-size: 2vw;
+    }
+    .percentage {
+      font-size: 2.6vw;
+      font-weight: 600;
+    }
+    .percentage::after {
+      font-size: 1.7vw;
+    }
   }
 }
