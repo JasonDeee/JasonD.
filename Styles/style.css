@@ -659,10 +659,25 @@ a {
 
 .POP-up {
   width: 2vw;
-  height: auto;
-  z-index: 11;
+  height: 50%;
+  z-index: 22;
   cursor: none;
   margin-right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.6vw;
+  position: relative;
 }
 
 .NAV-Elements a {
@@ -686,7 +701,7 @@ a {
   width: 100%;
 }
 
-.POP-up:hover svg,
+.POP-up:hover div,
 .NAV-Elements a:hover {
   opacity: 50%;
 }
@@ -698,10 +713,13 @@ a {
 }
 
 .button-line {
-  width: 2vw;
-  height: 0.9vw;
-  -webkit-transform: translateY(0) rotate(0);
-          transform: translateY(0) rotate(0);
+  position: absolute;
+  background: #292929;
+  border-radius: 2vw;
+  width: 100%;
+  height: 4px;
+  -webkit-transform: translateY(-0.5vw) rotate(0);
+          transform: translateY(-0.5vw) rotate(0);
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   -webkit-transition: all 1s 0s cubic-bezier(0.25, 0, 0, 1);
@@ -709,8 +727,8 @@ a {
 }
 
 .button-line:nth-child(2) {
-  -webkit-transform: translateY(0) rotate(0);
-          transform: translateY(0) rotate(0);
+  -webkit-transform: translateY(0.5vw) rotate(0);
+          transform: translateY(0.5vw) rotate(0);
 }
 
 #blur-mask {
@@ -745,19 +763,6 @@ a {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 0.5vw;
-}
-
-.POP-up {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 0.6vw;
-  width: auto;
-  height: auto;
 }
 
 .Box-Intro {
@@ -1259,11 +1264,6 @@ circle {
   fill: #e9e7e7;
 }
 
-.behance-svg:hover,
-.behance-svg2:hover {
-  cursor: none;
-}
-
 .behance-svg:hover .bha-1,
 .behance-svg2:hover .bha-1 {
   d: path("M809,1996.26q-402.21,0-804.43.09c-3.75,0-4.59-.84-4.59-4.59Q.17,1209.87,0,428c0-3.75.84-4.59,4.59-4.59q397.73.15,795.41.09c-.18.25-.38.5-.54.76a.64.64,0,0,0,.36.31,32.25,32.25,0,0,0,4.36.73,945.28,945.28,0,0,1,127.39,15.24c53.08,9.87,103.65,26.71,150.51,53.87,73.14,42.47,120.92,105,143.74,186,19.54,69.44,22.25,140.21,10.23,211.34q-16.83,99.66-89.52,170.23c-32.61,31.65-70.18,55.94-110.52,76.34-1.85.93-4,1.53-5.75,3.6,1.92.63,3.42,1.15,4.93,1.62,36.72,11.25,72,25.74,105,45.64,42.73,25.78,78.58,58.84,106.66,100.07,40.18,59,61.08,124.83,68.09,195.39a550.7,550.7,0,0,1-.81,119.71c-4,34-11.19,67.32-23.53,99.3-34.65,89.8-94.71,157.89-177.32,206.66-75.55,44.59-158.13,67.33-244.28,79-18.81,2.56-37.7,4.45-56.69,5.38C811.28,1994.69,808.93,1993.36,809,1996.26Zm-462.8-484.64v209.43c0,7.18-.92,6.39,6.36,6.39H709.47a522.39,522.39,0,0,0,83.61-6.16c32.29-5.19,63.22-14.2,91.69-30.72,42.15-24.44,69-60.44,80.19-107.71,10.87-46,8.83-92.26-1.56-138.13-6.6-29.15-18.9-55.75-39.19-78.09-22.13-24.37-50.1-39.88-80.48-51.32-40-15-81.68-19.55-124.1-19.52q-183.69.09-367.38-.11c-5.33,0-6.16,1.67-6.15,6.47Q346.35,1406.91,346.22,1511.62ZM537,1060.21c55.82,0,111.64.43,167.46-.15,38.29-.4,75.44-7.31,110.43-23.78,42.29-19.9,72-50.73,84.63-96.56,9.19-33.36,10.48-67.36,6.23-101.54-3.9-31.38-15.9-59.18-37-83-19.22-21.73-43.53-35.38-70.39-44.81C761,697.22,722.12,692.81,682.9,692.61c-110.64-.59-221.29-.26-331.93-.47-4.81,0-4.8,2.1-4.8,5.65q.1,178.22,0,356.42c0,4.68.94,6.13,5.92,6.12C413.69,1060.14,475.34,1060.21,537,1060.21Z");
@@ -1359,7 +1359,6 @@ circle {
 }
 
 .fb-svg:hover {
-  cursor: none;
   -webkit-transition: all 0.5s 0s ease-out;
   transition: all 0.5s 0s ease-out;
   -webkit-transform: scale(1.3);
@@ -1792,6 +1791,7 @@ circle {
 }
 
 .section3-layout {
+  scroll-behavior: smooth;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3936,7 +3936,6 @@ circle {
           justify-content: flex-start;
   padding-top: 1.5vw;
   padding-bottom: 1vw;
-  overflow: visible;
   overflow: hidden;
 }
 
@@ -4394,10 +4393,12 @@ circle {
 @media screen and (max-width: 768px) {
   /*Mobile Ver*/
   body,
-  a,
   li,
   div {
     cursor: default;
+  }
+  a {
+    cursor: pointer;
   }
   html {
     overflow-x: hidden;
@@ -4465,6 +4466,23 @@ circle {
     -webkit-filter: drop-shadow(1vw 1vw 2vw #00000049);
             filter: drop-shadow(1vw 1vw 2vw #00000049);
   }
+  .menu-section {
+    right: -33vw;
+  }
+  .menu-layout {
+    width: 33vw;
+    height: 101vh;
+    -webkit-backdrop-filter: blur(2vw);
+            backdrop-filter: blur(2vw);
+    background: #ffffff57;
+    padding-top: 1.5vw;
+    padding-bottom: 1vw;
+    overflow: hidden;
+  }
+  .funny-pic {
+    margin-left: 0;
+    margin-top: 3vw;
+  }
   .Intro {
     margin-top: 3vh;
     display: -webkit-box;
@@ -4521,6 +4539,11 @@ circle {
             justify-content: flex-end;
     gap: 3vw;
   }
+  #ast-nav,
+  #beh-nav,
+  #fb-nav {
+    cursor: pointer;
+  }
   .behance-svg,
   .behance-svg2 {
     height: 3vw;
@@ -4556,6 +4579,7 @@ circle {
     font-size: 20vw;
   }
   .section1 {
+    padding-top: 0vw;
     -webkit-box-shadow: 2vw 4vw 6vw 0 #00000059;
             box-shadow: 2vw 4vw 6vw 0 #00000059;
   }
@@ -4891,8 +4915,8 @@ circle {
     width: 3px;
   }
   .section5_Mobile .sec5-layout #dz-sub {
-    -webkit-animation: hubout2 3s forwards;
-            animation: hubout2 3s forwards;
+    -webkit-animation: none;
+            animation: none;
   }
   .section5_Mobile .sec5-layout #sub-t {
     -webkit-animation: tilout2 3s forwards;
@@ -4968,13 +4992,9 @@ circle {
     }
   }
   .section5_Mobile .sec5-layout:hover #dz-sub {
-    -webkit-animation: none;
-            animation: none;
     height: 0;
   }
   .section5_Mobile .sec5-layout:hover #sub-t {
-    -webkit-animation: none;
-            animation: none;
     width: 0;
     letter-spacing: -0.8vw;
   }
@@ -5396,6 +5416,40 @@ circle {
         grid-column-start: 1;
     grid-column-end: 3;
     margin-bottom: 5vw;
+  }
+  .NAV-Elements {
+    width: 100vw;
+    height: 10vw;
+    padding-left: 17vw;
+    padding-right: 17vw;
+    margin-top: 12vh;
+  }
+  .NAV-Elements .Name {
+    font-size: 3.4vw;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 0.5vw;
+  }
+  .NAV-Elements #top-nav-link {
+    display: none;
+  }
+  .NAV-Elements .POP-up {
+    width: 4vw;
+    cursor: pointer;
+  }
+  .NAV-Elements .button-line {
+    cursor: pointer;
+    height: 2px;
+    -webkit-transform: translateY(-1vw) rotate(0);
+            transform: translateY(-1vw) rotate(0);
+  }
+  .NAV-Elements .button-line:nth-child(2) {
+    -webkit-transform: translateY(1vw) rotate(0);
+            transform: translateY(1vw) rotate(0);
   }
 }
 /*# sourceMappingURL=style.css.map */

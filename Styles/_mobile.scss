@@ -1,12 +1,13 @@
 /*Mobile Ver*/
 
 body,
-a,
 li,
 div {
   cursor: default;
 }
-
+a {
+  cursor: pointer;
+}
 html {
   overflow-x: hidden;
 }
@@ -56,6 +57,25 @@ body {
   filter: drop-shadow(1vw 1vw 2vw #00000049);
 }
 
+.menu-section {
+  right: -33vw;
+}
+
+.menu-layout {
+  width: 33vw;
+  height: 101vh;
+  backdrop-filter: blur(2vw);
+  background: #ffffff57;
+  padding-top: 1.5vw;
+  padding-bottom: 1vw;
+  overflow: hidden;
+}
+
+.funny-pic {
+  margin-left: 0;
+  margin-top: 3vw;
+}
+
 .Intro {
   margin-top: 3vh;
   display: flex;
@@ -103,6 +123,11 @@ body {
   justify-content: flex-end;
   gap: 3vw;
 }
+#ast-nav,
+#beh-nav,
+#fb-nav {
+  cursor: pointer;
+}
 .behance-svg,
 .behance-svg2 {
   height: 3vw;
@@ -134,6 +159,7 @@ body {
 }
 
 .section1 {
+  padding-top: 0vw;
   box-shadow: 2vw 4vw 6vw 0 #00000059;
 }
 
@@ -420,7 +446,7 @@ body {
   }
 
   .sec5-layout #dz-sub {
-    animation: hubout2 3s forwards;
+    animation: none;
   }
   .sec5-layout #sub-t {
     animation: tilout2 3s forwards;
@@ -463,11 +489,9 @@ body {
     }
   }
   .sec5-layout:hover #dz-sub {
-    animation: none;
     height: 0;
   }
   .sec5-layout:hover #sub-t {
-    animation: none;
     width: 0;
     letter-spacing: -0.8vw;
   }
@@ -864,5 +888,36 @@ body {
     grid-column-start: 1;
     grid-column-end: 3;
     margin-bottom: 5vw;
+  }
+}
+
+.NAV-Elements {
+  width: 100vw;
+  height: 10vw;
+  padding-left: 17vw;
+  padding-right: 17vw;
+  margin-top: 12vh;
+
+  .Name {
+    font-size: 3.4vw;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5vw;
+  }
+  #top-nav-link {
+    display: none;
+  }
+  .POP-up {
+    width: 4vw;
+    cursor: pointer;
+  }
+  .button-line {
+    cursor: pointer;
+
+    height: 2px;
+    transform: translateY(-1vw) rotate(0);
+  }
+  .button-line:nth-child(2) {
+    transform: translateY(1vw) rotate(0);
   }
 }
