@@ -17,6 +17,8 @@ const Res_Sec5 = document.querySelector(".section5"); // sec4
 
 const Res_Sec6 = document.querySelector(".section6"); // sec4
 
+const Res_Sec7 = document.querySelector(".section7"); // sec4
+
 // Run it...
 
 var firstCheck = setTimeout(() => {
@@ -70,8 +72,21 @@ function mobileFunc() {
   NullObj.classList.add("section5");
 
   // Sec6 - About ME
+  TechPaticles.forEach((Element) => {
+    Element.style = ``;
+  });
+  wave.forEach((Element) => {
+    Element.style = ``;
+  });
   Res_Sec6.className = `section6_Mobile`;
   NullObj.classList.add("section6");
+
+  // Sec7 - Contact Me
+  Res_Sec7.className = `section7_Mobile`;
+  NullObj.classList.add("section7");
+
+  //  Footer
+  footer.className = `Footer_Mobile`;
 
   console.log("Mobiling");
 }
@@ -102,6 +117,13 @@ function payback() {
   // Sec6 - About ME
   Res_Sec6.className = `section6`;
   NullObj.classList.remove("section6");
+
+  // Sec7 - Contact Me
+  Res_Sec7.className = `section7`;
+  NullObj.classList.remove("section7");
+
+  // Footer
+  footer.className = `footer`;
 
   console.log("Desktop");
 }

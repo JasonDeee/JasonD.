@@ -687,6 +687,7 @@ var waveValilate2 = 0;
 //     waveValilate.getBoundingClientRect().height / 2;
 //   console.log(waveValilate2);
 //  if (waveValilate2 > 0) {
+
 sec6.addEventListener("mousemove", (e) => {
   var scrollX = window.scrollX;
   var scrollY = window.scrollY;
@@ -707,6 +708,10 @@ sec6.addEventListener("mousemove", (e) => {
   var distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
 
   for (let index = 0; index < wave.length; index++) {
+    if (window.innerWidth < 768) {
+      break;
+    }
+
     if (ValidateLenght < 0) {
       break;
     }
@@ -736,6 +741,9 @@ sec6.addEventListener("mouseleave", (e) => {
 
     element.style.transform = `scale(1) translateX(0px) translateY(0px)`;
     element.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1)`;
+    if (index == wave.length - 1) {
+      break;
+    }
   }
 });
 
@@ -783,6 +791,10 @@ TechSensor.addEventListener("mousemove", (e) => {
   // function LoopFreq() {
 
   for (let index = 0; index < TechPaticles.length; index++) {
+    if (window.innerWidth < 768) {
+      break;
+    }
+
     const element = TechPaticles[index];
 
     var rect = element.getBoundingClientRect();
