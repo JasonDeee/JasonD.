@@ -2349,6 +2349,7 @@ circle {
 .name-input:nth-child(2) label {
   width: 88%;
 }
+
 .name-input:nth-child(3) label {
   width: 77%;
 }
@@ -2364,6 +2365,7 @@ circle {
   border-bottom: 3px solid #cb356b;
   transition: all 0.7s cubic-bezier(0.25, 0, 0, 1);
 }
+
 .name-input:hover .name-label {
   color: #cb356b;
 }
@@ -2462,7 +2464,7 @@ circle {
   letter-spacing: 0.05vw;
   background: $keyColor;
   position: absolute;
-  height: 3vw;
+  height: 100%;
   width: 100%;
   border-radius: 5vw;
   clip-path: circle(0% at bottom 20% right 30%);
@@ -2536,7 +2538,7 @@ circle {
 .footer-layout {
   width: 100vw;
   height: auto;
-  min-height: 44vh;
+  min-height: 24vw;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
