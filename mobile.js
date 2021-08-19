@@ -214,7 +214,7 @@ document.addEventListener("scroll", (e) => {
     let Morph_Sensor1 = Morph_Rec.top - window.innerHeight * 0.7;
 
     let Darko_Rec = darko.getBoundingClientRect();
-    let Darko_Sensor = Darko_Rec.top - window.innerHeight * 0.7;
+    let Darko_Sensor = Darko_Rec.top - window.innerHeight * 0.55;
 
     if (Morph_Sensor1 < 0 && Darko_Sensor > 0) {
       morphism.style.transform = `scale(1)`;
