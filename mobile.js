@@ -68,6 +68,16 @@ function mobileFunc() {
   NullObj.classList.add("section4");
 
   // Sec5 - DiiZi
+  darkodes.forEach((Element) => {
+    Element.style = ``;
+  });
+  morphdes.forEach((Element) => {
+    Element.style = ``;
+  });
+  darko.style = ``;
+  morphism.style = ``;
+  darkoTitle.style = ``;
+  morphTitle.style = ``;
   Res_Sec5.className = `section5_Mobile`;
   NullObj.classList.add("section5");
 
@@ -87,6 +97,16 @@ function mobileFunc() {
 
   //  Footer
   footer.className = `Footer_Mobile`;
+
+  //  Nav Side & Top
+  topNAV.style = ``;
+  TagBox.style = `display: none;`;
+
+  docbdy.style = ``;
+  SideNav.style = ``;
+  buttonLine[0].style = ``;
+  buttonLine[1].style = ``;
+  NavValidate = false;
 
   console.log("Mobiling");
 }
@@ -111,6 +131,17 @@ function payback() {
   NullObj.classList.remove("section4");
 
   // Sec5 - DiiZi
+  darkodes.forEach((Element) => {
+    Element.style = ``;
+  });
+  morphdes.forEach((Element) => {
+    Element.style = ``;
+  });
+  darkoTitle.style = ``;
+  darko.style = ``;
+  morphism.style = ``;
+  darkoTitle.style = ``;
+  morphTitle.style = ``;
   Res_Sec5.className = `section5`;
   NullObj.classList.remove("section5");
 
@@ -125,5 +156,116 @@ function payback() {
   // Footer
   footer.className = `footer`;
 
+  //  Nav Side & Top
+  topNAV.style = ``;
+  TagBox.style = `display: flex;`;
+  TagBox.style.opacity = `100%`;
+
+  docbdy.style = ``;
+  SideNav.style = ``;
+  buttonLine[0].style = ``;
+  buttonLine[1].style = ``;
+  NavValidate = false;
+
   console.log("Desktop");
 }
+
+// Mobile Animation And React
+
+// Get The Elements
+
+const MrB_Des_Mobile = document.querySelector(".mrsB-destext");
+const Ctr_Des_Mobile = document.querySelector("#sec3_layout");
+
+// // // Reating
+document.addEventListener("scroll", (e) => {
+  if (window.innerWidth <= 768) {
+    // Mrs.Brown
+    let MrB_Des_Mobile_Rec = MrB_Des_Mobile.getBoundingClientRect();
+
+    if (
+      MrB_Des_Mobile_Rec.top < window.innerHeight &&
+      MrB_Des_Mobile_Rec.top > MrB_Des_Mobile_Rec.height
+    ) {
+      let MrB_scroll_Val = 1 - MrB_Des_Mobile_Rec.top / window.innerHeight;
+      MrB_Des_Mobile.scrollTop =
+        (MrB_scroll_Val * MrB_Des_Mobile.scrollHeight) / 2;
+    }
+
+    // Centaurus
+    let Ctr_Des_Mobile_Rec = Ctr_Des_Mobile.getBoundingClientRect();
+    if (Ctr_Des_Mobile_Rec.top < window.innerHeight / 2) {
+      Ctr_Des_Mobile.scrollTo({
+        top: 0,
+        left: Ctr_Des_Mobile.scrollWidth * 0.3,
+        behavior: "smooth",
+      });
+    }
+    if (Ctr_Des_Mobile_Rec.top > window.innerHeight * 1.2) {
+      Ctr_Des_Mobile.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }
+
+    // DiiZi & Darko
+    let Morph_Rec = morphism.getBoundingClientRect();
+    let Morph_Sensor1 = Morph_Rec.top - window.innerHeight * 0.7;
+
+    let Darko_Rec = darko.getBoundingClientRect();
+    let Darko_Sensor = Darko_Rec.top - window.innerHeight * 0.7;
+
+    if (Morph_Sensor1 < 0 && Darko_Sensor > 0) {
+      morphism.style.transform = `scale(1)`;
+      morphism.style.marginLeft = `2vw`;
+      darko.style.width = `30vw`;
+      morphism.style.width = `56vw`;
+
+      darko.style.transform = `scale(0.7)`;
+      darko.style.marginRight = `-17vw`;
+
+      morphTitle.style.transform = `translateX(22.3vw)`;
+      darkoTitle.style.transform = `translateX(0)`;
+
+      dzSub.style.animation = `hubout2 3s forwards`;
+
+      for (let index = 0; index < morphdes.length; index++) {
+        const element = morphdes[index];
+        const element2 = darkodes[index];
+
+        let number = index * 0.2 + 0.1;
+
+        element2.style.transform = `translateX(0)`;
+        element.style.transform = `translateX(24.9vw)`;
+        element.style.transition = `all 1.2s ${number}s cubic-bezier(0.2, 0, 0, 1)`;
+      }
+    }
+
+    if (Darko_Sensor < 0) {
+      darko.style.transform = `scale(1)`;
+      darko.style.marginRight = `2vw`;
+      morphism.style.width = `30vw`;
+      darko.style.width = `56vw`;
+
+      darkoTitle.style.transform = `translateX(-22.3vw)`;
+      morphTitle.style.transform = `translateX(0)`;
+
+      morphism.style.transform = `scale(0.7)`;
+      morphism.style.marginLeft = `-17vw`;
+
+      for (let index = 0; index < darkodes.length; index++) {
+        const element = darkodes[index];
+        const element2 = morphdes[index];
+
+        let number = index * 0.2 + 0.1;
+
+        element.style.transform = `translateX(-24.9vw)`;
+        element2.style.transform = `translateX(0)`;
+
+        element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
+      }
+    }
+    console.log(MrB_Des_Mobile);
+  }
+});

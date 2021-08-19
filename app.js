@@ -604,7 +604,7 @@ darko.addEventListener("mouseenter", (e) => {
 
     for (let index = 0; index < darkodes.length; index++) {
       const element = darkodes[index];
-      number = index * 0.2 + 0.1;
+      let number = index * 0.2 + 0.1;
 
       element.style.transform = `translateX(-24.9vw)`;
       element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
@@ -621,7 +621,7 @@ darko.addEventListener("mouseleave", (e) => {
     darkoTitle.style.transform = `translateX(0)`;
     for (let index = 0; index < darkodes.length; index++) {
       const element = darkodes[index];
-      number = index * 0.3;
+      let number = index * 0.3;
 
       element.style.transform = `translateX(0)`;
       element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
@@ -643,7 +643,7 @@ morphism.addEventListener("mouseenter", (e) => {
 
     for (let index = 0; index < morphdes.length; index++) {
       const element = morphdes[index];
-      number = index * 0.2 + 0.1;
+      let number = index * 0.2 + 0.1;
 
       element.style.transform = `translateX(24.9vw)`;
       element.style.transition = `all 1.2s ${number}s cubic-bezier(0.2, 0, 0, 1)`;
@@ -665,7 +665,7 @@ morphism.addEventListener("mouseleave", (e) => {
 
     for (let index = 0; index < morphdes.length; index++) {
       const element = morphdes[index];
-      number = index * 0.2 + 0.1;
+      let number = index * 0.2 + 0.1;
 
       element.style.transform = `translateX(0)`;
       element.style.transition = `all 1.2s ${number}s cubic-bezier(0.2, 0, 0, 1)`;
@@ -859,19 +859,22 @@ const blurMask = document.querySelector("#blur-mask");
 
 document.addEventListener("scroll", function (e) {
   if (window.scrollY > topNAV.offsetTop) {
-    topNAV.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0s linear`;
+    topNAV.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), 
+    margin-top 0s linear`;
     topNAV.style.position = `fixed`;
+    topNAV.style.marginTop = `0`;
     topNAV.style.paddingLeft = `5vw`;
     topNAV.style.paddingRight = `5vw`;
-    topNAV.style.marginTop = `0`;
     topNAV.style.background = `#ffffff31`;
     blurMask.style.opacity = `100%`;
-  } else {
-    topNAV.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0.3s cubic-bezier(0.25, 0, 0, 1)`;
+  }
+  if (window.scrollY <= topNAV.offsetTop) {
+    topNAV.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), 
+    margin-top 0.3s cubic-bezier(0.25, 0, 0, 1)`;
     topNAV.style.position = `absolute`;
+    topNAV.style.marginTop = `12vh`;
     topNAV.style.paddingLeft = `17vw`;
     topNAV.style.paddingRight = `17vw`;
-    topNAV.style.marginTop = `12vh`;
     topNAV.style.background = `#ffffff00`;
     blurMask.style.opacity = `0%`;
   }
@@ -897,28 +900,58 @@ var NavValidate = false;
 NAVButton.addEventListener("click", (e) => {
   NavValidate = !NavValidate;
   if (window.scrollY > topNAV.offsetTop && NavValidate == true) {
-    topNAV.style.paddingLeft = `17vw`;
-    topNAV.style.paddingRight = `17vw`;
+    if (window.innerWidth > 768) {
+      topNAV.style.paddingLeft = `17vw`;
+      topNAV.style.paddingRight = `17vw`;
+    }
+    if (window.innerWidth < 768) {
+      topNAV.style.paddingLeft = `5vw`;
+      topNAV.style.paddingRight = `37vw`;
+    }
   }
   if (window.scrollY > topNAV.offsetTop && NavValidate == false) {
     topNAV.style.paddingLeft = `5vw`;
     topNAV.style.paddingRight = `5vw`;
   }
 
+  if (window.scrollY < topNAV.offsetTop && NavValidate == true) {
+    if (window.innerWidth < 768) {
+      topNAV.style.paddingLeft = `17vw`;
+      topNAV.style.paddingRight = `37vw`;
+    }
+  }
+  if (
+    window.scrollY < topNAV.offsetTop &&
+    NavValidate == false &&
+    window.innerWidth < 768
+  ) {
+    topNAV.style.paddingLeft = `17vw`;
+    topNAV.style.paddingRight = `17vw`;
+  }
+
   if (NavValidate == true) {
     SideNav.style.right = `0`;
-    docbdy.style.right = `11vw`;
-    TagBox.style.marginLeft = `22vw`;
     MenuShadow.style.boxShadow = `-1vw 0vw 2vw #0000004d`;
-    footer.style.left = `11vw`;
-    footerChild.style.width = `25%`;
-    footerChild.style.marginRight = `25%`;
-    copyright.style.marginRight = `25%`;
+
     decor4.style.left = `5vw`;
-    decor2.style.transform = `translateX(5vw)`;
+
     decor3.style.transform = `translateX(5vw) rotate(-30deg) scale(0.8)`;
-    buttonLine[0].style.transform = `translateY(0.72vw) rotate(45deg)`;
-    buttonLine[1].style.transform = `translateY(-0.72vw) rotate(-45deg)`;
+    if (window.innerWidth > 768) {
+      copyright.style.marginRight = `25%`;
+      footer.style.left = `11vw`;
+      footerChild.style.width = `25%`;
+      footerChild.style.marginRight = `25%`;
+      docbdy.style.right = `11vw`;
+      decor2.style.transform = `translateX(5vw)`;
+      TagBox.style.marginLeft = `22vw`;
+    }
+    if (window.innerWidth < 768) {
+      decor3.style.transform = `translateX(-25vw) rotate(-30deg) scale(0.8)`;
+      copyright.style.marginRight = `37%`;
+    }
+
+    buttonLine[0].style.transform = `translateY(0) rotate(45deg)`;
+    buttonLine[1].style.transform = `translateY(0) rotate(-45deg)`;
 
     let loopValidate = 0;
     for (let index = 0; index < menuElement.length; index++) {
@@ -938,18 +971,29 @@ NAVButton.addEventListener("click", (e) => {
     }
   } else {
     SideNav.style.right = `-20vw`;
+    if (window.innerWidth < 768) {
+      SideNav.style.right = `-33vw`;
+    }
     docbdy.style.right = `0`;
     TagBox.style.marginLeft = `0`;
     MenuShadow.style.boxShadow = `0vw 0vw 0vw #0000004d`;
-    footer.style.left = `0`;
-    footerChild.style.width = `50%`;
-    footerChild.style.marginRight = `0`;
+
     copyright.style.marginRight = `0`;
     decor4.style.left = `0`;
     decor2.style.transform = `translateX(0)`;
     decor3.style.transform = `translateX(0) rotate(0) scale(1)`;
-    buttonLine[0].style.transform = `translateY(0) rotate(0)`;
-    buttonLine[1].style.transform = `translateY(0) rotate(0)`;
+
+    if (window.innerWidth < 768) {
+      buttonLine[0].style.transform = `translateY(-1vw) rotate(0)`;
+      buttonLine[1].style.transform = `translateY(1vw) rotate(0)`;
+    }
+    if (window.innerWidth > 768) {
+      buttonLine[0].style.transform = `translateY(-0.5vw) rotate(0)`;
+      buttonLine[1].style.transform = `translateY(0.5vw) rotate(0)`;
+      footer.style.left = `0`;
+      footerChild.style.width = `50%`;
+      footerChild.style.marginRight = `0`;
+    }
 
     let loopValidate = 0;
     for (let index = 0; index < menuElement.length; index++) {
@@ -975,11 +1019,22 @@ document.addEventListener("scroll", function (e) {
   if (window.scrollY > topNAV.offsetTop && NavValidate == true) {
     topNAV.style.paddingLeft = `17vw`;
     topNAV.style.paddingRight = `17vw`;
+
+    if (window.innerWidth <= 768) {
+      topNAV.style.paddingLeft = `5vw`;
+      topNAV.style.paddingRight = `37vw`;
+    }
   }
-  if (window.scrollY < topNAV.offsetTop && NavValidate == true) {
-    topNAV.style.paddingLeft = `5vw`;
-    topNAV.style.paddingRight = `5vw`;
+  if (window.scrollY <= topNAV.offsetTop && NavValidate == true) {
+    topNAV.style.paddingLeft = `17vw`;
+    topNAV.style.paddingRight = `17vw`;
+
+    if (window.innerWidth < 768) {
+      topNAV.style.paddingLeft = `17vw`;
+      topNAV.style.paddingRight = `37vw`;
+    }
   }
+
   if (window.scrollY > sensorEmail.offsetTop) {
     copyright2.style.opacity = `0%`;
   } else {
@@ -1034,7 +1089,9 @@ const LevelItem = document.querySelectorAll(".appitem");
 
 document.addEventListener("scroll", (e) => {
   // Parallax
-  let clampSensor = document.querySelector(".section3").getBoundingClientRect();
+  let clampSensor = document
+    .querySelector(".centaurus-art")
+    .getBoundingClientRect();
 
   if (clampSensor.top > 0) {
     decorPic1.style.transform = `translateY(${window.scrollY / 3}px) 
