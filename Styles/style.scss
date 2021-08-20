@@ -127,7 +127,7 @@ a {
 #PreloadCircle,
 #PreloadCircle2 {
   width: 101vw;
-  height: 101vw;
+  height: 101vh;
   box-sizing: border-box;
   background: white;
   position: fixed;
@@ -139,11 +139,11 @@ a {
   clip-path: circle(0% at top 20% right 30%);
 }
 @keyframes CirclePreload {
-  100% {
-    clip-path: circle(80% at top 20% right 30%);
-  }
   0% {
     clip-path: circle(0% at top 20% right 30%);
+  }
+  100% {
+    clip-path: circle(110% at top 20% right 30%);
   }
 }
 
@@ -576,7 +576,188 @@ a {
   }
 }
 
+@keyframes Ear_BG_Wing {
+  0% {
+    d: path(
+      "M960,594.66,1355,490s14.93,78.43,0,168c-13,78-66.79,241-374,241-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  40% {
+    d: path(
+      "M960,594.66,1355,490s14.93,78.43,0,168c-13,78-66.79,241-374,241-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  42% {
+    /*Wing Down Keyframe*/
+    d: path(
+      "M960,594.66,1324,610s-10,82-41,142c-51.71,100.08-180,147-302,147-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  44% {
+    d: path(
+      "M960,594.66,1355,490s14.93,78.43,0,168c-13,78-66.79,241-374,241-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  65% {
+    d: path(
+      "M960,594.66,1355,490s14.93,78.43,0,168c-13,78-66.79,241-374,241-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  67% {
+    /*Wing Down Keyframe*/
+    d: path(
+      "M960,594.66,1324,610s-10,82-41,142c-51.71,100.08-180,147-302,147-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  69% {
+    d: path(
+      "M960,594.66,1355,490s14.93,78.43,0,168c-13,78-66.79,241-374,241-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  71% {
+    /*Wing Down Keyframe*/
+    d: path(
+      "M960,594.66,1324,610s-10,82-41,142c-51.71,100.08-180,147-302,147-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+  73% {
+    d: path(
+      "M960,594.66,1355,490s14.93,78.43,0,168c-13,78-66.79,241-374,241-209,0-331,0-402-185-42.4-110.47-14-196-14-196Z"
+    );
+  }
+}
+
+@keyframes Ear_Color_Wing {
+  0% {
+    d: path("M1219,615c116.4-42.68,136-125,136-125l-291,77S1069,670,1219,615Z");
+  }
+  40% {
+    d: path("M1219,615c116.4-42.68,136-125,136-125l-291,77S1069,670,1219,615Z");
+  }
+  42% {
+    /*Wing Down Keyframe*/
+    d: path("M1188,677c79,3,118-65,118-65l-247-13S1102.91,673.77,1188,677Z");
+  }
+  44% {
+    d: path("M1219,615c116.4-42.68,136-125,136-125l-291,77S1069,670,1219,615Z");
+  }
+  65% {
+    d: path("M1219,615c116.4-42.68,136-125,136-125l-291,77S1069,670,1219,615Z");
+  }
+  67% {
+    /*Wing Down Keyframe*/
+    d: path("M1188,677c79,3,118-65,118-65l-247-13S1102.91,673.77,1188,677Z");
+  }
+  69% {
+    d: path("M1219,615c116.4-42.68,136-125,136-125l-291,77S1069,670,1219,615Z");
+  }
+  71% {
+    /*Wing Down Keyframe*/
+    d: path("M1188,677c79,3,118-65,118-65l-247-13S1102.91,673.77,1188,677Z");
+  }
+  73% {
+    d: path("M1219,615c116.4-42.68,136-125,136-125l-291,77S1069,670,1219,615Z");
+  }
+}
+
+@keyframes Ear_Line_Wing {
+  0% {
+    d: path(
+      "M1340.58,521.82S1308,572,1257,598c-72.54,37-116.14,33.16-116.14,33.16"
+    );
+  }
+  40% {
+    d: path(
+      "M1340.58,521.82S1308,572,1257,598c-72.54,37-116.14,33.16-116.14,33.16"
+    );
+  }
+  42% {
+    /*Wing Down Keyframe*/
+    d: path("M1267,653s-30,22-65,24c-52.55,3-104-33-104-33");
+  }
+  44% {
+    d: path(
+      "M1340.58,521.82S1308,572,1257,598c-72.54,37-116.14,33.16-116.14,33.16"
+    );
+  }
+  65% {
+    d: path(
+      "M1340.58,521.82S1308,572,1257,598c-72.54,37-116.14,33.16-116.14,33.16"
+    );
+  }
+  67% {
+    /*Wing Down Keyframe*/
+    d: path("M1267,653s-30,22-65,24c-52.55,3-104-33-104-33");
+  }
+  69% {
+    d: path(
+      "M1340.58,521.82S1308,572,1257,598c-72.54,37-116.14,33.16-116.14,33.16"
+    );
+  }
+  71% {
+    /*Wing Down Keyframe*/
+    d: path("M1267,653s-30,22-65,24c-52.55,3-104-33-104-33");
+  }
+  73% {
+    d: path(
+      "M1340.58,521.82S1308,572,1257,598c-72.54,37-116.14,33.16-116.14,33.16"
+    );
+  }
+}
+
+@keyframes Face_BG_Wing {
+  0% {
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5c89.5,0,122.76,19.52,122.76,19.52L1355,490"
+    );
+  }
+  40% {
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5c89.5,0,122.76,19.52,122.76,19.52L1355,490"
+    );
+  }
+  42% {
+    /*Wing Down Keyframe*/
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5C1117,538.5,1168,599,1168,599l156,11"
+    );
+  }
+  44% {
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5c89.5,0,122.76,19.52,122.76,19.52L1355,490"
+    );
+  }
+  65% {
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5c89.5,0,122.76,19.52,122.76,19.52L1355,490"
+    );
+  }
+  67% {
+    /*Wing Down Keyframe*/
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5C1117,538.5,1168,599,1168,599l156,11"
+    );
+  }
+  69% {
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5c89.5,0,122.76,19.52,122.76,19.52L1355,490"
+    );
+  }
+  71% {
+    /*Wing Down Keyframe*/
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5C1117,538.5,1168,599,1168,599l156,11"
+    );
+  }
+  73% {
+    d: path(
+      "M565,518l271.35,52.66S898,538.5,975.5,538.5c89.5,0,122.76,19.52,122.76,19.52L1355,490"
+    );
+  }
+}
+
 .funny-pic {
+  position: relative;
   width: 28vw;
   height: 28vw;
   display: flex;
@@ -588,6 +769,25 @@ a {
   margin-left: 1vw;
 }
 
+/*Ears Wing*/
+#Ear_BG_line {
+  animation: Ear_BG_Wing 7s cubic-bezier(0.35, 0, 0, 1) infinite,
+    Ear_BG_Wing 12s cubic-bezier(0.35, 0, 0, 1) 3s infinite;
+}
+#Ear_Color {
+  animation: Ear_Color_Wing 7s cubic-bezier(0.35, 0, 0, 1) infinite,
+    Ear_Color_Wing 12s cubic-bezier(0.35, 0, 0, 1) 3s infinite;
+}
+#Ear_Line {
+  animation: Ear_Line_Wing 7s cubic-bezier(0.35, 0, 0, 1) infinite,
+    Ear_Line_Wing 12s cubic-bezier(0.35, 0, 0, 1) 3s infinite;
+}
+#Face_BG-2 {
+  animation: Face_BG_Wing 7s cubic-bezier(0.35, 0, 0, 1) infinite,
+    Face_BG_Wing 12s cubic-bezier(0.35, 0, 0, 1) 3s infinite;
+}
+
+/* Eye Blink*/
 #Eye_Outline-2 {
   transition: all 0.05s;
   animation: Eye_R_Blink 5s cubic-bezier(0.35, 0, 0, 1) infinite;
@@ -637,7 +837,6 @@ a {
   position: absolute;
   width: 23vw;
   height: 23vw;
-  margin-right: 1vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -655,6 +854,7 @@ a {
   height: 100%;
   z-index: 3;
   filter: drop-shadow(-1vw 1vw 1vw #29292959);
+  border-radius: 50%;
 }
 
 .section1:hover .cat-watching g {
@@ -2247,11 +2447,9 @@ circle {
 
 .bar {
   width: 100%;
-  height: 2vh;
-  box-sizing: border-box;
-  background: transparent;
+  height: 13px;
   border-radius: 10vw;
-  border: 1px solid $secondaryColor;
+  border: 1px inset $secondaryColor;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -2261,24 +2459,24 @@ circle {
 
 #percent-bar {
   width: 90%;
-  height: 1vh;
+  height: 5px;
   box-sizing: border-box;
   background: $secondaryColor;
-  border-radius: 10vw;
+  border-radius: 5px;
 }
 #percent-bar-60 {
   width: 60%;
-  height: 1vh;
+  height: 5px;
   box-sizing: border-box;
   background: $secondaryColor;
-  border-radius: 10vw;
+  border-radius: 5px;
 }
 #percent-bar-50 {
   width: 50%;
-  height: 1vh;
+  height: 5px;
   box-sizing: border-box;
   background: $secondaryColor;
-  border-radius: 10vw;
+  border-radius: 5px;
 }
 
 #Ai-logo,

@@ -40,6 +40,22 @@ body {
   cursor: pointer;
 }
 
+#PreloadAnimation {
+  width: 100vw;
+  height: 38vh;
+  align-self: center;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10vh;
+}
+#Loop_Box_Circle {
+  width: 10vw;
+  height: 10vw;
+  margin-right: 0;
+}
+
 .Box-Intro {
   display: flex;
   flex-direction: column-reverse;
@@ -69,11 +85,57 @@ body {
   padding-top: 1.5vw;
   padding-bottom: 1vw;
   overflow: hidden;
+  #nav-place {
+    font-size: 2vw;
+  }
+
+  #greeting p {
+    font-size: 3vw;
+    line-height: 3.5vw;
+  }
+
+  #white-bar {
+    border-radius: 3vw;
+  }
+
+  #trick-line2 {
+    height: 1fr;
+    align-self: center;
+    overflow: visible;
+    margin-right: 0;
+    margin-top: 30vh;
+  }
+
+  #nav-copyright {
+    font-size: 1.6vw;
+    text-align: center;
+    position: relative;
+    align-self: center;
+    overflow: visible;
+  }
+}
+.third {
+  width: 55%;
+  height: auto;
 }
 
 .funny-pic {
-  margin-left: 0;
+  width: 45vw;
+  height: 45vw;
+  margin-left: none;
   margin-top: 3vw;
+}
+
+.funny-pic::before {
+  width: 100%;
+  height: 100%;
+}
+
+.cat-watching {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  filter: drop-shadow(-1vw 1vw 1vw #29292959);
 }
 
 .Intro {
@@ -686,10 +748,10 @@ body {
     }
 
     .level-bar {
-      height: 6px;
+      height: 5px;
     }
     .bar {
-      height: 4px;
+      height: 5px;
     }
     #percent-bar,
     #percent-bar-60,
@@ -877,7 +939,7 @@ body {
     font-size: 2vw;
   }
   #copyright {
-    font-size: 1.8vw;
+    font-size: 1.6vw;
     letter-spacing: 0.06vw;
   }
   #footer-col {
