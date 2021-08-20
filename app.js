@@ -169,72 +169,74 @@ let cat = {
 };
 
 section1.addEventListener("mousemove", (e) => {
-  const catBox = document.querySelector(".funny-pic").getBoundingClientRect();
+  if (window.innerWidth > 768) {
+    const catBox = document.querySelector(".funny-pic").getBoundingClientRect();
 
-  var offsetX = e.pageX - (catBox.left + catBox.width / 2 + window.scrollX);
-  var offsetY = e.pageY - (catBox.top + catBox.height / 2 + window.scrollY);
-  var offset = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
-  var scaleX = offsetX / window.innerWidth;
-  var scaleY = offsetY / window.innerHeight;
-  var scale =
-    offset /
-    Math.sqrt(
-      window.innerWidth * window.innerWidth +
-        window.innerHeight * window.innerHeight
-    );
+    var offsetX = e.pageX - (catBox.left + catBox.width / 2 + window.scrollX);
+    var offsetY = e.pageY - (catBox.top + catBox.height / 2 + window.scrollY);
+    var offset = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
+    var scaleX = offsetX / window.innerWidth;
+    var scaleY = offsetY / window.innerHeight;
+    var scale =
+      offset /
+      Math.sqrt(
+        window.innerWidth * window.innerWidth +
+          window.innerHeight * window.innerHeight
+      );
 
-  // Head React
-  cat.HeadBG.style.transform = `rotateX(${offsetY / 20}deg)
+    // Head React
+    cat.HeadBG.style.transform = `rotateX(${offsetY / 20}deg)
   rotateY(${-offsetX / 30}deg)`;
-  cat.foreHead.style.transform = `rotateX(${offsetY / 20}deg)
+    cat.foreHead.style.transform = `rotateX(${offsetY / 20}deg)
   rotateY(${-offsetX / 27}deg)`;
-  cat.EarBG.style.transform = `rotateX(${offsetY / 20}deg)
+    cat.EarBG.style.transform = `rotateX(${offsetY / 20}deg)
   rotateY(${-offsetX / 26}deg)`;
 
-  cat.EarL.style.transform = `rotateX(${offsetY / 30}deg)
+    cat.EarL.style.transform = `rotateX(${offsetY / 30}deg)
   rotateY(${-offsetX / 26}deg) translateX(${offsetX / 40}px)
   translateY(${offsetY / 20}px) scaleY(${1 + scaleY / 50})
   scaleX(${1 + scaleX / 20})
   `;
 
-  cat.EarR.style.transform = `rotateX(${offsetY / 30}deg)
+    cat.EarR.style.transform = `rotateX(${offsetY / 30}deg)
   rotateY(${-offsetX / 26}deg) translateX(${offsetX / 40}px)
   translateY(${offsetY / 20}px) scaleY(${1 + scaleY / 10})
   scaleX(${1 + scaleX / 5})
   `;
 
-  cat.EyeL.style.transform = `scale(${1 - scaleX / 600 + scaleY / 200})
+    cat.EyeL.style.transform = `scale(${1 - scaleX / 600 + scaleY / 200})
   translateX(${offsetX / 40}px) translateY(${offsetY / 60 + offsetX / 200}px)
   rotateZ(${offsetX / 240}deg)`;
-  cat.EyeR.style.transform = `scale(${1 + scaleX / 5 - scaleY / 50})
+    cat.EyeR.style.transform = `scale(${1 + scaleX / 5 - scaleY / 50})
   translateX(${offsetX / 60}px) translateY(${-offsetY / 65 + offsetX / 150}px)
   rotateZ(${offsetX / 240}deg)`;
-  cat.EyeBowL.style.transform = `
+    cat.EyeBowL.style.transform = `
   translateX(${offsetX / 30}px) translateY(${offsetY / 20}px)`;
-  cat.EyeBowR.style.transform = `
+    cat.EyeBowR.style.transform = `
   translateX(${offsetX / 80}px) translateY(${offsetY / 20}px)`;
-  cat.EyeBallL.style.transform = `
+    cat.EyeBallL.style.transform = `
   translateX(${-offsetX / 30}px)
   translateY(${-offsetY / 50 - offsetX / 180}px)`;
-  cat.EyeBallR.style.transform = `
+    cat.EyeBallR.style.transform = `
   translateX(${-offsetX / 50}px) 
   translateY(${-offsetY / 50 - offsetX / 130}px)`;
 
-  cat.Nose.style.transform = `
+    cat.Nose.style.transform = `
   translateX(${offsetX / 60}px) translateY(${offsetY / 18}px)`;
 
-  cat.Mouth.style.transform = `
+    cat.Mouth.style.transform = `
   translateX(${offsetX / 60}px) translateY(${offsetY / 7}px)`;
-  cat.BeardL.style.transform = `translateX(${offsetX / 10}px)
+    cat.BeardL.style.transform = `translateX(${offsetX / 10}px)
   translateY(${offsetY / 10}px)`;
-  cat.BeardR.style.transform = `translateX(${-offsetX / 20}px)
+    cat.BeardR.style.transform = `translateX(${-offsetX / 20}px)
   translateY(${offsetY / 10}px)`;
 
-  // Body React
-  cat.BodyBG.style.transform = `skewX(${-offsetX / 300}deg)`;
-  cat.Hand.style.transform = `skewX(${offsetX / 100}deg)`;
-  cat.FatLine1.style.transform = `translateX(${offsetX / 100}px)`;
-  cat.FatLine2.style.transform = `translateX(${-offsetX / 50}px)`;
+    // Body React
+    cat.BodyBG.style.transform = `skewX(${-offsetX / 300}deg)`;
+    cat.Hand.style.transform = `skewX(${offsetX / 100}deg)`;
+    cat.FatLine1.style.transform = `translateX(${offsetX / 100}px)`;
+    cat.FatLine2.style.transform = `translateX(${-offsetX / 50}px)`;
+  }
 });
 
 section1.addEventListener("mouseleave", (e) => {

@@ -99,7 +99,6 @@ function mobileFunc() {
   footer.className = `Footer_Mobile`;
 
   //  Nav Side & Top
-  topNAV.style = ``;
   TagBox.style = `display: none;`;
 
   docbdy.style = ``;
@@ -157,7 +156,6 @@ function payback() {
   footer.className = `footer`;
 
   //  Nav Side & Top
-  topNAV.style = ``;
   TagBox.style = `display: flex;`;
   TagBox.style.opacity = `100%`;
 
@@ -187,27 +185,27 @@ document.addEventListener("scroll", (e) => {
       MrB_Des_Mobile_Rec.top < window.innerHeight &&
       MrB_Des_Mobile_Rec.top > MrB_Des_Mobile_Rec.height
     ) {
-      let MrB_scroll_Val = 1 - MrB_Des_Mobile_Rec.top / window.innerHeight;
-      MrB_Des_Mobile.scrollTop =
-        (MrB_scroll_Val * MrB_Des_Mobile.scrollHeight) / 2;
+      // let MrB_scroll_Val = 1 - MrB_Des_Mobile_Rec.top / window.innerHeight;
+      // MrB_Des_Mobile.scrollTop =
+      //   (MrB_scroll_Val * MrB_Des_Mobile.scrollHeight) / 2;
     }
 
     // Centaurus
-    let Ctr_Des_Mobile_Rec = Ctr_Des_Mobile.getBoundingClientRect();
-    if (Ctr_Des_Mobile_Rec.top < window.innerHeight / 2) {
-      Ctr_Des_Mobile.scrollTo({
-        top: 0,
-        left: Ctr_Des_Mobile.scrollWidth * 0.3,
-        behavior: "smooth",
-      });
-    }
-    if (Ctr_Des_Mobile_Rec.top > window.innerHeight * 1.2) {
-      Ctr_Des_Mobile.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    }
+    //    let Ctr_Des_Mobile_Rec = Ctr_Des_Mobile.getBoundingClientRect();
+    //    if (Ctr_Des_Mobile_Rec.top < window.innerHeight / 2) {
+    //      Ctr_Des_Mobile.scrollTo({
+    //        top: 0,
+    //        left: Ctr_Des_Mobile.scrollWidth * 0.3,
+    //        behavior: "smooth",
+    //      });
+    //    }
+    //    if (Ctr_Des_Mobile_Rec.top > window.innerHeight * 1.2) {
+    //      Ctr_Des_Mobile.scrollTo({
+    //        top: 0,
+    //        left: 0,
+    //        behavior: "smooth",
+    //      });
+    //    }
 
     // DiiZi & Darko
     let Morph_Rec = morphism.getBoundingClientRect();
