@@ -6,18 +6,19 @@ const NullObj = document.getElementById("Null_Object");
 
 // Responsive Elements
 
-const Res_Sec2 = document.getElementById("section2_BOX"); // sec2
+const Res_Sec2 = document.getElementById("section2_BOX"); // sec2 - MrsB
+const MrB_Title = document.querySelector("#section2_BOX .mrsB-title");
 
-const Res_Sec3 = document.querySelector(".section3"); // sec3
+const Res_Sec3 = document.querySelector(".section3"); // sec3 - Ctr
 const Res_Sec3_Layout = document.getElementById("sec3_layout");
 
-const Res_Sec4 = document.querySelector(".section4"); // sec4
+const Res_Sec4 = document.querySelector(".section4"); // sec4 - Katun
 
-const Res_Sec5 = document.querySelector(".section5"); // sec4
+const Res_Sec5 = document.querySelector(".section5"); // sec5 - DiiZi
 
-const Res_Sec6 = document.querySelector(".section6"); // sec4
+const Res_Sec6 = document.querySelector(".section6"); // sec6 - Info
 
-const Res_Sec7 = document.querySelector(".section7"); // sec4
+const Res_Sec7 = document.querySelector(".section7"); // sec7 - Contact
 
 // Run it...
 
@@ -43,6 +44,7 @@ window.addEventListener("resize", (e) => {
 
 function mobileFunc() {
   // sec2 - Mrs.Brown
+  MrB_Title.style = ``;
   Res_Sec2.classList.add("section2_Mobile");
   Res_Sec2.classList.remove("section2-box");
   NullObj.classList.add("section2-box");
@@ -112,6 +114,7 @@ function mobileFunc() {
 
 function payback() {
   // sec2
+  MrB_Title.style = ``;
   Res_Sec2.classList.remove("section2_Mobile");
   Res_Sec2.classList.add("section2-box");
   NullObj.classList.remove("section2-box");
@@ -173,6 +176,7 @@ function payback() {
 // Get The Elements
 
 const MrB_Des_Mobile = document.querySelector(".mrsB-destext");
+
 const Ctr_Des_Mobile = document.querySelector("#sec3_layout");
 
 // // // Reating
@@ -185,9 +189,11 @@ document.addEventListener("scroll", (e) => {
       MrB_Des_Mobile_Rec.top < window.innerHeight &&
       MrB_Des_Mobile_Rec.top > MrB_Des_Mobile_Rec.height
     ) {
-      // let MrB_scroll_Val = 1 - MrB_Des_Mobile_Rec.top / window.innerHeight;
+      let MrB_scroll_Val = MrB_Des_Mobile_Rec.top / window.innerHeight;
       // MrB_Des_Mobile.scrollTop =
       //   (MrB_scroll_Val * MrB_Des_Mobile.scrollHeight) / 2;
+      MrB_Title.style.marginTop = `${MrB_scroll_Val * 7}vw`;
+      MrB_Title.style.letterSpacing = `${MrB_scroll_Val * 1.3}vw`;
     }
 
     // Centaurus
