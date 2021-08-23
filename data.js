@@ -27,49 +27,53 @@ thankPopUp.addEventListener("click", (e) => {
   }, 1200);
 });
 
-ContactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
+ContactForm.addEventListener(
+  "submit",
+  (e) => {
+    e.preventDefault();
 
-  submitBOX.style.width = `100%`;
-  submitBOX.style.marginLeft = `1vw`;
-  submitShape.style.strokeDashoffset = `0`;
+    submitBOX.style.width = `100%`;
+    submitBOX.style.marginLeft = `1vw`;
+    submitShape.style.strokeDashoffset = `0`;
 
-  Pop_main.style.animation = `none`;
-  thankPopUp.style.display = `flex`;
-  thankOverlay.style.opacity = `100%`;
-  checked_shape.style.animation = `Appreciate 0.8s cubic-bezier(0.25, 0, 0, 1) 0.3s forwards`;
-  submitShape2.style.animation = `AppreciateShape 1.5s cubic-bezier(0.25, 0, 0, 1) 0.8s forwards`;
+    Pop_main.style.animation = `none`;
+    thankPopUp.style.display = `flex`;
+    thankOverlay.style.opacity = `100%`;
+    checked_shape.style.animation = `Appreciate 0.8s cubic-bezier(0.25, 0, 0, 1) 0.3s forwards`;
+    submitShape2.style.animation = `AppreciateShape 1.5s cubic-bezier(0.25, 0, 0, 1) 0.8s forwards`;
 
-  // Get Current Values
-  let Name = NameInput.value;
-  let Email = EmailInput.value;
-  let Subject = SubjectInput.value;
-  let Message = MessageInput.value;
+    // Get Current Values
+    let Name = NameInput.value;
+    let Email = EmailInput.value;
+    let Subject = SubjectInput.value;
+    let Message = MessageInput.value;
 
-  // Init Data Values
-  let dataEntry = {
-    "entry.326690724": Name,
-    "entry.210917691": Email,
-    "entry.837615816": Subject,
-    "entry.906113398": Message,
-  };
+    // Init Data Values
+    let dataEntry = {
+      "entry.326690724": Name,
+      "entry.210917691": Email,
+      "entry.837615816": Subject,
+      "entry.906113398": Message,
+    };
 
-  let dataEntryParams = new URLSearchParams(dataEntry);
-  let DataEntryString = dataEntryParams.toString();
+    let dataEntryParams = new URLSearchParams(dataEntry);
+    let DataEntryString = dataEntryParams.toString();
 
-  // Push Data Values
-  var dataPush = new XMLHttpRequest();
-  dataPush.open(
-    "POST",
-    "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdups-X9r8xWllK8FRltZd1jG1R6OO7REGHAL6CUN5Bue7tww/formResponse",
-    true
-  );
+    // Push Data Values
+    var dataPush = new XMLHttpRequest();
+    dataPush.open(
+      "POST",
+      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdups-X9r8xWllK8FRltZd1jG1R6OO7REGHAL6CUN5Bue7tww/formResponse",
+      true
+    );
 
-  dataPush.setRequestHeader(
-    "Content-type",
-    "application/x-www-form-urlencoded"
-  );
+    dataPush.setRequestHeader(
+      "Content-type",
+      "application/x-www-form-urlencoded"
+    );
 
-  console.log(DataEntryString);
-  dataPush.send(DataEntryString);
-});
+    console.log(DataEntryString);
+    dataPush.send(DataEntryString);
+  },
+  { once: true }
+);
