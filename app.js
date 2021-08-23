@@ -10,7 +10,9 @@
 
 // Beta Alert
 
-alert("Hi There, The pages are still on developing!\r\nThanks For Turn By");
+// alert("Hi There, The pages are still on developing!\r\nThanks For Turn By");
+
+
 
 const WordCharacter =
   "00ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678900";
