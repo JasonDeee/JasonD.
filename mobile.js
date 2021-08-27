@@ -162,7 +162,7 @@ function payback() {
   TagBox.style = `display: flex;`;
   TagBox.style.opacity = `100%`;
 
-  docbdy.style = ``;
+  docbdy.style = `overflow-y: visible; right: 0px;`;
   SideNav.style = ``;
   buttonLine[0].style = ``;
   buttonLine[1].style = ``;
