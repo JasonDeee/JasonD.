@@ -385,7 +385,7 @@ a {
   backdrop-filter: blur(0.4vw);
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  z-index: 5;
 }
 
 .NAV-Elements {
@@ -2119,16 +2119,7 @@ circle {
   background: #292929;
 }
 
-#text-goup {
-  width: auto;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  box-sizing: border-box;
-  margin-left: 13vw;
+#text-group {
   z-index: 6;
 }
 #JS-name {
@@ -2176,6 +2167,7 @@ circle {
   font-weight: 400;
   font-size: 1.25vw;
 }
+
 #gr2 {
   width: 77%;
   z-index: 3;

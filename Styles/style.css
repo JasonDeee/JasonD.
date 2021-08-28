@@ -597,7 +597,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 1;
+  z-index: 5;
 }
 
 .NAV-Elements {
@@ -3074,26 +3074,7 @@ circle {
   background: #292929;
 }
 
-#text-goup {
-  width: auto;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin-left: 13vw;
+#text-group {
   z-index: 6;
 }
 
@@ -4770,18 +4751,18 @@ circle {
     overflow-x: hidden;
   }
   .mrsB-title {
-    font-size: 4.6vw;
+    font-size: 6.5vw;
     line-height: 5vw;
   }
   .mrsB-sub {
-    font-size: 2vw;
+    font-size: 2.7vw;
     line-height: 2.5vw;
   }
   .mrsB-destext {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .mrsB-readmore {
-    font-size: 2vw;
+    font-size: 2.7vw;
     cursor: pointer;
   }
   .see-more-button,
@@ -4868,7 +4849,7 @@ circle {
     overflow: hidden;
   }
   .menu-layout #nav-place {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .menu-layout #greeting p {
     font-size: 3vw;
@@ -4943,14 +4924,14 @@ circle {
   }
   .Intro-text,
   .Intro-text2 {
-    font-size: 4.6vw;
-    line-height: 5vw;
+    font-size: 6.5vw;
+    line-height: 8vw;
   }
   .Intro-text2 {
     margin-bottom: 5vh;
   }
   .subs {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .prj-button {
     width: 24vw;
@@ -5003,12 +4984,14 @@ circle {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    width: 100vw;
+    padding-left: 13vw;
   }
   .section-connector {
-    font-size: 4.6vw;
+    font-size: 6.5vw;
   }
   .sub-connector {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .section-connector::before {
     font-size: 20vw;
@@ -5017,12 +5000,13 @@ circle {
     padding-top: 0vw;
     -webkit-box-shadow: 2vw 4vw 6vw 0 #00000059;
             box-shadow: 2vw 4vw 6vw 0 #00000059;
+    width: 88vw;
   }
   .section2_Mobile {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 80vw;
+    width: 88vw;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -5037,27 +5021,27 @@ circle {
             transform-style: unset;
     -webkit-perspective: unset;
             perspective: unset;
+    position: relative;
   }
   .section2_Mobile .section2 {
     -webkit-transform-style: unset;
             transform-style: unset;
-    height: 90vw;
+    height: 120vw;
     -webkit-box-shadow: 2vw 4vw 6vw 0 #00000059;
             box-shadow: 2vw 4vw 6vw 0 #00000059;
+    width: 88vw;
   }
   .section2_Mobile .pic-holder {
-    width: 45.7vw;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    width: 62%;
+    height: 100%;
   }
   .section2_Mobile .pic-holder div {
     display: none;
   }
   .section2_Mobile .pic-holder div:nth-last-child(1) {
     display: inline;
-    width: 45.7vw;
-    height: 90vw;
+    width: 100%;
+    height: 100%;
     background-position: center;
   }
   .section2_Mobile .mrsB-des #fillter {
@@ -5080,20 +5064,20 @@ circle {
   .section2_Mobile .mrsB-title {
     -webkit-transition: all 0.3s ease-out, margin-top 0.1s ease-out;
     transition: all 0.3s ease-out, margin-top 0.1s ease-out;
-    font-size: 4.6vw;
+    font-size: 6.5vw;
     letter-spacing: 1vw;
   }
   .section2_Mobile .mrsB-sub {
     margin-top: 0.3vw;
-    font-size: 2vw;
-    line-height: 2.5vw;
-    width: 15vw;
+    font-size: 2.7vw;
+    line-height: 3vw;
+    width: 100%;
   }
   .section2_Mobile .mrsB-destext {
     background: #e9e7e7;
     margin-top: 2vh;
     height: 90%;
-    font-size: 2vw;
+    font-size: 2.7vw;
     overflow-y: scroll;
     margin-bottom: 1vh;
     padding: 1vw;
@@ -5106,7 +5090,7 @@ circle {
     background: #656565;
   }
   .section2_Mobile .mrsB-readmore {
-    font-size: 2vw;
+    font-size: 2.7vw;
     cursor: pointer;
     margin-left: 1vw;
   }
@@ -5147,8 +5131,8 @@ circle {
     position: relative;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 74vw 74vw 15vh 15vh 74vw 87vw;
-        grid-template-columns: 74vw 74vw 15vh 15vh 74vw 87vw;
+    -ms-grid-columns: 88vw 88vw 15vh 15vh 88vw 100vw;
+        grid-template-columns: 88vw 88vw 15vh 15vh 88vw 100vw;
     -ms-grid-rows: 100%;
         grid-template-rows: 100%;
     -webkit-box-orient: unset;
@@ -5164,9 +5148,9 @@ circle {
     overflow-x: scroll;
     -webkit-transform: none;
             transform: none;
-    padding-right: 13vw;
-    padding-left: 13vw;
-    scroll-padding: 0px 13vw 0px 13vw;
+    padding-right: 6vw;
+    padding-left: 6vw;
+    scroll-padding: 0px 6vw 0px 6vw;
     -ms-scroll-snap-type: x mandatory;
         scroll-snap-type: x mandatory;
   }
@@ -5175,7 +5159,7 @@ circle {
         -ms-grid-row-align: center;
         align-self: center;
     height: 80%;
-    width: 74vw;
+    width: 100%;
     overflow: visible;
     background-position: center;
     scroll-snap-align: center;
@@ -5210,21 +5194,21 @@ circle {
     margin-bottom: 1vh;
   }
   .section3_Mobile #ctr-des {
-    font-size: 3.2vw;
+    font-size: 2.7vw;
     margin-bottom: 1vh;
   }
   .section3_Mobile .mrsB-sub {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .section3_Mobile #ctrss {
     margin-top: 6vh;
   }
   .section3_Mobile .mrsB-destext {
-    font-size: 2vw;
+    font-size: 2.7vw;
     text-align: center;
   }
   .section3_Mobile .mrsB-readmore {
-    font-size: 2vw;
+    font-size: 2.7vw;
     cursor: pointer;
   }
   .section3_Mobile .see-more-button2 {
@@ -5244,7 +5228,7 @@ circle {
     position: relative;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    width: 74vw;
+    width: 88vw;
     height: auto;
     margin-top: 25vh;
     display: -webkit-box;
@@ -5302,7 +5286,9 @@ circle {
     left: unset;
   }
   .section4_Mobile .mrsB-title {
-    line-height: 7vw;
+    font-size: 6.5vw;
+    line-height: 9vw;
+    margin-bottom: 1vw;
   }
   .section4_Mobile .see-more-button {
     background: #e9e7e7;
@@ -5328,6 +5314,8 @@ circle {
   }
   .section5_Mobile .sec5-description {
     margin-top: 5vh;
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
   .section5_Mobile #darko {
     margin-top: 65vw;
@@ -5460,14 +5448,29 @@ circle {
     z-index: 0;
     cursor: default;
   }
+  .section6_Mobile #wave-decor {
+    opacity: 20%;
+    width: 45vw;
+    height: 45vw;
+    margin-top: -19vw;
+    right: -6vw;
+    top: 0vw;
+  }
   .section6_Mobile .sec6-layout {
     margin-top: 1vh;
+    width: 100vw;
+  }
+  .section6_Mobile .sec6-layout2 {
+    margin-right: 6vw;
   }
   .section6_Mobile #circle-decor {
     width: 75vw;
     height: 75vw;
     top: -20vw;
     left: -18vw;
+  }
+  .section6_Mobile #text-group {
+    margin-left: 0;
   }
   .section6_Mobile #gr1 {
     left: unset;
@@ -5478,11 +5481,12 @@ circle {
         -ms-flex-align: end;
             align-items: flex-end;
     text-align: end;
-    right: 20vw;
-    width: 54vw;
+    right: 12vw;
+    width: 100vw;
+    padding-left: 18vw;
   }
   .section6_Mobile #gr1 #des1 {
-    margin-right: -10vw;
+    margin-right: -6vw;
   }
   .section6_Mobile #gr1 #line_round {
     height: 22vw;
@@ -5502,7 +5506,7 @@ circle {
     font-size: 4.6vw;
   }
   .section6_Mobile #CV-name {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .section6_Mobile .formbox {
     -webkit-box-orient: vertical;
@@ -5596,20 +5600,25 @@ circle {
     margin-right: 0;
   }
   .section6_Mobile #des1 {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .section6_Mobile #des2 {
-    font-size: 2vw;
+    font-size: 2.7vw;
+  }
+  .section6_Mobile #gr2 {
+    width: 88%;
+    margin-left: 6vw;
   }
   .section6_Mobile #gr2 #line_round {
     height: 13vw;
   }
   .section6_Mobile #Love-name {
+    width: 70%;
     font-size: 4.6vw;
     line-height: 5vw;
   }
   .section6_Mobile #CV2-name {
-    font-size: 2vw;
+    font-size: 2.7vw;
     margin-top: 0.5vw;
   }
   .section6_Mobile #line_cnt {
@@ -5667,16 +5676,16 @@ circle {
   }
   .section6_Mobile #gr3 .app-name {
     font-family: "Poppins";
-    font-size: 2.6vw;
+    font-size: 2.7vw;
   }
   .section6_Mobile #gr3 #subfix1::after,
   .section6_Mobile #gr3 #subfix2::after,
   .section6_Mobile #gr3 #subfix3::after,
   .section6_Mobile #gr3 #subfix4::after {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .section6_Mobile #gr3 .percentage {
-    font-size: 2.6vw;
+    font-size: 2.7vw;
     font-weight: 600;
   }
   .section6_Mobile #gr3 .percentage::after {
@@ -5716,9 +5725,9 @@ circle {
     width: 100%;
   }
   .section7_Mobile #find-me2 {
-    font-size: 2vw;
+    font-size: 2.7vw;
     color: #292929;
-    line-height: 2.2vw;
+    line-height: 3vw;
     margin-top: 2vw;
   }
   .section7_Mobile #Email,
@@ -5740,7 +5749,7 @@ circle {
   }
   .section7_Mobile .name-input input,
   .section7_Mobile #message textarea {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .section7_Mobile #message {
     height: 20vw;
@@ -5794,10 +5803,10 @@ circle {
     padding-right: 4vw;
   }
   .section7_Mobile .submit-button::after {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .section7_Mobile .submit-button::before {
-    font-size: 2vw;
+    font-size: 2.7vw;
     letter-spacing: 0.3vw;
   }
   .section7_Mobile .submit-button:hover {
@@ -5834,32 +5843,34 @@ circle {
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
     height: auto;
+    gap: 5vw;
   }
   .Footer_Mobile .footer-heading {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .Footer_Mobile .footer-content {
-    font-size: 2vw;
+    font-size: 2.7vw;
   }
   .Footer_Mobile #copyright {
-    font-size: 1.6vw;
+    font-size: 2.3vw;
     letter-spacing: 0.06vw;
   }
   .Footer_Mobile #footer-col {
     width: 100%;
   }
-  .Footer_Mobile #footer-col:nth-child(3) {
-    width: 75%;
-    -ms-grid-column: 1;
-        grid-column-start: 1;
-    grid-column-end: 3;
+  .Footer_Mobile #footer-col:nth-child(2) {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    grid-row-end: 3;
     margin-bottom: 5vw;
   }
   .NAV-Elements {
     width: 100vw;
     height: 10vw;
-    padding-left: 17vw;
-    padding-right: 17vw;
+    padding-left: 13vw;
+    padding-right: 13vw;
     margin-top: 12vh;
   }
   .NAV-Elements .Name {
