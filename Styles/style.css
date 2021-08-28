@@ -487,7 +487,7 @@ a {
   position: absolute;
   -webkit-filter: blur(5vw);
           filter: blur(5vw);
-  z-index: 0;
+  z-index: -1;
 }
 
 .decor-img1 {
@@ -510,7 +510,6 @@ a {
   height: auto;
   right: 1vw;
   top: 80vh;
-  z-index: 1;
   -webkit-transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0s 0s;
   transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1), margin-top 0s 0s;
 }
@@ -527,7 +526,7 @@ a {
   position: absolute;
   -webkit-filter: blur(10vw);
           filter: blur(10vw);
-  z-index: 0;
+  z-index: -1;
 }
 
 .decor3 {
@@ -597,7 +596,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  z-index: 5;
+  z-index: 1;
 }
 
 .NAV-Elements {
@@ -715,7 +714,7 @@ a {
 .button-line {
   position: absolute;
   background: #292929;
-  border-radius: 2vw;
+  border-radius: 10vw;
   width: 100%;
   height: 4px;
   -webkit-transform: translateY(-0.5vw) rotate(0);
@@ -798,6 +797,7 @@ a {
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin-top: 0;
+  position: relative;
 }
 
 @-webkit-keyframes Eye_R_Blink {
@@ -1211,7 +1211,7 @@ a {
           justify-content: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 50%;
+  border-radius: 55%;
   overflow: visible;
   margin-left: 1vw;
 }
@@ -3104,6 +3104,7 @@ circle {
 #des-group {
   margin-top: -1.6vw;
   margin-bottom: 2vw;
+  width: 100%;
 }
 
 #des-group2 {
@@ -3677,6 +3678,7 @@ circle {
   -webkit-backdrop-filter: blur(0.4vw);
           backdrop-filter: blur(0.4vw);
   background: #ffffff2f;
+  border-bottom: 0.2vw inset #ffffff6e;
   border-top-left-radius: 1.5vw;
   border-bottom-left-radius: 1.5vw;
   overflow: hidden;
@@ -3689,7 +3691,17 @@ circle {
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding-top: 15vh;
-  overflow: visible;
+}
+
+.sec7-layout::after {
+  content: "";
+  background: -webkit-gradient(linear, left bottom, left top, from(#ffffff6e), to(#ffffff00));
+  background: linear-gradient(to top, #ffffff6e, #ffffff00);
+  width: 0.2vw;
+  height: 30vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #sec7-heading {
@@ -4286,10 +4298,7 @@ circle {
 #trick-line {
   width: 100%;
   height: 2vw;
-  border-top: 3px solid #292929;
-  border-bottom: 3px solid #292929;
   margin-bottom: 5vh;
-  opacity: 0%;
 }
 
 #greeting {
@@ -4800,6 +4809,32 @@ circle {
     height: 10vw;
     margin-right: 0;
   }
+  .decor1 {
+    width: 50vw;
+    height: 50vw;
+    top: -2vw;
+    left: -13vw;
+    -webkit-filter: blur(10vw);
+            filter: blur(10vw);
+  }
+  .decor2 {
+    width: 75vw;
+    height: 75vw;
+    top: 75vh;
+    right: -18vw;
+    -webkit-filter: blur(10vw);
+            filter: blur(10vw);
+  }
+  .decor-img1 {
+    width: 30vw;
+    left: -6vw;
+    top: 16vh;
+  }
+  .decor-img2 {
+    width: 22vw;
+    right: 1vw;
+    top: 90vh;
+  }
   .Box-Intro {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4877,25 +4912,18 @@ circle {
     overflow: visible;
   }
   .third {
-    width: 55%;
+    width: 100%;
     height: auto;
   }
   .funny-pic {
-    width: 45vw;
-    height: 45vw;
-    margin-left: none;
-    margin-top: 3vw;
+    width: 55vw;
+    height: 55vw;
+    margin-left: 0;
+    margin-top: -3vw;
   }
   .funny-pic::before {
-    width: 100%;
-    height: 100%;
-  }
-  .cat-watching {
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    -webkit-filter: drop-shadow(-1vw 1vw 1vw #29292959);
-            filter: drop-shadow(-1vw 1vw 1vw #29292959);
+    width: 82%;
+    height: 82%;
   }
   .Intro {
     margin-top: 3vh;
@@ -5001,6 +5029,8 @@ circle {
     -webkit-box-shadow: 2vw 4vw 6vw 0 #00000059;
             box-shadow: 2vw 4vw 6vw 0 #00000059;
     width: 88vw;
+    -webkit-backdrop-filter: blur(0.6vw);
+            backdrop-filter: blur(0.6vw);
   }
   .section2_Mobile {
     display: -webkit-box;
@@ -5700,6 +5730,10 @@ circle {
   .section7_Mobile .sec7-layout {
     margin-top: 2vw;
     padding-top: 10vw;
+    border-bottom: 0.6vw inset #ffffff6e;
+  }
+  .section7_Mobile .sec7-layout::after {
+    width: 0.4vw;
   }
   .section7_Mobile #sec7-heading {
     height: 13vw;
@@ -5868,13 +5902,13 @@ circle {
   }
   .NAV-Elements {
     width: 100vw;
-    height: 10vw;
-    padding-left: 13vw;
-    padding-right: 13vw;
+    height: 15vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
     margin-top: 12vh;
   }
   .NAV-Elements .Name {
-    font-size: 3.4vw;
+    font-size: 4.6vw;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -5887,12 +5921,12 @@ circle {
     display: none;
   }
   .NAV-Elements .POP-up {
-    width: 4vw;
+    width: 6vw;
     cursor: pointer;
   }
   .NAV-Elements .button-line {
     cursor: pointer;
-    height: 2px;
+    height: 3px;
     -webkit-transform: translateY(-1vw) rotate(0);
             transform: translateY(-1vw) rotate(0);
   }

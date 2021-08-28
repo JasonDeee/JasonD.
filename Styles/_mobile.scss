@@ -56,6 +56,32 @@ body {
   margin-right: 0;
 }
 
+.decor1 {
+  width: 50vw;
+  height: 50vw;
+  top: -2vw;
+  left: -13vw;
+  filter: blur(10vw);
+}
+.decor2 {
+  width: 75vw;
+  height: 75vw;
+  top: 75vh;
+  right: -18vw;
+  filter: blur(10vw);
+}
+.decor-img1 {
+  width: 30vw;
+  left: -6vw;
+  top: 16vh;
+}
+
+.decor-img2 {
+  width: 22vw;
+  right: 1vw;
+  top: 90vh;
+}
+
 .Box-Intro {
   display: flex;
   flex-direction: column-reverse;
@@ -115,27 +141,20 @@ body {
   }
 }
 .third {
-  width: 55%;
+  width: 100%;
   height: auto;
 }
 
 .funny-pic {
-  width: 45vw;
-  height: 45vw;
-  margin-left: none;
-  margin-top: 3vw;
+  width: 55vw;
+  height: 55vw;
+  margin-left: 0;
+  margin-top: -3vw;
 }
 
 .funny-pic::before {
-  width: 100%;
-  height: 100%;
-}
-
-.cat-watching {
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  filter: drop-shadow(-1vw 1vw 1vw #29292959);
+  width: 82%;
+  height: 82%;
 }
 
 .Intro {
@@ -228,6 +247,7 @@ body {
   padding-top: 0vw;
   box-shadow: 2vw 4vw 6vw 0 #00000059;
   width: 88vw;
+  backdrop-filter: blur(0.6vw);
 }
 
 .section2_Mobile {
@@ -823,6 +843,10 @@ body {
   .sec7-layout {
     margin-top: 2vw;
     padding-top: 10vw;
+    border-bottom: 0.6vw inset #ffffff6e;
+  }
+  .sec7-layout::after {
+    width: 0.4vw;
   }
 
   #sec7-heading {
@@ -990,13 +1014,13 @@ body {
 
 .NAV-Elements {
   width: 100vw;
-  height: 10vw;
-  padding-left: 13vw;
-  padding-right: 13vw;
+  height: 15vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
   margin-top: 12vh;
 
   .Name {
-    font-size: 3.4vw;
+    font-size: 4.6vw;
     align-items: center;
     justify-content: center;
     margin-bottom: 0.5vw;
@@ -1005,13 +1029,12 @@ body {
     display: none;
   }
   .POP-up {
-    width: 4vw;
+    width: 6vw;
     cursor: pointer;
   }
   .button-line {
     cursor: pointer;
-
-    height: 2px;
+    height: 3px;
     transform: translateY(-1vw) rotate(0);
   }
   .button-line:nth-child(2) {
