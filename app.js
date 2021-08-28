@@ -10,9 +10,7 @@
 
 // Beta Alert
 
-// alert("Hi There, The pages are still on developing!\r\nThanks For Turn By");
-
-
+//  alert("Hi There, The pages are still on developing!\r\nThanks For Turn By");
 
 const WordCharacter =
   "00ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678900";
@@ -862,6 +860,10 @@ const topNAV = document.querySelector(".NAV-Elements");
 const blurMask = document.querySelector("#blur-mask");
 
 document.addEventListener("scroll", function (e) {
+  topNavReset();
+});
+
+function topNavReset() {
   if (window.scrollY > topNAV.offsetTop) {
     topNAV.style.transition = `all 1.5s 0s cubic-bezier(0.25, 0, 0, 1), 
     margin-top 0s linear`;
@@ -879,10 +881,16 @@ document.addEventListener("scroll", function (e) {
     topNAV.style.marginTop = `12vh`;
     topNAV.style.paddingLeft = `17vw`;
     topNAV.style.paddingRight = `17vw`;
+
+    if (window.innerWidth < 768) {
+      topNAV.style.marginTop = `10vh`;
+      topNAV.style.paddingLeft = `13vw`;
+      topNAV.style.paddingRight = `13vw`;
+    }
     topNAV.style.background = `#ffffff00`;
     blurMask.style.opacity = `0%`;
   }
-});
+}
 
 // Side Navigation Panel React
 
@@ -905,8 +913,8 @@ NAVButton.addEventListener("click", (e) => {
   NavValidate = !NavValidate;
   if (window.scrollY > topNAV.offsetTop && NavValidate == true) {
     if (window.innerWidth > 768) {
-      topNAV.style.paddingLeft = `17vw`;
-      topNAV.style.paddingRight = `17vw`;
+      topNAV.style.paddingLeft = `13vw`;
+      topNAV.style.paddingRight = `13vw`;
     }
     if (window.innerWidth < 768) {
       topNAV.style.paddingLeft = `5vw`;
@@ -920,7 +928,7 @@ NAVButton.addEventListener("click", (e) => {
 
   if (window.scrollY < topNAV.offsetTop && NavValidate == true) {
     if (window.innerWidth < 768) {
-      topNAV.style.paddingLeft = `17vw`;
+      topNAV.style.paddingLeft = `13vw`;
       topNAV.style.paddingRight = `37vw`;
     }
   }
@@ -929,8 +937,8 @@ NAVButton.addEventListener("click", (e) => {
     NavValidate == false &&
     window.innerWidth < 768
   ) {
-    topNAV.style.paddingLeft = `17vw`;
-    topNAV.style.paddingRight = `17vw`;
+    topNAV.style.paddingLeft = `13vw`;
+    topNAV.style.paddingRight = `13vw`;
   }
 
   if (NavValidate == true) {
@@ -1034,7 +1042,7 @@ document.addEventListener("scroll", function (e) {
     topNAV.style.paddingRight = `17vw`;
 
     if (window.innerWidth < 768) {
-      topNAV.style.paddingLeft = `17vw`;
+      topNAV.style.paddingLeft = `13vw`;
       topNAV.style.paddingRight = `37vw`;
     }
   }

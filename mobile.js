@@ -102,6 +102,7 @@ function mobileFunc() {
 
   //  Nav Side & Top
   TagBox.style = `display: none;`;
+  topNavReset();
 
   docbdy.style = ``;
   SideNav.style = ``;
@@ -161,6 +162,7 @@ function payback() {
   //  Nav Side & Top
   TagBox.style = `display: flex;`;
   TagBox.style.opacity = `100%`;
+  topNavReset();
 
   docbdy.style = `overflow-y: visible; right: 0px;`;
   SideNav.style = ``;
