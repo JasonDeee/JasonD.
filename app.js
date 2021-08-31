@@ -301,6 +301,7 @@ section1.addEventListener("mouseleave", (e) => {
   cat.FatLine1.style.transform = `translateX(${offsetX / 100}px)`;
   cat.FatLine2.style.transform = `translateX(${-offsetX / 50}px)`;
 });
+
 // "Project - section2
 
 var body = document.querySelector(".desktop_body");
@@ -339,13 +340,13 @@ function ProjectBox_MouseMove(e) {
 
   let middleLeft = rect.left + rect.width / 2 + scrolledX;
   let middleTop = rect.top + rect.height / 2 + scrolledY;
-  let xAxis = (middleLeft - e.pageX) / (rect.width / 40);
-  let yAxis = (middleTop - e.pageY) / (rect.height / 24);
+  let xAxis = (middleLeft - e.pageX) / ((4 * rect.width) / 40);
+  let yAxis = (middleTop - e.pageY) / ((4 * rect.height) / 24);
   let rad = Math.atan2(e.pageY - middleTop, e.pageX - middleLeft);
   let angle = (rad * 180) / Math.PI + 270;
   let glareX = e.pageX - (rect.left + scrolledX);
   let glareY = e.pageY - (rect.top + scrolledY);
-  sec2.style.transform = `rotateY(${xAxis + 6}deg) rotateX(${yAxis}deg)`;
+  sec2.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
 }
 function ProjectBox_MouseEnter(e) {
   MRBname.style.letterSpacing = `0.5vw`;
