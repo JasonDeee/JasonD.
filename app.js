@@ -394,7 +394,7 @@ for (i = 0; i < spic.length; i++) {
   OriginY[i] = Obj.height;
 }
 
-document.addEventListener("mouseenter", (e) => {
+function sec3Check() {
   if (window.innerWidth > 768) {
     for (i = 0; i < spic.length; i++) {
       var Obj = spic[i].getBoundingClientRect();
@@ -431,52 +431,53 @@ document.addEventListener("mouseenter", (e) => {
       spic[i].style.height = `${scale * OriginY[i]}px`;
     }
   }
+}
+sec3Check();
+document.addEventListener("mouseenter", sec3Check());
 
-  section3.addEventListener("mousemove", (e) => {
-    var shiftVal1 = (e.pageX - window.innerWidth / 2) / window.innerWidth;
-    var shiftVal2 = shiftVal1 * (0 - 130);
+section3.addEventListener("mousemove", (e) => {
+  var shiftVal1 = (e.pageX - window.innerWidth / 2) / window.innerWidth;
+  var shiftVal2 = shiftVal1 * (0 - 130);
 
-    if (window.innerWidth > 768) {
-      for (i = 0; i < spic.length; i++) {
-        sec3Ly.style.transform = `translateX(${shiftVal2}vw)`;
+  if (window.innerWidth > 768) {
+    for (i = 0; i < spic.length; i++) {
+      sec3Ly.style.transform = `translateX(${shiftVal2}vw)`;
 
-        var Obj = spic[i].getBoundingClientRect();
-        var ObjectX = Obj.x + Obj.width / 2;
-        var ScreenMin1 = (window.innerWidth * 2) / 10;
-        var ScreenMin2 = (window.innerWidth * 3) / 10;
+      var Obj = spic[i].getBoundingClientRect();
+      var ObjectX = Obj.x + Obj.width / 2;
+      var ScreenMin1 = (window.innerWidth * 2) / 10;
+      var ScreenMin2 = (window.innerWidth * 3) / 10;
 
-        var ScreenMax1 = (window.innerWidth * 8) / 10;
-        var ScreenMax2 = (window.innerWidth * 7) / 10;
+      var ScreenMax1 = (window.innerWidth * 8) / 10;
+      var ScreenMax2 = (window.innerWidth * 7) / 10;
 
-        if (ObjectX < ScreenMin1) {
-          scale = 0.3;
-        }
-        if (ObjectX > ScreenMax1) {
-          scale = 0.3;
-        }
-
-        if (ObjectX < ScreenMin2 && ObjectX > ScreenMin1) {
-          scale =
-            0.3 +
-            0.7 *
-              (Math.abs(ObjectX - ScreenMin2) / ((window.innerWidth * 2) / 10));
-        }
-        if (ObjectX < ScreenMax2 && ObjectX > ScreenMin2) {
-          scale = 1;
-        }
-        if (ObjectX < ScreenMax1 && ObjectX > ScreenMax2) {
-          scale =
-            0.3 +
-            0.7 *
-              (Math.abs(ObjectX - ScreenMax1) / ((window.innerWidth * 2) / 10));
-        }
-        spic[i].style.width = `${scale * OriginX[i]}px`;
-        spic[i].style.height = `${scale * OriginY[i]}px`;
+      if (ObjectX < ScreenMin1) {
+        scale = 0.3;
       }
-    }
-  });
-});
+      if (ObjectX > ScreenMax1) {
+        scale = 0.3;
+      }
 
+      if (ObjectX < ScreenMin2 && ObjectX > ScreenMin1) {
+        scale =
+          0.3 +
+          0.7 *
+            (Math.abs(ObjectX - ScreenMin2) / ((window.innerWidth * 2) / 10));
+      }
+      if (ObjectX < ScreenMax2 && ObjectX > ScreenMin2) {
+        scale = 1;
+      }
+      if (ObjectX < ScreenMax1 && ObjectX > ScreenMax2) {
+        scale =
+          0.3 +
+          0.7 *
+            (Math.abs(ObjectX - ScreenMax1) / ((window.innerWidth * 2) / 10));
+      }
+      spic[i].style.width = `${scale * OriginX[i]}px`;
+      spic[i].style.height = `${scale * OriginY[i]}px`;
+    }
+  }
+});
 // section4 Video
 
 const sec4 = document.querySelector(".section4");
