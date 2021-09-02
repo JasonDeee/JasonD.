@@ -493,14 +493,46 @@ a {
 }
 
 .Name {
-  display: flex;
+  width: auto;
+  height: 4vw;
+  justify-self: end;
   font-family: "UTM Avo";
   font-weight: Bold;
   color: $secondaryColor;
   font-size: 1.7vw;
+  margin-bottom: 0.5vw;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  overflow: hidden;
+}
+
+.Name span {
+  position: relative;
+  width: auto;
+  line-height: 4vw;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.5vw;
+  transition: transform 1.3s cubic-bezier(0.25, 0, 0, 1);
+}
+.Name span:nth-child(2) {
+  font-size: 1vw;
+  text-transform: uppercase;
+  line-height: 1vw;
+  margin-top: 1vw;
+}
+.Name span:nth-child(3) {
+  line-height: 1vw;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.36vw;
 }
 
 .Box-Intro {

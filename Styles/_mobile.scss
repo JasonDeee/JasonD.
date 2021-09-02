@@ -1021,10 +1021,24 @@ body {
 
   .Name {
     font-size: 4.6vw;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.5vw;
+    height: 7vw;
   }
+
+  .Name span {
+    line-height: 7vw;
+  }
+  .Name span:nth-child(2) {
+    font-size: 2vw;
+    text-transform: uppercase;
+    line-height: 3.5vw;
+    margin-top: 0;
+  }
+  .Name span:nth-child(3) {
+    font-size: 2vw;
+    line-height: 2vw;
+    letter-spacing: 0.66vw;
+  }
+
   #top-nav-link {
     display: none;
   }

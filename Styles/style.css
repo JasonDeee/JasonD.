@@ -748,20 +748,67 @@ a {
 }
 
 .Name {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: auto;
+  height: 4vw;
+  justify-self: end;
   font-family: "UTM Avo";
   font-weight: Bold;
   color: #292929;
   font-size: 1.7vw;
+  margin-bottom: 0.5vw;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: hidden;
+}
+
+.Name span {
+  position: relative;
+  width: auto;
+  line-height: 4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 0.5vw;
+  -webkit-transition: -webkit-transform 1.3s cubic-bezier(0.25, 0, 0, 1);
+  transition: -webkit-transform 1.3s cubic-bezier(0.25, 0, 0, 1);
+  transition: transform 1.3s cubic-bezier(0.25, 0, 0, 1);
+  transition: transform 1.3s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 1.3s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.Name span:nth-child(2) {
+  font-size: 1vw;
+  text-transform: uppercase;
+  line-height: 1vw;
+  margin-top: 1vw;
+}
+
+.Name span:nth-child(3) {
+  line-height: 1vw;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.36vw;
 }
 
 .Box-Intro {
@@ -5909,13 +5956,21 @@ circle {
   }
   .NAV-Elements .Name {
     font-size: 4.6vw;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin-bottom: 0.5vw;
+    height: 7vw;
+  }
+  .NAV-Elements .Name span {
+    line-height: 7vw;
+  }
+  .NAV-Elements .Name span:nth-child(2) {
+    font-size: 2vw;
+    text-transform: uppercase;
+    line-height: 3.5vw;
+    margin-top: 0;
+  }
+  .NAV-Elements .Name span:nth-child(3) {
+    font-size: 2vw;
+    line-height: 2vw;
+    letter-spacing: 0.66vw;
   }
   .NAV-Elements #top-nav-link {
     display: none;
