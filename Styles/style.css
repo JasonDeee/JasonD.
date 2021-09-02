@@ -4494,10 +4494,10 @@ circle {
   z-index: 999;
   color: #292929;
   letter-spacing: 0.02vw;
-  -webkit-transition: all 0.6s 0s ease-out, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s;
-  transition: all 0.6s 0s ease-out, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s;
-  transition: all 0.6s 0s ease-out, transform 0s, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
-  transition: all 0.6s 0s ease-out, transform 0s, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s;
+  -webkit-transition: all 0.6s 0s ease-out, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
+  transition: all 0.6s 0s ease-out, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
+  transition: all 0.6s 0s ease-out, transform 0s linear, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.6s 0s ease-out, transform 0s linear, margin-left 0.8s 0s cubic-bezier(0.25, 0, 0, 1), width 0.8s 0s cubic-bezier(0.25, 0, 0, 1), -webkit-transform 0s linear;
   -ms-flex-item-align: center;
       align-self: center;
   justify-self: center;
