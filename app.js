@@ -67,7 +67,7 @@
 //  // const PreloadBox = document.querySelector("#Preloader");
 //  // const PreloadCircle = document.querySelector("#PreloadCircle");
 //  // const PreloadCircle2 = document.querySelector("#PreloadCircle2");
-//  // const bodyload = document.querySelector(".desktop_body");
+const bodyload = document.querySelector(".desktop_body");
 //  //
 //  // // // jQuerry Method
 //  //
@@ -90,7 +90,7 @@ $("#IMGPreload").ready(function () {
   //      // Finishing
   //      PreloadBox.style.display = `none`;
   //      PreloadBox.style.pointerEvents = `none`;
-  //      bodyload.style.overflowY = `visible`;
+  bodyload.style.overflowY = `visible`;
   //      PreloadFinish();
   //      return;
   //    }
