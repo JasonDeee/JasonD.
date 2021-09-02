@@ -138,6 +138,32 @@ $(document).ready(function () {
   $("body").animate({ scrollLeft: 0 }, 1);
 });
 
+//
+//
+// Logo Swap
+const JD_logo = document.querySelectorAll(".Name span");
+var Logo_Status = true; // True Stand For my PlayName, False Stand For My Role  -- Swap Between Them
+
+var Logo_Timer = setInterval(() => {
+  if (Logo_Status == true) {
+    JD_logo[0].style.transform = `translateY(-4vw)`;
+    JD_logo[1].style.transform = `translateY(-4vw)`;
+    JD_logo[2].style.transform = `translateY(-4vw)`;
+
+    if (window.innerWidth < 768) {
+      JD_logo[0].style.transform = `translateY(-7vw)`;
+      JD_logo[1].style.transform = `translateY(-7vw)`;
+      JD_logo[2].style.transform = `translateY(-7vw)`;
+    }
+  }
+  if (Logo_Status == false) {
+    JD_logo[0].style = ``;
+    JD_logo[1].style = ``;
+    JD_logo[2].style = ``;
+  }
+  Logo_Status = !Logo_Status;
+}, 4000);
+
 // My Cat ALLWAY WATCHING YOU
 const section1 = document.querySelector(".section1");
 
