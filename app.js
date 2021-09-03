@@ -935,14 +935,14 @@ const decor3 = document.querySelector(".img-decor3");
 const buttonLine = document.querySelectorAll(".button-line");
 const menuElement = document.querySelectorAll("#nav-place");
 
-var NavValidate = false;
+var NavValidate = false; // Popping UP?
 
 NAVButton.addEventListener("click", (e) => {
   NavValidate = !NavValidate;
   if (window.scrollY > topNAV.offsetTop && NavValidate == true) {
     if (window.innerWidth > 768) {
-      topNAV.style.paddingLeft = `13vw`;
-      topNAV.style.paddingRight = `13vw`;
+      topNAV.style.paddingLeft = `17vw`;
+      topNAV.style.paddingRight = `17vw`;
     }
     if (window.innerWidth < 768) {
       topNAV.style.paddingLeft = `5vw`;
@@ -978,12 +978,12 @@ NAVButton.addEventListener("click", (e) => {
     decor3.style.transform = `translateX(5vw) rotate(-30deg) scale(0.8)`;
     if (window.innerWidth > 768) {
       copyright.style.marginRight = `25%`;
-      footer.style.left = `11vw`;
+      footer.style.left = `10.5vw`;
       footerChild.style.width = `25%`;
       footerChild.style.marginRight = `25%`;
-      docbdy.style.right = `11vw`;
+      docbdy.style.right = `10.5vw`;
       decor2.style.transform = `translateX(5vw)`;
-      TagBox.style.marginLeft = `22vw`;
+      TagBox.style.marginLeft = `21vw`;
     }
     if (window.innerWidth < 768) {
       decor3.style.transform = `translateX(-25vw) rotate(-30deg) scale(0.8)`;
@@ -1060,7 +1060,7 @@ document.addEventListener("scroll", function (e) {
     topNAV.style.paddingLeft = `17vw`;
     topNAV.style.paddingRight = `17vw`;
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth < 768) {
       topNAV.style.paddingLeft = `5vw`;
       topNAV.style.paddingRight = `37vw`;
     }
