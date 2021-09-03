@@ -95,6 +95,9 @@
 html {
   width: 100vw;
   overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body {
@@ -121,7 +124,6 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  right: 0vw;
   -webkit-transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
   transition: all 0.8s 0s cubic-bezier(0.25, 0, 0, 1);
   cursor: none;
@@ -5962,15 +5964,15 @@ circle {
     line-height: 7vw;
   }
   .NAV-Elements .Name span:nth-child(2) {
-    font-size: 2vw;
+    font-size: 2.4vw;
     text-transform: uppercase;
     line-height: 3.5vw;
     margin-top: 0;
   }
   .NAV-Elements .Name span:nth-child(3) {
-    font-size: 2vw;
+    font-size: 2.4vw;
     line-height: 2vw;
-    letter-spacing: 0.66vw;
+    letter-spacing: 0.9vw;
   }
   .NAV-Elements #top-nav-link {
     display: none;
