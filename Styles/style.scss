@@ -115,6 +115,12 @@ a {
   cursor: none;
 }
 
+.skelecton {
+  background-color: #c9c7c7;
+}
+.skelecton2 {
+  background-color: brown;
+}
 #Preloader {
   box-sizing: border-box;
   position: fixed;
@@ -1321,6 +1327,7 @@ circle {
 
 .mrsB {
   transition: all 0.85s ease-out;
+  background-color: #86a8e7;
   background-image: url(../Images/Work1.jpg);
   image-resolution: 250dpi;
   width: 45.7vw;
@@ -1676,6 +1683,7 @@ circle {
 }
 
 .katun-vid {
+  background-color: #bd5e32;
   position: relative;
   width: 74vw;
   border-radius: 1.5vw;
@@ -1787,6 +1795,7 @@ circle {
 .dame {
   background-position: center;
   border-radius: 1.5vw;
+  background-color: #656565;
   background-image: url(../Images/Darko.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1855,6 +1864,7 @@ circle {
 .dame2 {
   background-position: center;
   border-radius: 1.5vw;
+  background-color: #f9f7f7;
   background-image: url(../Images/Morphism.jpg);
   background-size: cover;
   background-repeat: no-repeat;
