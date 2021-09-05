@@ -166,6 +166,11 @@ a {
   }
 }
 
+.mobile_notification {
+  display: none;
+  pointer-events: none;
+}
+
 #PreloadAnimation {
   width: 100vw;
   height: 30vh;

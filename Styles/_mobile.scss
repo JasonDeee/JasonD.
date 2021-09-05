@@ -14,6 +14,50 @@ html {
 body {
   overflow-x: hidden;
 }
+
+.mobile_notification {
+  position: fixed;
+  bottom: calc(-60px - 2.5vh);
+  right: 6vw;
+  background: #ffffff6e;
+  width: auto;
+  height: 60px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+
+  backdrop-filter: blur(5px);
+
+  font-family: "Poppins";
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #292929;
+  z-index: 99;
+
+  border-right: 1px solid #ffffff62;
+  border-top: 1px solid #ffffff62;
+  box-shadow: 3px 3px 7px #0000004d;
+
+  animation: notify 1.5s cubic-bezier(0.25, 0, 0, 1) 1s forwards,
+    notify 1.5s cubic-bezier(0.25, 0, 0, 1) 4s reverse forwards;
+}
+
+@keyframes notify {
+  0% {
+    bottom: calc(-60px - 2.5vh);
+    visibility: hidden;
+  }
+  1% {
+    visibility: visible;
+  }
+  100% {
+    bottom: 5vh;
+  }
+}
+
 .mrsB-title {
   font-size: 6.5vw;
   line-height: 5vw;
@@ -1010,11 +1054,14 @@ body {
     grid-row-end: 3;
     margin-bottom: 5vw;
   }
+  .skelecton {
+    background-color: #c9c7c7;
+  }
 }
 
 .NAV-Elements {
   width: 100vw;
-  height: 15vw;
+  height: 60px;
   padding-left: 10vw;
   padding-right: 10vw;
   margin-top: 12vh;
