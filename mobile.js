@@ -272,6 +272,5 @@ document.addEventListener("scroll", (e) => {
         element.style.transition = `all 1.2s ${number}s cubic-bezier(0.25, 0, 0, 1)`;
       }
     }
-    console.log(MrB_Des_Mobile);
   }
 });

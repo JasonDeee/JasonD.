@@ -490,6 +490,104 @@ a {
   }
 }
 
+@-webkit-keyframes EntraneAnimation {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes EntraneAnimation {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+#Please_Note {
+  position: fixed;
+  top: 32vh;
+  right: 0;
+  background: #cb356b;
+  color: white;
+  padding: 16px;
+  max-width: 22vw;
+  -webkit-transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+  transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+#Please_Note p {
+  font-size: 1vw;
+  text-transform: uppercase;
+}
+
+#Please_Note strong {
+  margin-bottom: 4px;
+  display: block;
+}
+
+#Please_Note span {
+  text-transform: none;
+  font-weight: 300;
+  line-height: 2vw;
+  margin-top: 2px;
+}
+
+#Please_Note #CloseButton_Entrance {
+  cursor: pointer;
+  width: 2vw;
+  height: 2vw;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+#Please_Note #CloseButton_Entrance::after,
+#Please_Note #CloseButton_Entrance::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 2vw;
+  background: white;
+}
+
+#Please_Note #CloseButton_Entrance::after {
+  right: 0;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: translateX(-0.2vw) rotate(45deg);
+          transform: translateX(-0.2vw) rotate(45deg);
+}
+
+#Please_Note #CloseButton_Entrance::before {
+  left: 0;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-transform: translateX(0.2vw) rotate(-45deg);
+          transform: translateX(0.2vw) rotate(-45deg);
+}
+
+.Entrance_Added {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+}
+
+.Entrance_Removing {
+  -webkit-transform: translateX(100%) !important;
+          transform: translateX(100%) !important;
+}
+
 .decor1 {
   background: linear-gradient(60deg, #12c2e9, #c471ed, #f64f59);
   -webkit-box-sizing: border-box;

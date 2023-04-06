@@ -85,8 +85,6 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
   </head>
 
   <body class="desktop_body">
@@ -106,6 +104,7 @@
         </div>
       </div>
     </section> -->
+
     <div class="mobile_notification">Best With Desktop</div>
 
     <section class="menu-section">
@@ -3511,6 +3510,37 @@
         <p id="copyright">© 2021 JasonD. - All rights Reserved</p>
       </div>
     </section>
+    <div class="Entrance_Notification" id="Please_Note">
+      <p>
+        <strong>Please Note:</strong>
+        <br />This is my very old Portfolio from 2022
+        <br />
+        <span>A new realease is on it's way, thanks.</span>
+      </p>
+      <script>
+        const Entrance_Notification = document.getElementById("Please_Note");
+        Entrance_Notification.classList.add("Entrance_Added");
+
+        const Close_Entrance_Notification = () => {
+          console.log("clicked");
+          Entrance_Notification.classList.add("Entrance_Removing");
+          let EntranceTimer = window.setTimeout(() => {
+            Entrance_Notification.remove();
+            clearTimeout(EntranceTimer);
+            EntranceTimer = null;
+          }, 3000);
+        };
+      </script>
+      <div
+        id="CloseButton_Entrance"
+        onclick="Close_Entrance_Notification()"
+      ></div>
+      <!-- <script>
+        document
+          .getElementById("CloseButton_Entrance")
+          .addEventListener("click", Close_Entrance_Notification);
+      </script> -->
+    </div>
     <div class="thank_Pop">
       <div id="black_matte"></div>
       <div id="Pop_main">

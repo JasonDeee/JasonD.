@@ -1,0 +1,81 @@
+@keyframes EntraneAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#Please_Note {
+  position: fixed;
+  top: 32vh;
+  right: 0;
+
+  background: #cb356b;
+
+  color: white;
+  padding: 16px;
+  max-width: 22vw;
+
+  transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+  transform: translateX(100%);
+
+  p {
+    font-size: 1vw;
+    text-transform: uppercase;
+  }
+
+  strong {
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  span {
+    text-transform: none;
+    font-weight: 300;
+    line-height: 2vw;
+    margin-top: 2px;
+  }
+
+  #CloseButton_Entrance {
+    cursor: pointer;
+
+    width: 2vw;
+    height: 2vw;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  #CloseButton_Entrance::after,
+  #CloseButton_Entrance::before {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    width: 2px;
+    height: 2vw;
+    background: white;
+  }
+  #CloseButton_Entrance::after {
+    right: 0;
+    transform-origin: 50% 0;
+    transform: translateX(-0.2vw) rotate(45deg);
+  }
+
+  #CloseButton_Entrance::before {
+    left: 0;
+    transform-origin: 50% 0;
+
+    transform: translateX(0.2vw) rotate(-45deg);
+  }
+}
+
+.Entrance_Added {
+  transform: translateX(0) !important;
+}
+.Entrance_Removing {
+  transform: translateX(100%) !important;
+}
