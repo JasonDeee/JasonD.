@@ -13,6 +13,8 @@
   top: 32vh;
   right: 0;
 
+  cursor: help;
+
   background: #cb356b;
 
   color: white;
@@ -25,6 +27,18 @@
   p {
     font-size: 1vw;
     text-transform: uppercase;
+  }
+
+  a {
+    color: inherit;
+
+    cursor: pointer;
+    transition: all 0.88s cubic-bezier(0.25, 0, 0, 1);
+  }
+
+  a:hover {
+    letter-spacing: 1px;
+    opacity: 0.62;
   }
 
   strong {
